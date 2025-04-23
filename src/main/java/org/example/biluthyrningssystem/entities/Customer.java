@@ -1,14 +1,13 @@
 package org.example.biluthyrningssystem.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
-public class Customer {
+public class Customer { // Entire Class made by Leo
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(length = 13, unique=true, nullable=false)
+    @Column(length = 30, unique=true, updatable = false, nullable=false)
     private String socialSecurityNumber;
     @Column(length = 30, nullable=false)
     private String firstName;
