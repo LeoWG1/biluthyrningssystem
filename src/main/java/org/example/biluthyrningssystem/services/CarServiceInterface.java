@@ -1,5 +1,6 @@
 package org.example.biluthyrningssystem.services;
 
+import org.apache.coyote.Response;
 import org.example.biluthyrningssystem.entities.Car;
 import org.springframework.http.ResponseEntity;
 
@@ -9,8 +10,7 @@ public interface CarServiceInterface {
 
     ResponseEntity<List<Car>> getCars();
     ResponseEntity<List<Car>> getAllCars();
-    ResponseEntity<Car> addCar(Car car);
-    ResponseEntity<Car> updateCar(Car car);
-    ResponseEntity<Car> removeCar(Car car);
-
+    Car addCar(Car car);
+    String updateCar(Car car);
+    String removeCar(Car car);
 }
