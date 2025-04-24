@@ -1,4 +1,4 @@
-INSERT INTO customer(social_security_number, first_name, last_name, email, address, phone_number)
+INSERT INTO customers(social_security_number, first_name, last_name, email, address, phone_number)
 VALUES
     ('19850101-1234', 'Anna', 'Svensson',
      'anna.svensson@outlook.se', 'Svenssongatan 85', null),
