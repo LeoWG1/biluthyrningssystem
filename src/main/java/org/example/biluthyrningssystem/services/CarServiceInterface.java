@@ -8,9 +8,10 @@ import java.util.List;
 
 public interface CarServiceInterface {
 
-    ResponseEntity<List<Car>> getCars();
-    ResponseEntity<List<Car>> getAllCars();
-    Car addCar(Car car);
+    List<Car> getAvailableCars();
+    List<Car> adminGetAvailableCars();
+    List<Car> getAllCars();
+    String addCar(Car car);
     String updateCar(Car car);
-    String removeCar(Car car);
+    String removeCar(Long id);
 }

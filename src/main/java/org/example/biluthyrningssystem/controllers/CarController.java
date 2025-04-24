@@ -3,15 +3,14 @@ package org.example.biluthyrningssystem.controllers;
 import org.example.biluthyrningssystem.entities.Car;
 import org.example.biluthyrningssystem.services.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/cars")
+@RequestMapping("/api/v1")
 public class CarController {
 
     private final CarService carService;
@@ -23,7 +22,33 @@ public class CarController {
 
     //OBS TILLGÄNGLIGA BILAR
     @GetMapping("/cars")
-    public ResponseEntity<List<Car>> getCars() {
-        return carService.getCars();
+    public ResponseEntity<List<Car>> getAvailableCars() {
+        return ResponseEntity.ok(carService.getAvailableCars());
     }
+
+    @GetMapping("/admin/cars")
+    public ResponseEntity<List<Car>> adminGetAvailableCars() {
+        return ResponseEntity.ok(carService.adminGetAvailableCars());
+    }
+
+    @GetMapping("/admin/allcars")
+    public ResponseEntity<List<Car>> getAllCars() {
+        return ResponseEntity.ok(carService.getAllCars());
+    }
+
+    @PostMapping("/admin/addcar")
+    public ResponseEntity<String> addCar(@RequestBody Car car) {
+        return new ResponseEntity<>(carService.addCar(car), HttpStatus.CREATED);
+    }
+
+    @PutMapping("/admin/updatecar")
+    public ResponseEntity<String> updateCar(@RequestBody Car car) {
+        return ResponseEntity.ok(carService.updateCar(car));
+    }
+
+    @DeleteMapping("admin/removecar/{id}")
+    public ResponseEntity<String> removeCar(@PathVariable Long id) {
+        return ResponseEntity.ok(carService.removeCar(id));
+    }
+
 }
