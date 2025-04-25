@@ -1,5 +1,6 @@
 package org.example.biluthyrningssystem.services;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.example.biluthyrningssystem.entities.Car;
 import org.example.biluthyrningssystem.exceptions.ResourceNotFoundException;
 import org.example.biluthyrningssystem.repositories.CarRepository;
@@ -7,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class CarService implements CarServiceInterface {
@@ -21,7 +22,6 @@ public class CarService implements CarServiceInterface {
         this.carRepository = carRepository;
     }
 
-    //FUNGERAR, men hur inte visa booked/inservice?
     @Override
     public List<Car> getAvailableCars() {
         List<Car> cars = new ArrayList<>();
@@ -44,7 +44,6 @@ public class CarService implements CarServiceInterface {
         return cars;
     }
 
-
     @Override
     public List<Car> getAllCars() {
         return carRepository.findAll();
@@ -52,10 +51,12 @@ public class CarService implements CarServiceInterface {
 
     @Override
     public String addCar(Car car) {
-        for(Car carToAdd : carRepository.findAll()) {
-            if(carToAdd.getPlateNumber().equals(car.getPlateNumber())) {
-                throw new RuntimeException("PlateNumber already exists");
+        for(Car existingCar : carRepository.findAll()) {
+            if (existingCar.getPlateNumber().equals(car.getPlateNumber())) {
+                throw new ResponseStatusException(HttpStatus.CONFLICT, "PlateNumber already exists");
             }
+        }
+        if(isValidCar(car)) {
             carRepository.save(car);
         }
         return "Car added";
@@ -64,21 +65,12 @@ public class CarService implements CarServiceInterface {
     @Override
     public String updateCar(Car car) {
         if(carRepository.existsById(car.getId())) {
-            if(car.getPricePerDay() <= 0) {
-                throw new RuntimeException("Invalid price per day");
-            }
-            else if(car.getBrand() == null) {
-                throw new RuntimeException("Brand is missing");
-            }
-            else if(car.getModel() == null) {
-                throw new RuntimeException("Model is missing");
-            }
-            else if(car.getPlateNumber() == null) {
-                throw new RuntimeException("PlateNumber is missing");
+            if(isValidCar(car)) {
+                carRepository.save(car);
+                return "Car updated";
             }
         }
-        carRepository.save(car);
-        return "Car updated";
+        throw new ResourceNotFoundException("Car", "id", car.getId());
     }
 
     @Override
@@ -86,5 +78,21 @@ public class CarService implements CarServiceInterface {
         carRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Car", "id", id));
         carRepository.deleteById(id);
         return "Car removed";
+    }
+
+    private boolean isValidCar(Car car) {
+        if(car.getPricePerDay() <= 0) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid pricePerDay");
+        }
+        else if(car.getBrand() == null || car.getBrand().isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "brand is missing");
+        }
+        else if(car.getModel() == null || car.getModel().isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "model is missing");
+        }
+        else if(car.getPlateNumber() == null || car.getPlateNumber().isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "plateNumber is missing");
+        }
+        return true;
     }
 }

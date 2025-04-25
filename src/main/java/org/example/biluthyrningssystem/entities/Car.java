@@ -1,5 +1,6 @@
 package org.example.biluthyrningssystem.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 // Ann-Louis made this class
@@ -85,5 +86,4 @@ public class Car {
     public void setInService(boolean inService) {
         this.inService = inService;
     }
-
 }
