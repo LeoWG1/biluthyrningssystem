@@ -2,7 +2,10 @@ package org.example.biluthyrningssystem.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
+@Table(name = "customers")
 public class Customer { // Entire Class made by Leo
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +22,9 @@ public class Customer { // Entire Class made by Leo
     private String address;
     @Column(length = 30)
     private String phoneNumber;
+
+    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
+    private List<Order> orderList;
 
     public Customer(){}
 
