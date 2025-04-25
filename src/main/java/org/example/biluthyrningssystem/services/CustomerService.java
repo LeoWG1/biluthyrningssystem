@@ -32,7 +32,7 @@ public class CustomerService implements CustomerServiceInterface { // Entire cla
         return customerRepository.save(customer);
     }
 
-    @Override // Needs to ignore changes to SSN and ID, and maybe even notify user
+    @Override
     public Customer updateCustomer(Customer updatedCustomer) {
 
         Customer existingCustomer = customerRepository.findById(updatedCustomer.getId())
