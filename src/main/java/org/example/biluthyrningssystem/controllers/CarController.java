@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+// Ann-Louis made this class
 @RestController
 @RequestMapping("/api/v1")
 public class CarController {
@@ -20,7 +20,6 @@ public class CarController {
         this.carService = carService;
     }
 
-    //OBS TILLGÄNGLIGA BILAR
     @GetMapping("/cars")
     public ResponseEntity<List<Car>> getAvailableCars() {
         return ResponseEntity.ok(carService.getAvailableCars());

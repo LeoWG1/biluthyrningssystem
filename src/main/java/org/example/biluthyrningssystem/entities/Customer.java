@@ -3,6 +3,7 @@ package org.example.biluthyrningssystem.entities;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "customers")
 public class Customer { // Entire Class made by Leo
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

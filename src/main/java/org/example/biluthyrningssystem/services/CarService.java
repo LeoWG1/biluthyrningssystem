@@ -1,17 +1,16 @@
 package org.example.biluthyrningssystem.services;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.example.biluthyrningssystem.entities.Car;
 import org.example.biluthyrningssystem.exceptions.ResourceNotFoundException;
 import org.example.biluthyrningssystem.repositories.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.*;
 
+//Ann-Louis made this class
 @Service
 public class CarService implements CarServiceInterface {
 

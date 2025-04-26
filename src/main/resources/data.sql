@@ -1,4 +1,4 @@
-INSERT INTO customer(social_security_number, first_name, last_name, email, address, phone_number)
+INSERT INTO customers(social_security_number, first_name, last_name, email, address, phone_number)
 VALUES
     ('19850101-1234', 'Anna', 'Svensson',
      'anna.svensson@outlook.se', 'Svenssongatan 85', null),
@@ -11,7 +11,7 @@ VALUES
     ('19950505-7890', 'Elin', 'Andersson',
      'elin.andersson1@outlook.se', 'Anderssongatan 5', '0737878788');
 
-INSERT INTO car(price_per_day, brand, model, plate_number, booked, in_service)
+INSERT INTO cars(price_per_day, brand, model, plate_number, booked, in_service)
 VALUES
     (661.5, 'Renault', 'Captur', 'MLB84A', true, false),
     (990.0, 'Peugeot', '3008', 'ABC123', false, true),

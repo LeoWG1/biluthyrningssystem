@@ -1,10 +1,10 @@
 package org.example.biluthyrningssystem.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 // Ann-Louis made this class
 @Entity
+@Table(name = "cars")
 public class Car {
 
     @Id
