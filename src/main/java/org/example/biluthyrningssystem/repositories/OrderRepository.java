@@ -7,8 +7,12 @@ import org.springframework.stereotype.Repository;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * @author Frida Jakobsson
+ */
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Long> {
     List<Order> findByEndDateBefore(LocalDate endDate);
     List<Order> findByActiveTrue();
+    List<Order> findByActiveFalse();
 }

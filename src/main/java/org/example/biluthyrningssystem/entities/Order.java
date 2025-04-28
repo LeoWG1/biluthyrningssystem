@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
+/**
+ * @author Frida Jakobsson
+ */
 @Entity
 @Table(name = "orders")
 public class Order {

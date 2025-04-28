@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * @author Frida Jakobsson
+ */
 @RestController
 @RequestMapping("/api/v1")
 public class OrderController {
@@ -51,7 +54,7 @@ public class OrderController {
      */
     @GetMapping("/admin/orders")
     public ResponseEntity<List<Order>> getAllOrdersAdmin() {
-        return ResponseEntity.ok(orderService.getAllOrders());
+        return ResponseEntity.ok(orderService.getAllInactiveOrders());
     }
 
     @DeleteMapping("/admin/removeorder/{id}")
@@ -71,7 +74,7 @@ public class OrderController {
         return ResponseEntity.ok(orderService.getAllActiveOrders());
     }
 
-    // WIP - SKA VISA VALFRI STATISTIK
+    // WIP
     @GetMapping("/admin/statistics")
     public ResponseEntity<List<Order>> showStatistics() {
         return ResponseEntity.ok(orderService.getAllOrders());
