@@ -1,5 +1,6 @@
 package org.example.biluthyrningssystem.services;
 
+import org.example.biluthyrningssystem.CarDTO;
 import org.example.biluthyrningssystem.entities.Car;
 import org.example.biluthyrningssystem.exceptions.ResourceNotFoundException;
 import org.example.biluthyrningssystem.repositories.CarRepository;
@@ -22,14 +23,17 @@ public class CarService implements CarServiceInterface {
     }
 
     @Override
-    public List<Car> getAvailableCars() {
-        List<Car> cars = new ArrayList<>();
+    public List<CarDTO> getAvailableCars() {
+        List<CarDTO> carDTO = new ArrayList<>();
         for(Car car : carRepository.findAll()) {
             if(!car.isInService() && !car.isBooked()) {
-                cars.add(car);
+                carDTO.add(new CarDTO(car));
             }
         }
-        return cars;
+
+        Comparator<CarDTO> priceComparator = (car1, car2) -> (int) (car1.getPricePerDay() - car2.getPricePerDay());
+        carDTO.sort(priceComparator);
+        return carDTO;
     }
 
     @Override
