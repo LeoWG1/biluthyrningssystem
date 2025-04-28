@@ -7,7 +7,9 @@ import java.util.List;
 
 public interface OrderServiceInterface {
     List<Order> getAllOrders();
+    List<Order> getAllActiveOrders();
     Order createOrder(Order order);
     void removeOrderById(long id);
     void removeOrderBeforeDate(LocalDate date);
+    Order cancelOrder(long id);
 }

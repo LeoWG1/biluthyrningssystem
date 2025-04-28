@@ -13,8 +13,15 @@ VALUES
 
 INSERT INTO cars(price_per_day, brand, model, plate_number, booked, in_service)
 VALUES
-    (661.5, 'Renault', 'Captur', 'MLB84A', true, false),
+    (661.5, 'Renault', 'Captur', 'MLB84A', false, true),
     (990.0, 'Peugeot', '3008', 'ABC123', false, true),
-    (1365.0, 'Volvo', 'V90 Plug in', 'YXH32E', false, false),
-    (1138.5, 'Volvo', 'XC40', 'PRE12B', true, false),
-    (1260.0, 'Volvo', 'V60 Plug in', 'FCV91H', false, false);
+    (1365.0, 'Volvo', 'V90 Plug in', 'YXH32E', false, true),
+    (1138.5, 'Volvo', 'XC40', 'PRE12B', false, false),
+    (1260.0, 'Volvo', 'V60 Plug in', 'FCV91H', false, true);
+
+INSERT INTO orders (price, start_date, end_date, active, customer_id, car_id)
+VALUES
+    (10, '2025-01-01', '2025-02-01', true, 1, 1),
+    (10, '2025-02-15', '2025-03-05', true, 2, 2),
+    (10, '2025-03-10', '2025-04-05', true, 4, 2),
+    (10, '2005-03-10', '2005-04-05', true, 5, 2);

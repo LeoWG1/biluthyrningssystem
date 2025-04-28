@@ -15,7 +15,13 @@ public class Order {
     private long price;
 
     @Column
-    private LocalDate date;
+    private LocalDate startDate;
+
+    @Column
+    private LocalDate endDate;
+
+    @Column
+    private boolean active;
 
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
@@ -44,12 +50,28 @@ public class Order {
         this.price = price;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public LocalDate getStartDate() {
+        return startDate;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
+
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public Customer getCustomer() {
