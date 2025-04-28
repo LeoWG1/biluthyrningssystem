@@ -2,8 +2,8 @@ package org.example.biluthyrningssystem.services;
 
 import org.example.biluthyrningssystem.entities.Customer;
 import org.example.biluthyrningssystem.exceptions.ResourceNotFoundException;
+import org.example.biluthyrningssystem.exceptions.UnalterableFieldException;
 import org.example.biluthyrningssystem.repositories.CustomerRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,8 +11,11 @@ import java.util.List;
 @Service
 public class CustomerService implements CustomerServiceInterface { // Entire class made by Leo
 
-    @Autowired
-    private CustomerRepository customerRepository;
+    private final CustomerRepository customerRepository;
+
+    public CustomerService(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
+    }
 
     @Override
     public List<Customer> fetchAllCustomers() {
@@ -29,10 +32,22 @@ public class CustomerService implements CustomerServiceInterface { // Entire cla
         return customerRepository.save(customer);
     }
 
-    @Override // Find a solution for this
-    public Customer updateCustomer(Customer customer) {
+    @Override
+    public Customer updateCustomer(Customer updatedCustomer) {
 
-        return customerRepository.save(customer);
+        Customer existingCustomer = customerRepository.findById(updatedCustomer.getId())
+                .orElseThrow(() -> new ResourceNotFoundException("Customer", "id", updatedCustomer.getId()));
+
+        if(!existingCustomer.getSocialSecurityNumber().equals(updatedCustomer.getSocialSecurityNumber())) {
+            throw new UnalterableFieldException("You cannot change the social security number from: " + existingCustomer.getSocialSecurityNumber());
+        }
+
+        existingCustomer.setFirstName(updatedCustomer.getFirstName());
+        existingCustomer.setLastName(updatedCustomer.getLastName());
+        existingCustomer.setEmail(updatedCustomer.getEmail());
+        existingCustomer.setPhoneNumber(updatedCustomer.getPhoneNumber());
+
+        return customerRepository.save(updatedCustomer);
     }
 
     @Override

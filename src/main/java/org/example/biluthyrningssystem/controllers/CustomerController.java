@@ -2,7 +2,6 @@ package org.example.biluthyrningssystem.controllers;
 
 import org.example.biluthyrningssystem.entities.Customer;
 import org.example.biluthyrningssystem.services.CustomerService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -11,10 +10,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-public class CustomerController {
+public class CustomerController { // Entire class made by Leo
 
-    @Autowired
-    private CustomerService customerService;
+    private final CustomerService customerService;
+
+    public CustomerController(CustomerService customerService) {
+        this.customerService = customerService;
+    }
 
     @GetMapping("api/v1/admin/customers")
     public ResponseEntity<List<Customer>> getAllCustomer() {
