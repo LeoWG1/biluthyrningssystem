@@ -1,5 +1,6 @@
 package org.example.biluthyrningssystem.controllers;
 
+import org.example.biluthyrningssystem.CarDTO;
 import org.example.biluthyrningssystem.entities.Car;
 import org.example.biluthyrningssystem.services.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class CarController {
     }
 
     @GetMapping("/cars")
-    public ResponseEntity<List<Car>> getAvailableCars() {
+    public ResponseEntity<List<CarDTO>> getAvailableCars() {
         return ResponseEntity.ok(carService.getAvailableCars());
     }
 
@@ -49,5 +50,4 @@ public class CarController {
     public ResponseEntity<String> removeCar(@PathVariable Long id) {
         return ResponseEntity.ok(carService.removeCar(id));
     }
-
 }
