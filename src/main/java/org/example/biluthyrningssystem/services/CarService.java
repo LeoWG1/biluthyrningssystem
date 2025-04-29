@@ -1,8 +1,6 @@
 package org.example.biluthyrningssystem.services;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.example.biluthyrningssystem.CarDTO;
+import org.example.biluthyrningssystem.dto.CarDTO;
 import org.example.biluthyrningssystem.entities.Car;
 import org.example.biluthyrningssystem.exceptions.ResourceNotFoundException;
 import org.example.biluthyrningssystem.repositories.CarRepository;

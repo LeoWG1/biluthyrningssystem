@@ -1,4 +1,4 @@
-package org.example.biluthyrningssystem;
+package org.example.biluthyrningssystem.dto;
 
 import org.example.biluthyrningssystem.entities.Car;
 
