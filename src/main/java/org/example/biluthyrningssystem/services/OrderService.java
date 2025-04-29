@@ -48,12 +48,6 @@ public class OrderService implements OrderServiceInterface {
         Car car = carRepository.findById(order.getCar().getId())
                 .orElseThrow(() -> new ResourceNotFoundException("Car", "id", order.getCar().getId()));
 
-        if (car.isBooked()) {
-            throw new IllegalStateException("Car is already booked");
-        }
-
-        car.setBooked(true);
-
         // Calculate total price of order
         long days = ChronoUnit.DAYS.between(order.getStartDate(), order.getEndDate());
         long totalPrice = (long) (days * car.getPricePerDay());
@@ -85,7 +79,6 @@ public class OrderService implements OrderServiceInterface {
 
         order.setActive(false);
         Car car = order.getCar();
-        car.setBooked(false);
         carRepository.save(car);
 
         return orderRepository.save(order);

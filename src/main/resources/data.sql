@@ -11,13 +11,13 @@ VALUES
     ('19950505-7890', 'Elin', 'Andersson',
      'elin.andersson1@outlook.se', 'Anderssongatan 5', '0737878788');
 
-INSERT INTO cars(price_per_day, brand, model, plate_number, booked, in_service)
+INSERT INTO cars(price_per_day, brand, model, plate_number, in_service)
 VALUES
-    (661.5, 'Renault', 'Captur', 'MLB84A', false, true),
-    (990.0, 'Peugeot', '3008', 'ABC123', false, true),
-    (1365.0, 'Volvo', 'V90 Plug in', 'YXH32E', false, true),
-    (1138.5, 'Volvo', 'XC40', 'PRE12B', false, false),
-    (1260.0, 'Volvo', 'V60 Plug in', 'FCV91H', false, true);
+    (661.5, 'Renault', 'Captur', 'MLB84A', true),
+    (990.0, 'Peugeot', '3008', 'ABC123', true),
+    (1365.0, 'Volvo', 'V90 Plug in', 'YXH32E', true),
+    (1138.5, 'Volvo', 'XC40', 'PRE12B', false),
+    (1260.0, 'Volvo', 'V60 Plug in', 'FCV91H', true);
 
 INSERT INTO orders (price, start_date, end_date, active, customer_id, car_id)
 VALUES

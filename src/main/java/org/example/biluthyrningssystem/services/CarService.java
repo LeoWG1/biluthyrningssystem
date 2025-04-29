@@ -28,7 +28,7 @@ public class CarService implements CarServiceInterface {
     public List<CarDTO> getAvailableCars() {
         List<CarDTO> carDTO = new ArrayList<>();
         for(Car car : carRepository.findAll()) {
-            if(!car.isInService() && !car.isBooked()) {
+            if(!car.isInService()) {
                 carDTO.add(new CarDTO(car));
             }
         }
@@ -42,7 +42,7 @@ public class CarService implements CarServiceInterface {
     public List<Car> adminGetAvailableCars() {
         List<Car> cars = new ArrayList<>();
         for(Car car : carRepository.findAll()) {
-            if(!car.isInService() && !car.isBooked()) {
+            if(!car.isInService()) {
                 cars.add(car);
             }
         }

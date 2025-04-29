@@ -24,9 +24,6 @@ public class Car {
     private String plateNumber;
 
     @Column(length = 10, nullable = false)
-    private boolean booked;
-
-    @Column(length = 10, nullable = false)
     private boolean inService;
 
     public Car() {}
@@ -69,14 +66,6 @@ public class Car {
 
     public void setPlateNumber(String plateNumber) {
         this.plateNumber = plateNumber;
-    }
-
-    public boolean isBooked() {
-        return booked;
-    }
-
-    public void setBooked(boolean booked) {
-        this.booked = booked;
     }
 
     public boolean isInService() {
