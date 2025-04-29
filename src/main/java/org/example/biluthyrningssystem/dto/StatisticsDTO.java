@@ -1,5 +1,8 @@
 package org.example.biluthyrningssystem.dto;
 
+/**
+ * @author Frida Jakobsson
+ */
 public class StatisticsDTO {
     private long totalActiveOrders;
     private long totalOrders;
