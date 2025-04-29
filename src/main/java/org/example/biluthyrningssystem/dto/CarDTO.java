@@ -4,6 +4,7 @@ import org.example.biluthyrningssystem.entities.Car;
 
 import java.io.Serializable;
 
+//Ann-Louis made this class
 public class CarDTO implements Serializable {
 
     private String brand;

@@ -1,5 +1,7 @@
 package org.example.biluthyrningssystem.services;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.example.biluthyrningssystem.dto.CarDTO;
 import org.example.biluthyrningssystem.entities.Car;
 import org.example.biluthyrningssystem.exceptions.ResourceNotFoundException;
@@ -16,6 +18,7 @@ import java.util.*;
 public class CarService implements CarServiceInterface {
 
     private final CarRepository carRepository;
+    private static final Logger USER_LOGGER = LogManager.getLogger("userlog");
 
     @Autowired
     public CarService(CarRepository carRepository) {
@@ -56,11 +59,13 @@ public class CarService implements CarServiceInterface {
     public String addCar(Car car) {
         for(Car existingCar : carRepository.findAll()) {
             if (existingCar.getPlateNumber().equals(car.getPlateNumber())) {
+                USER_LOGGER.warn("Admin tried to add a car with a plate number that already exists");
                 throw new ResponseStatusException(HttpStatus.CONFLICT, "PlateNumber already exists");
             }
         }
         if(isValidCar(car)) {
             carRepository.save(car);
+            USER_LOGGER.info("Admin added a car with plate number {}.", car.getPlateNumber());
         }
         return "Car added";
     }
