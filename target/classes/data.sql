@@ -3,7 +3,7 @@ VALUES
     ('19850101-1234', 'Anna', 'Svensson',
      'anna.svensson@outlook.se', 'Svenssongatan 85', null),
     ('19900215-5678', 'Erik', 'Johansson',
-     'erikjohan90@gmail.com', 'Schrödingergatn 1', null),
+     'erikjohan90@gmail.com', 'Schrödingergatan 1', null),
     ('19751230-9101', 'Maria', 'Lindberg',
      'maria.lindberg75@hotmail.com', 'Schrödingergatan 4', null),
     ('19881122-3456', 'Johan', 'Karlsson',

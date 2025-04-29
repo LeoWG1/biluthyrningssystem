@@ -1,6 +1,7 @@
 <Configuration status="info">
     <properties>
         <property name="layout">%d[%t]%yellow{%-5level}%blue{%logger}-%m%n</property>
+        <property name="layout2">%d%level%logger</property>
     </properties>
 
     <Appenders>
@@ -10,11 +11,11 @@
         </Console>
 
         <File name="LogFile" fileName="logs/app.logg">
-            <PatternLayout pattern="${layout}"/>
+            <PatternLayout pattern="${layout2}"/>
         </File>
 
         <File name="UserLogFile" filename="logs/user-logging.log">
-            <PatternLayout pattern="${layout}"/>
+            <PatternLayout pattern="${layout2}"/>
         </File>
 
     </Appenders>
