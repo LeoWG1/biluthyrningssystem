@@ -61,8 +61,8 @@ public class CustomerService implements CustomerServiceInterface { // Entire cla
                 .orElseThrow(() -> new ResourceNotFoundException("Customer", "id", updatedCustomer.getId()));
 
         if(!existingCustomer.getSocialSecurityNumber().equals(user)){
-            LOGGER.warn("Unauthorized USER attempted change to customer '{}'", existingCustomer.getId());
-            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "You are not authorized to change this customer");
+            LOGGER.warn("Unauthorized USER attempted and failed to change customer with ID: '{}'", existingCustomer.getId());
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "You are not authorized to make any changes to this customer");
         }
 
         if(!existingCustomer.getSocialSecurityNumber().equals(updatedCustomer.getSocialSecurityNumber())) {
