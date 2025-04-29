@@ -75,9 +75,11 @@ public class CarService implements CarServiceInterface {
         if(carRepository.existsById(car.getId())) {
             if(isValidCar(car)) {
                 carRepository.save(car);
+                USER_LOGGER.info("Admin updated car with plate number {}.", car.getPlateNumber());
                 return "Car updated";
             }
         }
+        USER_LOGGER.warn("Admin tried to update a car that does not exist.");
         throw new ResourceNotFoundException("Car", "id", car.getId());
     }
 
