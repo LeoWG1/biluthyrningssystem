@@ -1,0 +1,293 @@
+2025-04-28 20:25:23,706[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-Starting BiluthyrningssystemApplication using Java 17.0.12 with PID 1748 (C:\Users\heyit\IdeaProjects\biluthyrningssystem\target\classes started by heyit in C:\Users\heyit\IdeaProjects\biluthyrningssystem)
+2025-04-28 20:25:23,716[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-No active profile set, falling back to 1 default profile: "default"
+2025-04-28 20:25:23,760[restartedMain]INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-28 20:25:23,786[restartedMain]INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-28 20:25:24,418[restartedMain]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-28 20:25:24,474[restartedMain]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 47 ms. Found 3 JPA repository interfaces.
+2025-04-28 20:25:24,908[restartedMain]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 9090 (http)
+2025-04-28 20:25:24,920[restartedMain]INFO org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-9090"]
+2025-04-28 20:25:24,921[restartedMain]INFO org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-04-28 20:25:24,921[restartedMain]INFO org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-28 20:25:24,974[restartedMain]INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-04-28 20:25:24,975[restartedMain]INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1187 ms
+2025-04-28 20:25:25,124[restartedMain]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-04-28 20:25:25,311[restartedMain]INFO com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:rentaldb user=SA
+2025-04-28 20:25:25,312[restartedMain]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-04-28 20:25:25,355[restartedMain]INFO org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-28 20:25:25,407[restartedMain]INFO org.hibernate.Version-HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-28 20:25:25,440[restartedMain]INFO org.hibernate.cache.internal.RegionFactoryInitiator-HHH000026: Second-level cache disabled
+2025-04-28 20:25:25,689[restartedMain]INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-28 20:25:25,767[restartedMain]INFO org.hibernate.orm.connections.pooling-HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-28 20:25:26,621[restartedMain]INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-28 20:25:26,671[restartedMain]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-28 20:25:26,926[restartedMain]WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-28 20:25:27,186[restartedMain]INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration-H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:rentaldb'
+2025-04-28 20:25:27,261[restartedMain]INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2025-04-28 20:25:27,281[restartedMain]INFO org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-9090"]
+2025-04-28 20:25:27,298[restartedMain]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 9090 (http) with context path '/'
+2025-04-28 20:25:27,307[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-Started BiluthyrningssystemApplication in 3.941 seconds (process running for 5.206)
+2025-04-28 20:26:40,374[SpringApplicationShutdownHook]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-28 20:26:40,502[tomcat-shutdown]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-04-28 20:26:40,506[SpringApplicationShutdownHook]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-28 20:26:40,516[SpringApplicationShutdownHook]WARN org.springframework.beans.factory.support.DisposableBeanAdapter-Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-04-28 20:26:40,517[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-04-28 20:26:40,519[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-04-28 20:26:44,430[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-Starting BiluthyrningssystemApplication using Java 17.0.12 with PID 17740 (C:\Users\heyit\IdeaProjects\biluthyrningssystem\target\classes started by heyit in C:\Users\heyit\IdeaProjects\biluthyrningssystem)
+2025-04-28 20:26:44,437[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-No active profile set, falling back to 1 default profile: "default"
+2025-04-28 20:26:44,476[restartedMain]INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-28 20:26:44,476[restartedMain]INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-28 20:26:45,125[restartedMain]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-28 20:26:45,184[restartedMain]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 50 ms. Found 3 JPA repository interfaces.
+2025-04-28 20:26:45,626[restartedMain]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 9090 (http)
+2025-04-28 20:26:45,637[restartedMain]INFO org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-9090"]
+2025-04-28 20:26:45,639[restartedMain]INFO org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-04-28 20:26:45,639[restartedMain]INFO org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-28 20:26:45,685[restartedMain]INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-04-28 20:26:45,686[restartedMain]INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1209 ms
+2025-04-28 20:26:45,811[restartedMain]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-04-28 20:26:45,991[restartedMain]INFO com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:rentaldb user=SA
+2025-04-28 20:26:45,993[restartedMain]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-04-28 20:26:46,031[restartedMain]INFO org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-28 20:26:46,079[restartedMain]INFO org.hibernate.Version-HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-28 20:26:46,111[restartedMain]INFO org.hibernate.cache.internal.RegionFactoryInitiator-HHH000026: Second-level cache disabled
+2025-04-28 20:26:46,368[restartedMain]INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-28 20:26:46,443[restartedMain]INFO org.hibernate.orm.connections.pooling-HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-28 20:26:47,282[restartedMain]INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-28 20:26:47,332[restartedMain]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-28 20:26:47,577[restartedMain]WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-28 20:26:47,839[restartedMain]INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration-H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:rentaldb'
+2025-04-28 20:26:47,914[restartedMain]INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2025-04-28 20:26:47,938[restartedMain]INFO org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-9090"]
+2025-04-28 20:26:47,955[restartedMain]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 9090 (http) with context path '/'
+2025-04-28 20:26:47,964[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-Started BiluthyrningssystemApplication in 3.882 seconds (process running for 5.192)
+2025-04-28 20:26:50,352[SpringApplicationShutdownHook]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-28 20:26:50,485[tomcat-shutdown]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-04-28 20:26:50,488[SpringApplicationShutdownHook]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-28 20:26:50,502[SpringApplicationShutdownHook]WARN org.springframework.beans.factory.support.DisposableBeanAdapter-Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-04-28 20:26:50,502[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-04-28 20:26:50,504[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-04-28 20:29:35,844[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-Starting BiluthyrningssystemApplication using Java 17.0.12 with PID 9656 (C:\Users\heyit\IdeaProjects\biluthyrningssystem\target\classes started by heyit in C:\Users\heyit\IdeaProjects\biluthyrningssystem)
+2025-04-28 20:29:35,852[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-No active profile set, falling back to 1 default profile: "default"
+2025-04-28 20:29:35,892[restartedMain]INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-28 20:29:35,892[restartedMain]INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-28 20:29:36,523[restartedMain]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-28 20:29:36,585[restartedMain]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 55 ms. Found 3 JPA repository interfaces.
+2025-04-28 20:29:37,022[restartedMain]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 9090 (http)
+2025-04-28 20:29:37,034[restartedMain]INFO org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-9090"]
+2025-04-28 20:29:37,035[restartedMain]INFO org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-04-28 20:29:37,036[restartedMain]INFO org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-28 20:29:37,083[restartedMain]INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-04-28 20:29:37,083[restartedMain]INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1190 ms
+2025-04-28 20:29:37,214[restartedMain]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-04-28 20:29:37,408[restartedMain]INFO com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:rentaldb user=SA
+2025-04-28 20:29:37,409[restartedMain]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-04-28 20:29:37,446[restartedMain]INFO org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-28 20:29:37,498[restartedMain]INFO org.hibernate.Version-HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-28 20:29:37,531[restartedMain]INFO org.hibernate.cache.internal.RegionFactoryInitiator-HHH000026: Second-level cache disabled
+2025-04-28 20:29:37,802[restartedMain]INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-28 20:29:37,877[restartedMain]INFO org.hibernate.orm.connections.pooling-HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-28 20:29:38,771[restartedMain]INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-28 20:29:38,821[restartedMain]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-28 20:29:39,083[restartedMain]WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-28 20:29:39,341[restartedMain]INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration-H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:rentaldb'
+2025-04-28 20:29:39,415[restartedMain]INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2025-04-28 20:29:39,437[restartedMain]INFO org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-9090"]
+2025-04-28 20:29:39,457[restartedMain]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 9090 (http) with context path '/'
+2025-04-28 20:29:39,467[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-Started BiluthyrningssystemApplication in 3.955 seconds (process running for 5.051)
+2025-04-28 20:30:03,228[File Watcher]INFO org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener-Restarting due to 20 class path changes (0 additions, 19 deletions, 1 modification)
+2025-04-28 20:30:03,233[Thread-5]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-28 20:30:03,234[tomcat-shutdown]INFO org.apache.coyote.http11.Http11NioProtocol-Pausing ProtocolHandler ["http-nio-9090"]
+2025-04-28 20:30:03,411[tomcat-shutdown]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-04-28 20:30:03,412[Thread-5]INFO org.apache.coyote.http11.Http11NioProtocol-Stopping ProtocolHandler ["http-nio-9090"]
+2025-04-28 20:30:03,416[Thread-5]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-28 20:30:03,427[Thread-5]WARN org.springframework.beans.factory.support.DisposableBeanAdapter-Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-04-28 20:30:03,427[Thread-5]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-04-28 20:30:03,429[Thread-5]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-04-28 20:30:03,569[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-Starting BiluthyrningssystemApplication using Java 17.0.12 with PID 9656 (C:\Users\heyit\IdeaProjects\biluthyrningssystem\target\classes started by heyit in C:\Users\heyit\IdeaProjects\biluthyrningssystem)
+2025-04-28 20:30:03,570[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-No active profile set, falling back to 1 default profile: "default"
+2025-04-28 20:30:03,886[restartedMain]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-28 20:30:03,906[restartedMain]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 18 ms. Found 3 JPA repository interfaces.
+2025-04-28 20:30:04,072[restartedMain]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 9090 (http)
+2025-04-28 20:30:04,073[restartedMain]INFO org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-9090"]
+2025-04-28 20:30:04,074[restartedMain]INFO org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-04-28 20:30:04,075[restartedMain]INFO org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-28 20:30:04,112[restartedMain]INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-04-28 20:30:04,112[restartedMain]INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 539 ms
+2025-04-28 20:30:04,179[restartedMain]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-2 - Starting...
+2025-04-28 20:30:04,181[restartedMain]INFO com.zaxxer.hikari.pool.HikariPool-HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:rentaldb user=SA
+2025-04-28 20:30:04,181[restartedMain]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-2 - Start completed.
+2025-04-28 20:30:04,183[restartedMain]INFO org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-28 20:30:04,187[restartedMain]INFO org.hibernate.cache.internal.RegionFactoryInitiator-HHH000026: Second-level cache disabled
+2025-04-28 20:30:04,203[restartedMain]INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-28 20:30:04,205[restartedMain]INFO org.hibernate.orm.connections.pooling-HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-28 20:30:04,297[restartedMain]INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-28 20:30:04,308[restartedMain]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-28 20:30:04,403[restartedMain]WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-28 20:30:04,518[restartedMain]INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration-H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:rentaldb'
+2025-04-28 20:30:04,547[restartedMain]INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2025-04-28 20:30:04,560[restartedMain]INFO org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-9090"]
+2025-04-28 20:30:04,563[restartedMain]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 9090 (http) with context path '/'
+2025-04-28 20:30:04,569[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-Started BiluthyrningssystemApplication in 1.082 seconds (process running for 30.152)
+2025-04-28 20:30:04,571[restartedMain]INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener-Condition evaluation unchanged
+2025-04-28 20:30:05,966[File Watcher]INFO org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener-Restarting due to 19 class path changes (19 additions, 0 deletions, 0 modifications)
+2025-04-28 20:30:05,967[Thread-7]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-28 20:30:05,967[tomcat-shutdown]INFO org.apache.coyote.http11.Http11NioProtocol-Pausing ProtocolHandler ["http-nio-9090"]
+2025-04-28 20:30:06,083[tomcat-shutdown]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-04-28 20:30:06,084[Thread-7]INFO org.apache.coyote.http11.Http11NioProtocol-Stopping ProtocolHandler ["http-nio-9090"]
+2025-04-28 20:30:06,085[Thread-7]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-28 20:30:06,087[Thread-7]WARN org.springframework.beans.factory.support.DisposableBeanAdapter-Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-04-28 20:30:06,088[Thread-7]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-2 - Shutdown initiated...
+2025-04-28 20:30:06,088[Thread-7]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-2 - Shutdown completed.
+2025-04-28 20:30:06,163[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-Starting BiluthyrningssystemApplication using Java 17.0.12 with PID 9656 (C:\Users\heyit\IdeaProjects\biluthyrningssystem\target\classes started by heyit in C:\Users\heyit\IdeaProjects\biluthyrningssystem)
+2025-04-28 20:30:06,164[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-No active profile set, falling back to 1 default profile: "default"
+2025-04-28 20:30:06,338[restartedMain]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-28 20:30:06,352[restartedMain]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 12 ms. Found 3 JPA repository interfaces.
+2025-04-28 20:30:06,427[restartedMain]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 9090 (http)
+2025-04-28 20:30:06,428[restartedMain]INFO org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-9090"]
+2025-04-28 20:30:06,428[restartedMain]INFO org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-04-28 20:30:06,428[restartedMain]INFO org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-28 20:30:06,450[restartedMain]INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-04-28 20:30:06,450[restartedMain]INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 284 ms
+2025-04-28 20:30:06,479[restartedMain]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-3 - Starting...
+2025-04-28 20:30:06,481[restartedMain]INFO com.zaxxer.hikari.pool.HikariPool-HikariPool-3 - Added connection conn20: url=jdbc:h2:mem:rentaldb user=SA
+2025-04-28 20:30:06,481[restartedMain]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-3 - Start completed.
+2025-04-28 20:30:06,483[restartedMain]INFO org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-28 20:30:06,486[restartedMain]INFO org.hibernate.cache.internal.RegionFactoryInitiator-HHH000026: Second-level cache disabled
+2025-04-28 20:30:06,495[restartedMain]INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-28 20:30:06,496[restartedMain]INFO org.hibernate.orm.connections.pooling-HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-28 20:30:06,567[restartedMain]INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-28 20:30:06,572[restartedMain]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-28 20:30:06,634[restartedMain]WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-28 20:30:06,708[restartedMain]INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration-H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:rentaldb'
+2025-04-28 20:30:06,726[restartedMain]INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2025-04-28 20:30:06,733[restartedMain]INFO org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-9090"]
+2025-04-28 20:30:06,736[restartedMain]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 9090 (http) with context path '/'
+2025-04-28 20:30:06,743[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-Started BiluthyrningssystemApplication in 0.619 seconds (process running for 32.326)
+2025-04-28 20:30:06,744[restartedMain]INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener-Condition evaluation unchanged
+2025-04-28 20:31:28,257[SpringApplicationShutdownHook]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-28 20:31:28,378[tomcat-shutdown]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-04-28 20:31:28,380[SpringApplicationShutdownHook]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-28 20:31:28,383[SpringApplicationShutdownHook]WARN org.springframework.beans.factory.support.DisposableBeanAdapter-Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-04-28 20:31:28,384[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-3 - Shutdown initiated...
+2025-04-28 20:31:28,384[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-3 - Shutdown completed.
+2025-04-28 20:31:36,859[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-Starting BiluthyrningssystemApplication using Java 17.0.12 with PID 7660 (C:\Users\heyit\IdeaProjects\biluthyrningssystem\target\classes started by heyit in C:\Users\heyit\IdeaProjects\biluthyrningssystem)
+2025-04-28 20:31:36,868[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-No active profile set, falling back to 1 default profile: "default"
+2025-04-28 20:31:36,911[restartedMain]INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-28 20:31:36,911[restartedMain]INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-28 20:31:37,553[restartedMain]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-28 20:31:37,618[restartedMain]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 57 ms. Found 3 JPA repository interfaces.
+2025-04-28 20:31:38,068[restartedMain]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 9090 (http)
+2025-04-28 20:31:38,079[restartedMain]INFO org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-9090"]
+2025-04-28 20:31:38,081[restartedMain]INFO org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-04-28 20:31:38,082[restartedMain]INFO org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-28 20:31:38,133[restartedMain]INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-04-28 20:31:38,133[restartedMain]INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1221 ms
+2025-04-28 20:31:38,259[restartedMain]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-04-28 20:31:38,454[restartedMain]INFO com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:rentaldb user=SA
+2025-04-28 20:31:38,457[restartedMain]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-04-28 20:31:38,496[restartedMain]INFO org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-28 20:31:38,552[restartedMain]INFO org.hibernate.Version-HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-28 20:31:38,587[restartedMain]INFO org.hibernate.cache.internal.RegionFactoryInitiator-HHH000026: Second-level cache disabled
+2025-04-28 20:31:38,872[restartedMain]INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-28 20:31:38,946[restartedMain]INFO org.hibernate.orm.connections.pooling-HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-28 20:31:39,835[restartedMain]INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-28 20:31:39,886[restartedMain]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-28 20:31:40,160[restartedMain]WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-28 20:31:40,434[restartedMain]INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration-H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:rentaldb'
+2025-04-28 20:31:40,508[restartedMain]INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2025-04-28 20:31:40,534[restartedMain]INFO org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-9090"]
+2025-04-28 20:31:40,553[restartedMain]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 9090 (http) with context path '/'
+2025-04-28 20:31:40,564[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-Started BiluthyrningssystemApplication in 4.055 seconds (process running for 5.08)
+2025-04-28 20:32:48,799[SpringApplicationShutdownHook]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-28 20:32:48,930[tomcat-shutdown]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-04-28 20:32:48,933[SpringApplicationShutdownHook]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-28 20:32:48,941[SpringApplicationShutdownHook]WARN org.springframework.beans.factory.support.DisposableBeanAdapter-Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-04-28 20:32:48,942[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-04-28 20:32:48,944[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-04-28 20:32:51,753[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-Starting BiluthyrningssystemApplication using Java 17.0.12 with PID 13568 (C:\Users\heyit\IdeaProjects\biluthyrningssystem\target\classes started by heyit in C:\Users\heyit\IdeaProjects\biluthyrningssystem)
+2025-04-28 20:32:51,764[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-No active profile set, falling back to 1 default profile: "default"
+2025-04-28 20:32:51,817[restartedMain]INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-28 20:32:51,818[restartedMain]INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-28 20:32:52,494[restartedMain]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-28 20:32:52,550[restartedMain]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 48 ms. Found 3 JPA repository interfaces.
+2025-04-28 20:32:53,015[restartedMain]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 9090 (http)
+2025-04-28 20:32:53,026[restartedMain]INFO org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-9090"]
+2025-04-28 20:32:53,027[restartedMain]INFO org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-04-28 20:32:53,028[restartedMain]INFO org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-28 20:32:53,074[restartedMain]INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-04-28 20:32:53,075[restartedMain]INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1256 ms
+2025-04-28 20:32:53,199[restartedMain]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-04-28 20:32:53,401[restartedMain]INFO com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:rentaldb user=SA
+2025-04-28 20:32:53,402[restartedMain]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-04-28 20:32:53,445[restartedMain]INFO org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-28 20:32:53,498[restartedMain]INFO org.hibernate.Version-HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-28 20:32:53,531[restartedMain]INFO org.hibernate.cache.internal.RegionFactoryInitiator-HHH000026: Second-level cache disabled
+2025-04-28 20:32:53,811[restartedMain]INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-28 20:32:53,885[restartedMain]INFO org.hibernate.orm.connections.pooling-HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-28 20:32:54,767[restartedMain]INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-28 20:32:54,823[restartedMain]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-28 20:32:55,100[restartedMain]WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-28 20:32:55,375[restartedMain]INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration-H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:rentaldb'
+2025-04-28 20:32:55,464[restartedMain]INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2025-04-28 20:32:55,483[restartedMain]INFO org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-9090"]
+2025-04-28 20:32:55,500[restartedMain]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 9090 (http) with context path '/'
+2025-04-28 20:32:55,509[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-Started BiluthyrningssystemApplication in 4.157 seconds (process running for 5.358)
+2025-04-28 21:15:17,613[HikariPool-1 housekeeper]WARN com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m54s72ms550µs500ns).
+2025-04-28 21:15:40,364[SpringApplicationShutdownHook]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-28 21:15:40,483[tomcat-shutdown]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-04-28 21:15:40,487[SpringApplicationShutdownHook]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-28 21:15:40,497[SpringApplicationShutdownHook]WARN org.springframework.beans.factory.support.DisposableBeanAdapter-Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-04-28 21:15:40,497[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-04-28 21:15:40,498[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-04-28 21:55:10,536[http-nio-9090-exec-2][33mINFO [m[34muserlog[m-A car with plate number 4e6rfb has been added.
+2025-04-28 22:02:51,324[http-nio-9090-exec-1][33mINFO [m[34muserlog[m-Admin added a car with plate number 4e6rfb.
+2025-04-28 22:03:57,750[http-nio-9090-exec-4][33mWARN [m[34muserlog[m-Admin tried to add a car with a plate number that already exists
