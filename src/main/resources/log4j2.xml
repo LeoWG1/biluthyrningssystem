@@ -1,7 +1,7 @@
 <Configuration status="info">
     <properties>
         <property name="layout">%d[%t]%yellow{%-5level}%blue{%logger}-%m%n</property>
-        <property name="layout2">%d%level%logger</property>
+        <property name="layout2">%d[%t]%-5level%logger-%m%n</property>
     </properties>
 
     <Appenders>
