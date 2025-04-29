@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
+@RequestMapping("/api/v1")
 public class CustomerController { // Entire class made by Leo
 
     private final CustomerService customerService;
@@ -18,27 +19,27 @@ public class CustomerController { // Entire class made by Leo
         this.customerService = customerService;
     }
 
-    @GetMapping("api/v1/admin/customers")
+    @GetMapping("/admin/customers")
     public ResponseEntity<List<Customer>> getAllCustomer() {
         return ResponseEntity.ok(customerService.fetchAllCustomers());
     }
 
-    @GetMapping("api/v1/admin/customer/{id}")
+    @GetMapping("/admin/customer/{id}")
     public ResponseEntity<Customer> getCustomerById(@PathVariable long id) {
         return ResponseEntity.ok(customerService.fetchCustomerById(id));
     }
 
-    @PostMapping("api/v1/admin/addcustomer")
+    @PostMapping("/admin/addcustomer")
     public ResponseEntity<Customer> addCustomer(@RequestBody Customer customer) {
         return new ResponseEntity<>(customerService.addCustomer(customer), HttpStatus.CREATED);
     }
-    @DeleteMapping("api/v1/admin/removecustomer/{id}")
+    @DeleteMapping("/admin/removecustomer/{id}")
     public ResponseEntity<String> deleteCustomer(@PathVariable long id) {
         customerService.deleteCustomer(id);
         return new ResponseEntity<>("Customer with id " + id + " has been deleted!", HttpStatus.OK);
     }
 
-    @PutMapping("api/v1/updateinfo")
+    @PutMapping("/updateinfo")
     public ResponseEntity<Customer> updateCustomer(@RequestBody Customer Customer) {
         return ResponseEntity.ok(customerService.updateCustomer(Customer));
     }

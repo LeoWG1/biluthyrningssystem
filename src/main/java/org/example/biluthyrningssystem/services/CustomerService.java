@@ -47,7 +47,7 @@ public class CustomerService implements CustomerServiceInterface { // Entire cla
         existingCustomer.setEmail(updatedCustomer.getEmail());
         existingCustomer.setPhoneNumber(updatedCustomer.getPhoneNumber());
 
-        return customerRepository.save(updatedCustomer);
+        return customerRepository.save(existingCustomer);
     }
 
     @Override
