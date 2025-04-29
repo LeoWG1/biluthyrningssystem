@@ -1,5 +1,6 @@
 package org.example.biluthyrningssystem.controllers;
 
+import org.example.biluthyrningssystem.dto.StatisticsDTO;
 import org.example.biluthyrningssystem.entities.Order;
 import org.example.biluthyrningssystem.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,9 +75,8 @@ public class OrderController {
         return ResponseEntity.ok(orderService.getAllActiveOrders());
     }
 
-    // WIP
     @GetMapping("/admin/statistics")
-    public ResponseEntity<List<Order>> showStatistics() {
-        return ResponseEntity.ok(orderService.getAllOrders());
+    public ResponseEntity<StatisticsDTO> showStatistics() {
+        return ResponseEntity.ok(orderService.getStatistics());
     }
 }

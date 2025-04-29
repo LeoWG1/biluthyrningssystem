@@ -1,5 +1,6 @@
 package org.example.biluthyrningssystem.services;
 
+import org.example.biluthyrningssystem.dto.StatisticsDTO;
 import org.example.biluthyrningssystem.entities.Order;
 
 import java.time.LocalDate;
@@ -16,4 +17,5 @@ public interface OrderServiceInterface {
     void removeOrderById(long id);
     void removeOrderBeforeDate(LocalDate date);
     Order cancelOrder(long id);
+    StatisticsDTO getStatistics();
 }

@@ -1,9 +1,7 @@
 package org.example.biluthyrningssystem.services;
 
-import org.apache.coyote.Response;
-import org.example.biluthyrningssystem.CarDTO;
+import org.example.biluthyrningssystem.dto.CarDTO;
 import org.example.biluthyrningssystem.entities.Car;
-import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 

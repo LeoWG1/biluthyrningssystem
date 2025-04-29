@@ -1,6 +1,7 @@
 package org.example.biluthyrningssystem.services;
 
 import jakarta.transaction.Transactional;
+import org.example.biluthyrningssystem.dto.StatisticsDTO;
 import org.example.biluthyrningssystem.entities.Car;
 import org.example.biluthyrningssystem.entities.Order;
 import org.example.biluthyrningssystem.exceptions.ResourceNotFoundException;
@@ -44,15 +45,20 @@ public class OrderService implements OrderServiceInterface {
     @Override
     @Transactional // Cancels entire process if anything goes wrong
     public Order createOrder(Order order) {
-        // Set car's status as booked if it's available
+        // Check if car exists
         Car car = carRepository.findById(order.getCar().getId())
                 .orElseThrow(() -> new ResourceNotFoundException("Car", "id", order.getCar().getId()));
 
-        if (car.isBooked()) {
-            throw new IllegalStateException("Car is already booked");
-        }
+        // Check if car is available for the dates
+        List<Order> conflictingOrders = orderRepository.findActiveOrdersWithin(
+                car.getId(),
+                order.getStartDate(),
+                order.getEndDate()
+        );
 
-        car.setBooked(true);
+        if (!conflictingOrders.isEmpty()) {
+            throw new IllegalStateException("Car isn't available during the selected dates");
+        }
 
         // Calculate total price of order
         long days = ChronoUnit.DAYS.between(order.getStartDate(), order.getEndDate());
@@ -85,9 +91,25 @@ public class OrderService implements OrderServiceInterface {
 
         order.setActive(false);
         Car car = order.getCar();
-        car.setBooked(false);
         carRepository.save(car);
 
         return orderRepository.save(order);
+    }
+
+    @Override
+    public StatisticsDTO getStatistics() {
+        List<Order> allOrders = orderRepository.findAll();
+
+        long totalOrders = allOrders.size();
+
+        long totalActiveOrders = allOrders.stream()
+                .filter(Order::isActive)
+                .count();
+
+        long totalRevenue = allOrders.stream()
+                .mapToLong(Order::getPrice)
+                .sum();
+
+        return new StatisticsDTO(totalActiveOrders, totalOrders, totalRevenue);
     }
 }
