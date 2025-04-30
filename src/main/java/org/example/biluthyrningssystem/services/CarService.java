@@ -59,7 +59,7 @@ public class CarService implements CarServiceInterface {
     public String addCar(Car car) {
         for(Car existingCar : carRepository.findAll()) {
             if (existingCar.getPlateNumber().equals(car.getPlateNumber())) {
-                USER_LOGGER.warn("Admin tried to add a car with a plate number that already exists");
+                USER_LOGGER.warn("Admin tried to add a car with a plate number that already exists.");
                 throw new ResponseStatusException(HttpStatus.CONFLICT, "PlateNumber already exists");
             }
         }
@@ -85,9 +85,14 @@ public class CarService implements CarServiceInterface {
 
     @Override
     public String removeCar(Long id) {
-        carRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Car", "id", id));
-        carRepository.deleteById(id);
-        return "Car removed";
+        if(carRepository.existsById(id)) {
+            Car carToRemove = carRepository.getCarById(id);
+            carRepository.deleteById(id);
+            USER_LOGGER.info("Admin removed car with plate number {}.", carToRemove.getPlateNumber());
+            return "Car removed";
+        }
+        USER_LOGGER.warn("Admin tried to remove a car that does not exist.");
+        throw new ResourceNotFoundException("Car", "id", id);
     }
 
     private boolean isValidCar(Car car) {
