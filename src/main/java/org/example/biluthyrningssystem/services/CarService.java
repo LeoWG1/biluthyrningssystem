@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.time.LocalDate;
 import java.util.*;
 
 //Ann-Louis made this class
@@ -29,12 +30,23 @@ public class CarService implements CarServiceInterface {
     @Override
     public List<CarDTO> getAvailableCars() {
         List<CarDTO> carDTO = new ArrayList<>();
-        for(Car car : carRepository.findAll()) {
-            if(!car.isInService()) {
-                carDTO.add(new CarDTO(car));
+        LocalDate startDate;
+        LocalDate endDate;
+        for (Car car : carRepository.findAll()) {
+            if (!car.isInService()) {
+                Map<LocalDate, LocalDate> dates = new HashMap<>();
+
+                for (Order order : car.getOrders()) {
+                    if (order.isActive()) {
+                        startDate = order.getStartDate();
+                        endDate = order.getEndDate();
+
+                        dates.put(startDate, endDate);
+                    }
+                    carDTO.add(new CarDTO(car, dates));
+                }
             }
         }
-
         Comparator<CarDTO> priceComparator = (car1, car2) -> (int) (car1.getPricePerDay() - car2.getPricePerDay());
         carDTO.sort(priceComparator);
         return carDTO;
@@ -43,6 +55,7 @@ public class CarService implements CarServiceInterface {
     @Override
     public List<Car> adminGetAvailableCars() {
         List<Car> cars = new ArrayList<>();
+
         for(Car car : carRepository.findAll()) {
             if(!car.isInService()) {
                 cars.add(car);

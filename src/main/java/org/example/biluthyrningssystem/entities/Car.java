@@ -1,5 +1,6 @@
 package org.example.biluthyrningssystem.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -28,7 +29,8 @@ public class Car {
     @Column(length = 10, nullable = false)
     private boolean inService;
 
-    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "id")
+    @JsonIgnoreProperties("orders")
     private List<Order> orders;
 
     public Car() {}
