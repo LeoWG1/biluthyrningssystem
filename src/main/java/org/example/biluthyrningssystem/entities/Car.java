@@ -2,6 +2,8 @@ package org.example.biluthyrningssystem.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 // Ann-Louis made this class
 @Entity
 @Table(name = "cars")
@@ -25,6 +27,9 @@ public class Car {
 
     @Column(length = 10, nullable = false)
     private boolean inService;
+
+    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
+    private List<Order> orders;
 
     public Car() {}
 
@@ -74,5 +79,13 @@ public class Car {
 
     public void setInService(boolean inService) {
         this.inService = inService;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 }

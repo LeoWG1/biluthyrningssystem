@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.example.biluthyrningssystem.dto.CarDTO;
 import org.example.biluthyrningssystem.entities.Car;
+import org.example.biluthyrningssystem.entities.Order;
 import org.example.biluthyrningssystem.exceptions.ResourceNotFoundException;
 import org.example.biluthyrningssystem.repositories.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -87,6 +88,13 @@ public class CarService implements CarServiceInterface {
     public String removeCar(Long id) {
         if(carRepository.existsById(id)) {
             Car carToRemove = carRepository.getCarById(id);
+            List<Order> carOrders = carToRemove.getOrders();
+            for (Order order : carOrders) {
+                if(order.isActive()) {
+                    USER_LOGGER.warn("Admin tried to remove a car that is rented by a customer");
+                    throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Car is rented by a customer and can not be removed");
+                }
+            }
             carRepository.deleteById(id);
             USER_LOGGER.info("Admin removed car with plate number {}.", carToRemove.getPlateNumber());
             return "Car removed";

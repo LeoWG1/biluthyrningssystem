@@ -298,3 +298,14 @@
 2025-04-29 20:15:25,123[http-nio-9090-exec-5]INFO userlog-Admin removed car with plate number 3.
 2025-04-29 20:23:37,148[http-nio-9090-exec-9]WARN userlog-Admin tried to remove a car that does not exist.
 2025-04-30 18:29:32,730[http-nio-9090-exec-1]INFO userlog-Admin removed car with plate number YXH32E.
+2025-04-30 20:08:55,405[http-nio-9090-exec-7]WARN userlog-Admin tried to add a car with a plate number that already exists.
+2025-04-30 20:11:06,466[http-nio-9090-exec-10]WARN userlog-Admin tried to add a car with a plate number that already exists.
+2025-04-30 20:47:13,586[http-nio-9090-exec-4]WARN userlog-Admin tried to update a car that does not exist.
+2025-04-30 21:15:34,472[http-nio-9090-exec-4]WARN userlog-Admin tried to remove a car that does not exist.
+2025-04-30 21:39:25,840[http-nio-9090-exec-10]INFO userlog-Admin removed car with plate number YXH32E.
+2025-05-01 08:24:58,450[http-nio-9090-exec-5]WARN userlog-Admin tried to remove a car that is rented by a customer
+2025-05-01 08:25:50,891[http-nio-9090-exec-6]WARN userlog-Admin tried to remove a car that is rented by a customer
+2025-05-01 08:29:06,890[http-nio-9090-exec-1]WARN userlog-Admin tried to remove a car that is rented by a customer
+2025-05-01 08:29:17,195[http-nio-9090-exec-4]WARN userlog-Admin tried to remove a car that is rented by a customer
+2025-05-01 08:29:27,081[http-nio-9090-exec-6]WARN userlog-Admin tried to remove a car that is rented by a customer
+2025-05-01 08:29:33,440[http-nio-9090-exec-7]WARN userlog-Admin tried to remove a car that is rented by a customer
