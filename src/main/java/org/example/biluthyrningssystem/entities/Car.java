@@ -8,6 +8,7 @@ import java.util.List;
 // Ann-Louis made this class
 @Entity
 @Table(name = "cars")
+@JsonIgnoreProperties("orders") //TESTAR
 public class Car {
 
     @Id
@@ -29,8 +30,7 @@ public class Car {
     @Column(length = 10, nullable = false)
     private boolean inService;
 
-    @OneToMany(mappedBy = "id")
-    @JsonIgnoreProperties("orders")
+    @OneToMany(mappedBy = "car", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Order> orders;
 
     public Car() {}

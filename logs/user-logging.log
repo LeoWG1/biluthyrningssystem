@@ -309,3 +309,37 @@
 2025-05-01 08:29:17,195[http-nio-9090-exec-4]WARN userlog-Admin tried to remove a car that is rented by a customer
 2025-05-01 08:29:27,081[http-nio-9090-exec-6]WARN userlog-Admin tried to remove a car that is rented by a customer
 2025-05-01 08:29:33,440[http-nio-9090-exec-7]WARN userlog-Admin tried to remove a car that is rented by a customer
+2025-05-01 12:48:20,667[http-nio-9090-exec-10]WARN userlog-Admin tried to remove a car that is rented by a customer
+2025-05-01 12:54:05,305[http-nio-9090-exec-1]WARN userlog-Admin tried to remove a car that is rented by a customer
+2025-05-01 12:57:46,437[http-nio-9090-exec-4]WARN userlog-Admin tried to remove a car that is rented by a customer
+2025-05-01 12:58:11,266[http-nio-9090-exec-1]INFO userlog-Admin removed car with plate number PRE12B.
+2025-05-01 12:58:24,624[http-nio-9090-exec-3]WARN userlog-Admin tried to remove a car that is rented by a customer
+2025-05-01 12:58:28,667[http-nio-9090-exec-7]WARN userlog-Admin tried to remove a car that does not exist.
+2025-05-02 10:31:08,629[http-nio-9090-exec-3]WARN userlog-Admin tried to remove a car that is rented by a customer
+2025-05-02 10:31:15,197[http-nio-9090-exec-5]WARN userlog-Admin tried to remove a car that is rented by a customer
+2025-05-02 10:31:18,527[http-nio-9090-exec-7]WARN userlog-Admin tried to remove a car that is rented by a customer
+2025-05-02 10:31:23,591[http-nio-9090-exec-8]INFO userlog-Admin removed car with plate number PRE12B.
+2025-05-02 10:31:31,069[http-nio-9090-exec-4]WARN userlog-Admin tried to remove a car that is rented by a customer
+2025-05-02 15:57:27,050[http-nio-9090-exec-3]WARN userlog-Admin tried to remove a car that is rented by a customer
+2025-05-02 15:58:01,223[http-nio-9090-exec-5]WARN userlog-Admin tried to remove a car that is rented by a customer
+2025-05-02 15:58:08,062[http-nio-9090-exec-2]WARN userlog-Admin tried to remove a car that is rented by a customer
+2025-05-02 16:13:27,298[http-nio-9090-exec-1]WARN userlog-Admin tried to remove a car that is in service
+2025-05-02 16:15:24,724[http-nio-9090-exec-2]INFO userlog-Admin added a car with plate number MLCC4A.
+2025-05-02 16:16:06,702[http-nio-9090-exec-4]WARN userlog-Admin tried to add a car with a plate number that already exists.
+2025-05-02 16:16:13,396[http-nio-9090-exec-5]INFO userlog-Admin added a car with plate number MLAC4A.
+2025-05-02 16:18:05,022[http-nio-9090-exec-8]WARN userlog-Admin tried to add a car with a plate number that already exists.
+2025-05-02 20:44:31,005[http-nio-9090-exec-2]WARN userlog-Admin tried to add a car with invalid data.
+2025-05-02 20:45:36,507[http-nio-9090-exec-4]INFO userlog-Admin added a car with plate number MLBC4A.
+2025-05-02 20:46:17,020[http-nio-9090-exec-5]INFO userlog-Admin added a car with plate number MLCC4A.
+2025-05-02 20:46:21,312[http-nio-9090-exec-6]WARN userlog-Admin tried to add a car with a plate number that already exists.
+2025-05-02 20:48:14,423[http-nio-9090-exec-2]INFO userlog-Admin updated car with plate number MLCC4A.
+2025-05-02 20:48:46,206[http-nio-9090-exec-5]WARN userlog-Admin tried to update a car with invalid data.
+2025-05-02 20:49:41,234[http-nio-9090-exec-7]WARN userlog-Admin tried to update a car that does not exist.
+2025-05-02 20:51:11,802[http-nio-9090-exec-9]INFO userlog-Admin added a car with plate number MLCK4A.
+2025-05-02 20:55:56,406[http-nio-9090-exec-8]INFO userlog-Admin added a car with plate number BKL190.
+2025-05-02 21:02:01,519[http-nio-9090-exec-6]INFO userlog-Admin added a car with plate number MFD84A.
+2025-05-02 21:03:02,771[http-nio-9090-exec-2]WARN userlog-Admin tried to remove a car that is in service
+2025-05-02 21:03:14,909[http-nio-9090-exec-7]INFO userlog-Admin removed car with plate number MFD84A.
+2025-05-02 21:03:37,776[http-nio-9090-exec-2]INFO userlog-Admin added a car with plate number MFD84A.
+2025-05-02 21:14:22,421[http-nio-9090-exec-3]INFO userlog-Admin added a car with plate number MFD84A.
+2025-05-02 21:17:21,921[http-nio-9090-exec-3]INFO userlog-Admin added a car with plate number MFD84A.

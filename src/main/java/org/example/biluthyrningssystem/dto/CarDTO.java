@@ -18,7 +18,11 @@ public class CarDTO implements Serializable {
     private double pricePerDay;
     private Map<LocalDate, LocalDate> bookedDates;
 
-    public CarDTO() {}
+    public CarDTO(Car car) {
+        this.brand = car.getBrand();
+        this.model = car.getModel();
+        this.pricePerDay = car.getPricePerDay();
+    }
 
     public CarDTO(Car car, Map<LocalDate, LocalDate> bookedDates) {
         this.brand = car.getBrand();
