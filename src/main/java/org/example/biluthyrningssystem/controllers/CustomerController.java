@@ -44,5 +44,4 @@ public class CustomerController { // Entire class made by Leo
     public ResponseEntity<Customer> updateCustomer(@RequestBody Customer customer, Principal principal) {
         return ResponseEntity.ok(customerService.updateCustomer(customer, principal));
     }
-
 }
