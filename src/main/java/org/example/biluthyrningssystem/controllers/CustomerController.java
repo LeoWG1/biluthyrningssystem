@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @Controller
@@ -40,7 +41,7 @@ public class CustomerController { // Entire class made by Leo
     }
 
     @PutMapping("/updateinfo")
-    public ResponseEntity<Customer> updateCustomer(@RequestBody Customer Customer) {
-        return ResponseEntity.ok(customerService.updateCustomer(Customer));
+    public ResponseEntity<Customer> updateCustomer(@RequestBody Customer customer, Principal principal) {
+        return ResponseEntity.ok(customerService.updateCustomer(customer, principal));
     }
 }
