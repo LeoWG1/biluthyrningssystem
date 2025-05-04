@@ -26,7 +26,8 @@ public class CarService implements CarServiceInterface {
     public CarService(CarRepository carRepository) {
         this.carRepository = carRepository;
     }
-//LISTAR INTE BILAR SOM ÄR NYLIGEN TILLAGDA OCH HAR BOOKED DATES = NULL
+    /* Ann-Louis and Frida made this method
+       List cars not in service along with its booked dates to see what dates are available */
     @Override
     public List<CarDTO> getAvailableCars() {
         List<CarDTO> carDTOList = new ArrayList<>();
@@ -35,7 +36,7 @@ public class CarService implements CarServiceInterface {
         for (Car car : carRepository.findAll()) {
             if (!car.isInService()) {
                 Map<LocalDate, LocalDate> dates = new HashMap<>();
-                if(car.getOrders() != null) {
+                if(!car.getOrders().isEmpty()) {
                     for (Order order : car.getOrders()) {
                         if (order.isActive()) {
                             startDate = order.getStartDate();
@@ -59,7 +60,6 @@ public class CarService implements CarServiceInterface {
     @Override
     public List<Car> adminGetAvailableCars() {
         List<Car> cars = new ArrayList<>();
-
         for(Car car : carRepository.findAll()) {
             if(!car.isInService()) {
                 cars.add(car);
@@ -135,17 +135,4 @@ public class CarService implements CarServiceInterface {
                 car.getModel() != null && !car.getModel().isEmpty() &&
                 car.getPlateNumber() != null && !car.getPlateNumber().isEmpty();
     }
-//        if(car.getPricePerDay() <= 0) { //ÄNDRA DENNA METOD
-//            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid pricePerDay");
-//        }
-//        else if(car.getBrand() == null || car.getBrand().isEmpty()) {
-//            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "brand is missing");
-//        }
-//        else if(car.getModel() == null || car.getModel().isEmpty()) {
-//            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "model is missing");
-//        }
-//        else if(car.getPlateNumber() == null || car.getPlateNumber().isEmpty()) {
-//            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "plateNumber is missing");
-//        }
-//        return true;
 }

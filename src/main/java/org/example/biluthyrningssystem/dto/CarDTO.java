@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Set;
 
 //Ann-Louis made this class
-public class CarDTO implements Serializable {
+public class CarDTO {
 
     private String brand;
     private String model;
