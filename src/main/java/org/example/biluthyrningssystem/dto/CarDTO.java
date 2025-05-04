@@ -1,21 +1,34 @@
 package org.example.biluthyrningssystem.dto;
 
 import org.example.biluthyrningssystem.entities.Car;
+import org.example.biluthyrningssystem.entities.Order;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
-public class CarDTO implements Serializable {
+//Ann-Louis made this class
+public class CarDTO {
 
     private String brand;
     private String model;
     private double pricePerDay;
-
-    public CarDTO() {}
+    private Map<LocalDate, LocalDate> bookedDates;
 
     public CarDTO(Car car) {
         this.brand = car.getBrand();
         this.model = car.getModel();
         this.pricePerDay = car.getPricePerDay();
+    }
+
+    public CarDTO(Car car, Map<LocalDate, LocalDate> bookedDates) {
+        this.brand = car.getBrand();
+        this.model = car.getModel();
+        this.pricePerDay = car.getPricePerDay();
+        this.bookedDates = bookedDates;
     }
 
     public String getBrand() {
@@ -40,5 +53,13 @@ public class CarDTO implements Serializable {
 
     public void setPricePerDay(double pricePerDay) {
         this.pricePerDay = pricePerDay;
+    }
+
+    public Map<LocalDate, LocalDate> getBookedDates() {
+        return bookedDates;
+    }
+
+    public void setBookedDates(Map<LocalDate, LocalDate> bookedDates) {
+        this.bookedDates = bookedDates;
     }
 }
