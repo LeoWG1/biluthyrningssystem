@@ -1,7 +1,9 @@
 package org.example.biluthyrningssystem.controllers;
 
+import org.example.biluthyrningssystem.dto.CarStatisticsDTO;
 import org.example.biluthyrningssystem.dto.StatisticsDTO;
 import org.example.biluthyrningssystem.entities.Order;
+import org.example.biluthyrningssystem.services.CustomerService;
 import org.example.biluthyrningssystem.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -9,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -22,7 +25,7 @@ public class OrderController {
     private final OrderService orderService;
 
     @Autowired
-    public OrderController(OrderService orderService) {
+    public OrderController(OrderService orderService, CustomerService customerService) {
         this.orderService = orderService;
     }
 
@@ -30,22 +33,34 @@ public class OrderController {
     USER ENDPOINTS
      */
     @GetMapping("/orders") // All of user's orders
-    public ResponseEntity<List<Order>> getAllOrders() {
-        return ResponseEntity.ok(orderService.getAllOrders());
+    public ResponseEntity<List<Order>> getAllOrders(Principal principal) {
+        List<Order> userOrders = orderService.getAllOrdersByUsername(principal.getName());
+        return ResponseEntity.ok(userOrders);
     }
 
     @GetMapping("/activeorders") // User's active orders
-    public ResponseEntity<List<Order>> getAllActiveOrders() {
-        return ResponseEntity.ok(orderService.getAllActiveOrders());
+    public ResponseEntity<List<Order>> getAllActiveOrders(Principal principal) {
+        List<Order> activeUserOrders = orderService.getAllActiveOrdersByUsername(principal.getName());
+        return ResponseEntity.ok(activeUserOrders);
     }
 
     @PostMapping("/addorder")
-    public ResponseEntity<Order> addOrder(@RequestBody Order order) {
+    public ResponseEntity<?> addOrder(@RequestBody Order order, Principal principal) {
+        if (!(principal.getName().equals(order.getCustomer().getSocialSecurityNumber()))) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                    .body("Unable to place orders for other users");
+        }
         return new ResponseEntity<>(orderService.createOrder(order), HttpStatus.CREATED);
     }
 
     @PutMapping("/cancelorder/{id}")
-    public ResponseEntity<Order> cancelOrder(@PathVariable("id") long id) {
+    public ResponseEntity<?> cancelOrder(@PathVariable("id") long id, Principal principal) {
+        Order order = orderService.getOrderById(id);
+
+        if (!(principal.getName().equals(order.getCustomer().getSocialSecurityNumber()))) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                    .body("Unable to remove orders belonging to other users");
+        }
         Order canceledOrder = orderService.cancelOrder(id);
         return ResponseEntity.ok(canceledOrder);
     }
@@ -78,5 +93,10 @@ public class OrderController {
     @GetMapping("/admin/statistics")
     public ResponseEntity<StatisticsDTO> showStatistics() {
         return ResponseEntity.ok(orderService.getStatistics());
+    }
+
+    @GetMapping("/admin/statistics/{id}")
+    public ResponseEntity<CarStatisticsDTO> showCarStatistics(@PathVariable ("id") long id) {
+        return ResponseEntity.ok(orderService.getCarStatistics(id));
     }
 }
