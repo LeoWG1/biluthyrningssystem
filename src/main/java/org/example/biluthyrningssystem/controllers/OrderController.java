@@ -1,5 +1,6 @@
 package org.example.biluthyrningssystem.controllers;
 
+import org.example.biluthyrningssystem.dto.CarStatisticsDTO;
 import org.example.biluthyrningssystem.dto.StatisticsDTO;
 import org.example.biluthyrningssystem.entities.Order;
 import org.example.biluthyrningssystem.services.OrderService;
@@ -7,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -31,12 +34,18 @@ public class OrderController {
      */
     @GetMapping("/orders") // All of user's orders
     public ResponseEntity<List<Order>> getAllOrders() {
-        return ResponseEntity.ok(orderService.getAllOrders());
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String loggedInUsername = auth.getName();
+        List<Order> userOrders = orderService.getAllOrdersByUsername(loggedInUsername);
+        return ResponseEntity.ok(userOrders);
     }
 
     @GetMapping("/activeorders") // User's active orders
     public ResponseEntity<List<Order>> getAllActiveOrders() {
-        return ResponseEntity.ok(orderService.getAllActiveOrders());
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String loggedInUsername = auth.getName();
+        List<Order> activeUserOrders = orderService.getAllActiveOrdersByUsername(loggedInUsername);
+        return ResponseEntity.ok(activeUserOrders);
     }
 
     @PostMapping("/addorder")
@@ -78,5 +87,10 @@ public class OrderController {
     @GetMapping("/admin/statistics")
     public ResponseEntity<StatisticsDTO> showStatistics() {
         return ResponseEntity.ok(orderService.getStatistics());
+    }
+
+    @GetMapping("/admin/statistics/{id}")
+    public ResponseEntity<CarStatisticsDTO> showCarStatistics(@PathVariable ("id") long id) {
+        return ResponseEntity.ok(orderService.getCarStatistics(id));
     }
 }

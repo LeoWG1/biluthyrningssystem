@@ -1,6 +1,7 @@
 package org.example.biluthyrningssystem.services;
 
 import jakarta.transaction.Transactional;
+import org.example.biluthyrningssystem.dto.CarStatisticsDTO;
 import org.example.biluthyrningssystem.dto.StatisticsDTO;
 import org.example.biluthyrningssystem.entities.Car;
 import org.example.biluthyrningssystem.entities.Order;
@@ -12,7 +13,9 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author Frida Jakobsson
@@ -37,6 +40,23 @@ public class OrderService implements OrderServiceInterface {
     @Override
     public List<Order> getAllActiveOrders() {
         return orderRepository.findByActiveTrue();
+    }
+
+    @Override
+    public List<Order> getAllOrdersByUsername(String username) {
+        return orderRepository.findAll()
+                .stream()
+                .filter(order -> order.getCustomer().getSocialSecurityNumber().equals(username))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Order> getAllActiveOrdersByUsername(String username) {
+        return orderRepository.findAll()
+                .stream()
+                .filter(order -> order.isActive() &&
+                        order.getCustomer().getSocialSecurityNumber().equals(username))
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -111,5 +131,27 @@ public class OrderService implements OrderServiceInterface {
                 .sum();
 
         return new StatisticsDTO(totalActiveOrders, totalOrders, totalRevenue);
+    }
+
+    @Override
+    public CarStatisticsDTO getCarStatistics(long id) {
+        List<Order> relevantOrders = orderRepository.findByCarId(id);
+
+        long totalOrders = relevantOrders.size();
+
+        long totalActiveOrders = relevantOrders.stream()
+                .filter(Order::isActive)
+                .count();
+
+        long totalRevenue = relevantOrders.stream()
+                .mapToLong(Order::getPrice)
+                .sum();
+
+        LocalDate latestOrder = relevantOrders.stream()
+                .map(Order::getEndDate)
+                .max(Comparator.naturalOrder())
+                .orElse(null);
+
+        return new CarStatisticsDTO(totalActiveOrders, totalOrders, totalRevenue, latestOrder);
     }
 }

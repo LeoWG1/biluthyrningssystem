@@ -21,6 +21,7 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
             @Param("startDate") LocalDate startDate,
             @Param("endDate") LocalDate endDate
     );
+    List<Order> findByCarId(long carId);
     List<Order> findByEndDateBefore(LocalDate endDate);
     List<Order> findByActiveTrue();
     List<Order> findByActiveFalse();

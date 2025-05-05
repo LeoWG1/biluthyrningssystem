@@ -8,7 +8,7 @@ public class StatisticsDTO {
     private long totalOrders;
     private long totalRevenue;
 
-    public StatisticsDTO() {}
+    public StatisticsDTO() { }
 
     public StatisticsDTO(long totalActiveOrders, long totalOrders, long totalRevenue) {
         this.totalActiveOrders = totalActiveOrders;
@@ -24,9 +24,7 @@ public class StatisticsDTO {
         this.totalActiveOrders = totalActiveOrders;
     }
 
-    public long getTotalOrders() {
-        return totalOrders;
-    }
+    public long getTotalOrders() { return totalOrders; }
 
     public void setTotalOrders(long totalOrders) {
         this.totalOrders = totalOrders;
