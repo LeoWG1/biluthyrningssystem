@@ -25,4 +25,5 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
     List<Order> findByEndDateBefore(LocalDate endDate);
     List<Order> findByActiveTrue();
     List<Order> findByActiveFalse();
+    Order findOrderById(long id);
 }

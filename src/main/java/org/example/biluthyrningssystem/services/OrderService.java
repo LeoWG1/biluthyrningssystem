@@ -1,5 +1,7 @@
 package org.example.biluthyrningssystem.services;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import jakarta.transaction.Transactional;
 import org.example.biluthyrningssystem.dto.CarStatisticsDTO;
 import org.example.biluthyrningssystem.dto.StatisticsDTO;
@@ -25,6 +27,7 @@ public class OrderService implements OrderServiceInterface {
 
     private final OrderRepository orderRepository;
     private final CarRepository carRepository;
+    private static final Logger ORDER_LOGGER = LogManager.getLogger("OrderService Logger");
 
     @Autowired
     public OrderService(OrderRepository orderRepository, CarRepository carRepository) {
@@ -36,6 +39,9 @@ public class OrderService implements OrderServiceInterface {
     public List<Order> getAllOrders() {
         return orderRepository.findAll();
     }
+
+    @Override
+    public Order getOrderById(long id) { return orderRepository.findOrderById(id); }
 
     @Override
     public List<Order> getAllActiveOrders() {
