@@ -1384,3 +1384,17 @@
 2025-05-05 17:10:20,201[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN successfully added new customer
 2025-05-05 17:10:20,255[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '1'
 2025-05-05 17:10:20,260[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched all customers
+2025-05-05 17:11:48,708[main]WARN org.example.biluthyrningssystem.services.CustomerService-Unauthorized USER attempted and failed to change customer with ID: '1'
+2025-05-05 17:12:02,443[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-USER tried and failed to update customer with ID: '1'
+2025-05-05 17:12:17,391[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN tried and failed to delete customer with ID: '99'
+2025-05-05 17:12:23,495[main]INFO org.example.biluthyrningssystem.services.CustomerService-USER successfully updated customer with ID: '1'
+2025-05-05 17:12:23,541[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN deleted Customer with ID: '1'
+2025-05-05 17:12:23,548[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '1'
+2025-05-05 17:12:23,558[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-USER tried and failed to update customer with ID: '1'
+2025-05-05 17:12:23,564[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched all customers
+2025-05-05 17:12:23,571[main]WARN org.example.biluthyrningssystem.services.CustomerService-Unauthorized USER attempted and failed to change customer with ID: '1'
+2025-05-05 17:12:23,593[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN tried and failed to delete customer with ID: '99'
+2025-05-05 17:12:23,597[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed to add new customer
+2025-05-05 17:12:23,602[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '99'
+2025-05-05 17:12:23,603[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed fetch, as Customer with ID: '99' not found
+2025-05-05 17:12:23,606[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN successfully added new customer

@@ -77,9 +77,7 @@ class CustomerServiceTest { // Entire class by Leo
     void fetchCustomerById_WhenIDNotExists_ShouldThrowNotFoundException() {
         when(customerRepository.findById(99L)).thenReturn(Optional.empty());
 
-        assertThrows(ResourceNotFoundException.class, () -> {
-            customerService.fetchCustomerById(99L);
-        });
+        assertThrows(ResourceNotFoundException.class, () -> customerService.fetchCustomerById(99L));
 
         verify(customerRepository).findById(99L);
     }
@@ -130,9 +128,7 @@ class CustomerServiceTest { // Entire class by Leo
 
         when(customerRepository.findById(1L)).thenReturn(Optional.of(customer1));
 
-        assertThrows(ResponseStatusException.class, () -> {
-            customerService.updateCustomer(customer1, principal);
-        });
+        assertThrows(ResponseStatusException.class, () -> customerService.updateCustomer(customer1, principal));
 
         verify(customerRepository, never()).save(any(Customer.class));
     }
@@ -148,9 +144,7 @@ class CustomerServiceTest { // Entire class by Leo
 
         when(customerRepository.findById(1L)).thenReturn(Optional.of(customer1));
 
-        assertThrows(UnalterableFieldException.class, () -> {
-            customerService.updateCustomer(invalidUpdate, principal);
-        });
+        assertThrows(UnalterableFieldException.class, () -> customerService.updateCustomer(invalidUpdate, principal));
 
         verify(customerRepository, never()).save(any(Customer.class));
     }
@@ -169,9 +163,7 @@ class CustomerServiceTest { // Entire class by Leo
     void deleteCustomer_WhenIdNotExists_ShouldThrowNotFoundException() {
         when(customerRepository.findById(99L)).thenReturn(Optional.empty());
 
-        assertThrows(ResourceNotFoundException.class, () -> {
-            customerService.deleteCustomer(99L);
-        });
+        assertThrows(ResourceNotFoundException.class, () -> customerService.deleteCustomer(99L));
 
         verify(customerRepository, never()).deleteById(99L);
     }
