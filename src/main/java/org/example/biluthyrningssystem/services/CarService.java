@@ -106,7 +106,7 @@ public class CarService implements CarServiceInterface {
     }
 
     @Override
-    public String removeCar(Long id) {
+    public String removeCar(long id) {
         if(carRepository.existsById(id)) {
             Car carToRemove = carRepository.getCarById(id);
             List<Order> carOrders = carToRemove.getOrders();

@@ -348,3 +348,4 @@
 2025-05-04 12:55:54,746[http-nio-9090-exec-3]WARN userlog-Admin tried to remove a car that is in service
 2025-05-04 12:56:00,087[http-nio-9090-exec-5]INFO userlog-Admin removed car with plate number MFD84A.
 2025-05-04 12:56:26,673[http-nio-9090-exec-8]INFO userlog-Admin added a car with plate number MFD84A.
+2025-05-05 16:13:17,297[http-nio-9090-exec-2]INFO userlog-Admin added a car with plate number MFD84A.

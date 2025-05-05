@@ -13,5 +13,5 @@ public interface CarServiceInterface {
     List<Car> getAllCars();
     String addCar(Car car);
     String updateCar(Car car);
-    String removeCar(Long id);
+    String removeCar(long id);
 }

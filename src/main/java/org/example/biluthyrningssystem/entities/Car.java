@@ -35,6 +35,14 @@ public class Car {
 
     public Car() {}
 
+    public Car(double pricePerDay, String brand, String model, String plateNumber, boolean inService) {
+        this.pricePerDay = pricePerDay;
+        this.brand = brand;
+        this.model = model;
+        this.plateNumber = plateNumber;
+        this.inService = inService;
+    }
+
     public Long getId() {
         return id;
     }
