@@ -1194,3 +1194,193 @@
 2025-05-04 13:57:06,637[SpringApplicationShutdownHook]WARN org.springframework.beans.factory.support.DisposableBeanAdapter-Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
 2025-05-04 13:57:06,637[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
 2025-05-04 13:57:06,638[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-05-05 14:19:11,338[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-Starting BiluthyrningssystemApplication using Java 17.0.13 with PID 20368 (C:\Users\leoge\IdeaProjects\biluthyrningssystem1\target\classes started by leoge in C:\Users\leoge\IdeaProjects\biluthyrningssystem1)
+2025-05-05 14:19:11,345[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-No active profile set, falling back to 1 default profile: "default"
+2025-05-05 14:19:11,382[restartedMain]INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-05 14:19:11,382[restartedMain]INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-05 14:19:12,088[restartedMain]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-05 14:19:12,160[restartedMain]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 60 ms. Found 3 JPA repository interfaces.
+2025-05-05 14:19:12,644[restartedMain]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 9090 (http)
+2025-05-05 14:19:12,657[restartedMain]INFO org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-9090"]
+2025-05-05 14:19:12,658[restartedMain]INFO org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-05-05 14:19:12,659[restartedMain]INFO org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-05 14:19:12,699[restartedMain]INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-05-05 14:19:12,700[restartedMain]INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1316 ms
+2025-05-05 14:19:12,816[restartedMain]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-05-05 14:19:13,016[restartedMain]INFO com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:rentaldb user=SA
+2025-05-05 14:19:13,018[restartedMain]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-05-05 14:19:13,059[restartedMain]INFO org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-05 14:19:13,170[restartedMain]INFO org.hibernate.Version-HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-05-05 14:19:13,205[restartedMain]INFO org.hibernate.cache.internal.RegionFactoryInitiator-HHH000026: Second-level cache disabled
+2025-05-05 14:19:13,471[restartedMain]INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-05 14:19:13,561[restartedMain]INFO org.hibernate.orm.connections.pooling-HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-05 14:19:14,422[restartedMain]INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-05 14:19:14,478[restartedMain]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 14:19:14,807[restartedMain]INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-05 14:19:15,391[restartedMain]WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-05 14:19:15,431[restartedMain]INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer-Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-05-05 14:19:15,794[restartedMain]INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration-H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:rentaldb'
+2025-05-05 14:19:15,857[restartedMain]INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2025-05-05 14:19:15,874[restartedMain]INFO org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-9090"]
+2025-05-05 14:19:15,898[restartedMain]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 9090 (http) with context path '/'
+2025-05-05 14:19:15,911[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-Started BiluthyrningssystemApplication in 4.887 seconds (process running for 6.158)
+2025-05-05 14:19:20,030[SpringApplicationShutdownHook]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-05 14:19:20,078[tomcat-shutdown]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-05-05 14:19:20,084[SpringApplicationShutdownHook]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 14:19:20,093[SpringApplicationShutdownHook]WARN org.springframework.beans.factory.support.DisposableBeanAdapter-Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-05-05 14:19:20,093[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-05-05 14:19:20,095[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-05-05 14:23:29,613[main]INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils-Could not detect default configuration classes for test class [org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest]: CustomerControllerCustomerServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-05-05 14:23:29,874[main]INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper-Found @SpringBootConfiguration org.example.biluthyrningssystem.BiluthyrningssystemApplication for test class org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest
+2025-05-05 14:23:30,388[main]INFO org.springframework.boot.devtools.restart.RestartApplicationListener-Restart disabled due to context in which it is running
+2025-05-05 14:23:31,032[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-Starting CustomerControllerCustomerServiceIntegrationTest using Java 17.0.13 with PID 25780 (started by leoge in C:\Users\leoge\IdeaProjects\biluthyrningssystem1)
+2025-05-05 14:23:31,040[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-No active profile set, falling back to 1 default profile: "default"
+2025-05-05 14:23:33,187[main]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-05 14:23:33,463[main]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 232 ms. Found 3 JPA repository interfaces.
+2025-05-05 14:23:34,596[main]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-05-05 14:23:34,819[main]INFO com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:rentaldb user=SA
+2025-05-05 14:23:34,822[main]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-05-05 14:23:34,920[main]INFO org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-05 14:23:35,204[main]INFO org.hibernate.Version-HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-05-05 14:23:35,305[main]INFO org.hibernate.cache.internal.RegionFactoryInitiator-HHH000026: Second-level cache disabled
+2025-05-05 14:23:36,109[main]INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-05 14:23:36,214[main]INFO org.hibernate.orm.connections.pooling-HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-05 14:23:37,360[main]INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-05 14:23:37,414[main]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 14:23:38,047[main]INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-05 14:23:39,153[main]WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-05 14:23:39,310[main]INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer-Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-05-05 14:23:42,093[main]INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration-H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:rentaldb'
+2025-05-05 14:23:42,593[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-Started CustomerControllerCustomerServiceIntegrationTest in 12.23 seconds (process running for 14.703)
+2025-05-05 14:23:44,127[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed to add new customer
+2025-05-05 14:23:44,168[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN tried and failed to delete customer with ID: '1'
+2025-05-05 14:23:44,196[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN tried and failed to delete customer with ID: '69'
+2025-05-05 14:23:44,212[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN successfully added new customer
+2025-05-05 14:23:44,233[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched all customers
+2025-05-05 14:23:44,247[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '1'
+2025-05-05 14:23:44,250[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed fetch, as Customer with ID: '1' not found
+2025-05-05 14:23:44,291[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '69'
+2025-05-05 14:23:44,291[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed fetch, as Customer with ID: '69' not found
+2025-05-05 14:23:44,342[SpringApplicationShutdownHook]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 14:23:44,354[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-05-05 14:23:44,361[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-05-05 14:30:07,897[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed to add new customer
+2025-05-05 14:30:07,938[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN deleted Customer with ID: '1'
+2025-05-05 14:30:07,948[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN tried and failed to delete customer with ID: '69'
+2025-05-05 14:30:07,956[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN successfully added new customer
+2025-05-05 14:30:07,962[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched all customers
+2025-05-05 14:30:07,967[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '1'
+2025-05-05 14:30:07,976[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-USER tried and failed to update customer with ID: '1'
+2025-05-05 14:30:07,980[main]INFO org.example.biluthyrningssystem.services.CustomerService-USER successfully updated customer with ID: '1'
+2025-05-05 14:30:07,984[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '69'
+2025-05-05 14:30:07,985[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed fetch, as Customer with ID: '69' not found
+2025-05-05 14:30:07,995[main]WARN org.example.biluthyrningssystem.services.CustomerService-Unauthorized USER attempted and failed to change customer with ID: '1'
+2025-05-05 14:51:04,719[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched all customers
+2025-05-05 14:55:00,951[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN successfully added new customer
+2025-05-05 15:14:20,038[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched all customers
+2025-05-05 15:18:54,401[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched all customers
+2025-05-05 15:39:56,638[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed to add new customer
+2025-05-05 15:40:03,372[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN successfully added new customer
+2025-05-05 15:40:10,558[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '99'
+2025-05-05 15:40:10,565[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed fetch, as Customer with ID: '99' not found
+2025-05-05 15:40:17,747[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '1'
+2025-05-05 15:53:21,077[main]INFO org.example.biluthyrningssystem.services.CustomerService-USER successfully updated customer with ID: '1'
+2025-05-05 15:58:55,774[main]INFO org.example.biluthyrningssystem.services.CustomerService-USER successfully updated customer with ID: '1'
+2025-05-05 15:59:13,885[main]WARN org.example.biluthyrningssystem.services.CustomerService-Unauthorized USER attempted and failed to change customer with ID: '1'
+2025-05-05 16:06:24,134[main]WARN org.example.biluthyrningssystem.services.CustomerService-Unauthorized USER attempted and failed to change customer with ID: '1'
+2025-05-05 16:06:29,911[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-Starting BiluthyrningssystemApplication using Java 17.0.13 with PID 24816 (C:\Users\leoge\IdeaProjects\biluthyrningssystem1\target\classes started by leoge in C:\Users\leoge\IdeaProjects\biluthyrningssystem1)
+2025-05-05 16:06:29,931[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-No active profile set, falling back to 1 default profile: "default"
+2025-05-05 16:06:30,064[restartedMain]INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-05 16:06:30,064[restartedMain]INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-05 16:06:31,672[restartedMain]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-05 16:06:31,823[restartedMain]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 130 ms. Found 3 JPA repository interfaces.
+2025-05-05 16:06:32,825[restartedMain]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 9090 (http)
+2025-05-05 16:06:32,841[restartedMain]INFO org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-9090"]
+2025-05-05 16:06:32,844[restartedMain]INFO org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-05-05 16:06:32,844[restartedMain]INFO org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-05 16:06:32,898[restartedMain]INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-05-05 16:06:32,898[restartedMain]INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 2833 ms
+2025-05-05 16:06:33,056[restartedMain]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-05-05 16:06:33,259[restartedMain]INFO com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:rentaldb user=SA
+2025-05-05 16:06:33,261[restartedMain]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-05-05 16:06:33,308[restartedMain]INFO org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-05 16:06:33,375[restartedMain]INFO org.hibernate.Version-HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-05-05 16:06:33,412[restartedMain]INFO org.hibernate.cache.internal.RegionFactoryInitiator-HHH000026: Second-level cache disabled
+2025-05-05 16:06:33,702[restartedMain]INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-05 16:06:33,791[restartedMain]INFO org.hibernate.orm.connections.pooling-HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-05 16:06:35,552[restartedMain]INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-05 16:06:35,694[restartedMain]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 16:06:36,620[restartedMain]INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-05 16:06:38,416[restartedMain]WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-05 16:06:38,535[restartedMain]INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer-Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-05-05 16:06:39,768[restartedMain]INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration-H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:rentaldb'
+2025-05-05 16:06:40,007[restartedMain]INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2025-05-05 16:06:40,136[restartedMain]INFO org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-9090"]
+2025-05-05 16:06:40,199[restartedMain]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 9090 (http) with context path '/'
+2025-05-05 16:06:40,257[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-Started BiluthyrningssystemApplication in 11.369 seconds (process running for 13.083)
+2025-05-05 16:06:49,832[http-nio-9090-exec-1]INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-05 16:06:49,832[http-nio-9090-exec-1]INFO org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-05-05 16:06:49,834[http-nio-9090-exec-1]INFO org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2025-05-05 16:06:50,076[http-nio-9090-exec-1]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '1'
+2025-05-05 17:03:44,403[SpringApplicationShutdownHook]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-05 17:03:44,507[tomcat-shutdown]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-05-05 17:03:44,556[SpringApplicationShutdownHook]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 17:03:44,707[SpringApplicationShutdownHook]WARN org.springframework.beans.factory.support.DisposableBeanAdapter-Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-05-05 17:03:44,709[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-05-05 17:03:44,721[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-05-05 17:08:47,355[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-USER tried and failed to update customer with ID: '1'
+2025-05-05 17:08:57,826[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN deleted Customer with ID: '1'
+2025-05-05 17:09:06,823[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN tried and failed to delete customer with ID: '99'
+2025-05-05 17:09:18,136[main]INFO org.example.biluthyrningssystem.services.CustomerService-USER successfully updated customer with ID: '1'
+2025-05-05 17:09:18,173[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN deleted Customer with ID: '1'
+2025-05-05 17:09:18,179[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '1'
+2025-05-05 17:09:18,189[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-USER tried and failed to update customer with ID: '1'
+2025-05-05 17:09:18,198[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched all customers
+2025-05-05 17:09:18,206[main]WARN org.example.biluthyrningssystem.services.CustomerService-Unauthorized USER attempted and failed to change customer with ID: '1'
+2025-05-05 17:09:18,226[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN tried and failed to delete customer with ID: '99'
+2025-05-05 17:09:18,234[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed to add new customer
+2025-05-05 17:09:18,238[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '99'
+2025-05-05 17:09:18,239[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed fetch, as Customer with ID: '99' not found
+2025-05-05 17:09:18,243[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN successfully added new customer
+2025-05-05 17:09:30,626[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-USER tried and failed to update customer with ID: '1'
+2025-05-05 17:09:30,686[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN deleted Customer with ID: '1'
+2025-05-05 17:09:30,712[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '69'
+2025-05-05 17:09:30,720[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed to add new customer
+2025-05-05 17:09:30,725[main]WARN org.example.biluthyrningssystem.services.CustomerService-Unauthorized USER attempted and failed to change customer with ID: '1'
+2025-05-05 17:09:30,732[main]INFO org.example.biluthyrningssystem.services.CustomerService-USER successfully updated customer with ID: '1'
+2025-05-05 17:09:30,738[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN successfully added new customer
+2025-05-05 17:09:30,801[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '1'
+2025-05-05 17:09:30,807[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched all customers
+2025-05-05 17:10:06,129[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN tried and failed to delete customer with ID: '99'
+2025-05-05 17:10:20,130[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-USER tried and failed to update customer with ID: '1'
+2025-05-05 17:10:20,151[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN tried and failed to delete customer with ID: '99'
+2025-05-05 17:10:20,158[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN deleted Customer with ID: '1'
+2025-05-05 17:10:20,174[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '99'
+2025-05-05 17:10:20,175[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed fetch, as Customer with ID: '99' not found
+2025-05-05 17:10:20,181[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed to add new customer
+2025-05-05 17:10:20,185[main]WARN org.example.biluthyrningssystem.services.CustomerService-Unauthorized USER attempted and failed to change customer with ID: '1'
+2025-05-05 17:10:20,196[main]INFO org.example.biluthyrningssystem.services.CustomerService-USER successfully updated customer with ID: '1'
+2025-05-05 17:10:20,201[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN successfully added new customer
+2025-05-05 17:10:20,255[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '1'
+2025-05-05 17:10:20,260[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched all customers

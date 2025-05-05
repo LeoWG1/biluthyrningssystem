@@ -11,7 +11,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -22,11 +21,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-
-@SpringBootTest()
 @ExtendWith(MockitoExtension.class)
 class CustomerControllerCustomerServiceIntegrationTest { // Entire class made by Leo
     @Mock
@@ -67,7 +65,7 @@ class CustomerControllerCustomerServiceIntegrationTest { // Entire class made by
     }
 
     @Test
-    void getAllCustomerShouldReturnAllCustomers() {
+    void getAllCustomer_ShouldReturnAllCustomers() {
         // Given
         List<Customer> customers = Arrays.asList(customer1, customer2);
         when(customerRepository.findAll()).thenReturn(customers);
@@ -76,12 +74,12 @@ class CustomerControllerCustomerServiceIntegrationTest { // Entire class made by
         ResponseEntity<List<Customer>> responseEntity = customerController.getAllCustomer();
 
         // Then
-        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
-        assertEquals(customers, responseEntity.getBody());
+        assertTrue(responseEntity.getStatusCode().isSameCodeAs(HttpStatus.OK));
+        assertThat(responseEntity.getBody()).isEqualTo(customers);
     }
 
     @Test
-    void getCustomerByIdShouldReturnCustomer() {
+    void getCustomerById_WhenExistingId_ShouldReturnCustomer() {
         // Given
         when(customerRepository.findById(1L)).thenReturn(Optional.of(customer1));
 
@@ -89,21 +87,21 @@ class CustomerControllerCustomerServiceIntegrationTest { // Entire class made by
         ResponseEntity<Customer> responseEntity = customerController.getCustomerById(1L);
 
         // Then
-        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
+        assertTrue(responseEntity.getStatusCode().isSameCodeAs(HttpStatus.OK));
         assertEquals(customer1, responseEntity.getBody());
     }
 
     @Test
-    void getCustomerByIdShouldReturnNotFound() {
+    void getCustomerById_WhenNotExistingId_ShouldThrowResourceNotFoundException() {
         // Given
-        when(customerRepository.findById(69L)).thenReturn(Optional.empty());
+        when(customerRepository.findById(99L)).thenReturn(Optional.empty());
 
         // When/Then
-        assertThrows(ResourceNotFoundException.class, () -> customerController.getCustomerById(69L));
+        assertThrows(ResourceNotFoundException.class, () -> customerController.getCustomerById(99L));
     }
 
     @Test
-    void addCustomerShouldReturnNewCustomer() {
+    void addCustomer_WhenValid_ShouldReturnNewCustomer() {
         // Given
         when(customerRepository.save(customer1)).thenReturn(customer1);
 
@@ -111,12 +109,12 @@ class CustomerControllerCustomerServiceIntegrationTest { // Entire class made by
         ResponseEntity<Customer> responseEntity = customerController.addCustomer(customer1);
 
         // Then
-        assertEquals(HttpStatus.CREATED, responseEntity.getStatusCode());
-        assertEquals(customer1, responseEntity.getBody());
+        assertTrue(responseEntity.getStatusCode().isSameCodeAs(HttpStatus.CREATED));
+        assertThat(responseEntity.getBody()).isEqualTo(customer1);
     }
 
     @Test
-    void addCustomerShouldThrowIllegalArgumentException() {
+    void addCustomer_WhenInvalid_ShouldThrowIllegalArgumentException() {
         // Given
         Customer invalidCustomer = new Customer();
 
@@ -125,7 +123,7 @@ class CustomerControllerCustomerServiceIntegrationTest { // Entire class made by
     }
 
     @Test
-    void deleteCustomerShouldReturnSuccessMessage() {
+    void deleteCustomer_WhenExistingId_ShouldReturnSuccessMessage() {
         // Given
         when(customerRepository.findById(1L)).thenReturn(Optional.of(customer1));
         doNothing().when(customerRepository).deleteById(1L);
@@ -134,21 +132,21 @@ class CustomerControllerCustomerServiceIntegrationTest { // Entire class made by
         ResponseEntity<String> responseEntity = customerController.deleteCustomer(1L);
 
         // Then
-        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
+        assertTrue(responseEntity.getStatusCode().isSameCodeAs(HttpStatus.OK));
         assertEquals("Customer with id 1 has been deleted!", responseEntity.getBody());
     }
 
     @Test
-    void deleteCustomerShouldThrowNotFoundException() {
+    void deleteCustomer_WhenNotExistingId_ShouldThrowResourceNotFoundException() {
         // Given
-        when(customerRepository.findById(69L)).thenReturn(Optional.empty());
+        when(customerRepository.findById(99L)).thenReturn(Optional.empty());
 
         // When/Then
-        assertThrows(ResourceNotFoundException.class, () -> customerController.deleteCustomer(69L) );
+        assertThrows(ResourceNotFoundException.class, () -> customerController.deleteCustomer(99L) );
     }
 
     @Test
-    void updateCustomerShouldReturnUpdatedCustomer() {
+    void updateCustomer_WhenValidFieldValueChangeAndAuthorization_ShouldReturnUpdatedCustomer() {
         // Given
         Customer updatedCustomer = new Customer();
         updatedCustomer.setId(1L);
@@ -166,12 +164,12 @@ class CustomerControllerCustomerServiceIntegrationTest { // Entire class made by
         ResponseEntity<Customer> responseEntity = customerController.updateCustomer(updatedCustomer, principal);
 
         // Then
-        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
+        assertTrue(responseEntity.getStatusCode().isSameCodeAs(HttpStatus.OK));
         assertEquals(updatedCustomer, responseEntity.getBody());
     }
 
     @Test
-    void updateCustomerShouldThrowForbiddenException() {
+    void updateCustomer_WhenInvalidAuthorization_ShouldThrowForbiddenException() {
         // Given
         Principal unauthorizedUser = new UsernamePasswordAuthenticationToken("wrongusername", "wrongpassword");
         when(customerRepository.findById(1L)).thenReturn(Optional.of(customer1));
@@ -180,7 +178,7 @@ class CustomerControllerCustomerServiceIntegrationTest { // Entire class made by
         assertThrows(ResponseStatusException.class, () -> customerController.updateCustomer(customer1, unauthorizedUser));
     }
     @Test
-    void updateCustomerShouldThrowUnalterableFieldException() {
+    void updateCustomer_WhenInvalidFieldValueChange_ShouldThrowUnalterableFieldException() {
         // Given
         Customer invalidFieldUpdate = new Customer();
         invalidFieldUpdate.setId(1L);
