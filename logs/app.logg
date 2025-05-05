@@ -1054,3 +1054,562 @@
 2025-05-02 12:14:06,392[SpringApplicationShutdownHook]WARN org.springframework.beans.factory.support.DisposableBeanAdapter-Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
 2025-05-02 12:14:06,394[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
 2025-05-02 12:14:06,403[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-05-02 12:19:51,189[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-Starting BiluthyrningssystemApplication using Java 17.0.13 with PID 27844 (C:\Users\leoge\IdeaProjects\biluthyrningssystem1\target\classes started by leoge in C:\Users\leoge\IdeaProjects\biluthyrningssystem1)
+2025-05-02 12:19:51,199[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-No active profile set, falling back to 1 default profile: "default"
+2025-05-02 12:19:51,250[restartedMain]INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor-Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-02 12:19:51,251[restartedMain]INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor-For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-02 12:19:52,195[restartedMain]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-02 12:19:52,294[restartedMain]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 79 ms. Found 3 JPA repository interfaces.
+2025-05-02 12:19:53,047[restartedMain]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 9090 (http)
+2025-05-02 12:19:53,068[restartedMain]INFO org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-9090"]
+2025-05-02 12:19:53,071[restartedMain]INFO org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-05-02 12:19:53,072[restartedMain]INFO org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-02 12:19:53,146[restartedMain]INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-05-02 12:19:53,146[restartedMain]INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1895 ms
+2025-05-02 12:19:53,349[restartedMain]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-05-02 12:19:53,544[restartedMain]INFO com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:rentaldb user=SA
+2025-05-02 12:19:53,546[restartedMain]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-05-02 12:19:53,625[restartedMain]INFO org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-02 12:19:53,710[restartedMain]INFO org.hibernate.Version-HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-05-02 12:19:53,757[restartedMain]INFO org.hibernate.cache.internal.RegionFactoryInitiator-HHH000026: Second-level cache disabled
+2025-05-02 12:19:54,096[restartedMain]INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-02 12:19:54,235[restartedMain]INFO org.hibernate.orm.connections.pooling-HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-02 12:19:55,200[restartedMain]INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-02 12:19:55,252[restartedMain]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-02 12:19:55,543[restartedMain]INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-02 12:19:56,147[restartedMain]WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-02 12:19:56,187[restartedMain]INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer-Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-05-02 12:19:56,579[restartedMain]INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration-H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:rentaldb'
+2025-05-02 12:19:56,649[restartedMain]INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer-LiveReload server is running on port 35729
+2025-05-02 12:19:56,670[restartedMain]INFO org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-9090"]
+2025-05-02 12:19:56,685[restartedMain]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 9090 (http) with context path '/'
+2025-05-02 12:19:56,694[restartedMain]INFO org.example.biluthyrningssystem.BiluthyrningssystemApplication-Started BiluthyrningssystemApplication in 5.914 seconds (process running for 7.382)
+2025-05-02 12:20:15,111[SpringApplicationShutdownHook]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-02 12:20:15,204[tomcat-shutdown]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-05-02 12:20:15,211[SpringApplicationShutdownHook]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-02 12:20:15,221[SpringApplicationShutdownHook]WARN org.springframework.beans.factory.support.DisposableBeanAdapter-Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-05-02 12:20:15,221[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-05-02 12:20:15,223[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-05-04 13:08:19,122[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '1'
+2025-05-04 13:18:27,852[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN tried and failed to delete customer with ID: '69'
+2025-05-04 13:20:49,650[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN tried and failed to delete customer with ID: '69'
+2025-05-04 13:21:33,195[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN tried and failed to delete customer with ID: '69'
+2025-05-04 13:24:39,155[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched all customers
+2025-05-04 13:30:46,269[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '69'
+2025-05-04 13:30:46,279[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed fetch, as Customer with ID: '69' not found
+2025-05-04 13:31:49,920[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '69'
+2025-05-04 13:31:49,927[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed fetch, as Customer with ID: '69' not found
+2025-05-04 13:32:56,300[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '69'
+2025-05-04 13:32:56,306[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed fetch, as Customer with ID: '69' not found
+2025-05-04 13:37:19,933[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN successfully added new customer
+2025-05-04 13:38:38,477[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed to add new customer
+2025-05-04 13:39:35,114[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed to add new customer
+2025-05-04 13:39:58,639[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed to add new customer
+2025-05-04 13:42:10,332[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN deleted Customer with ID: '1'
+2025-05-04 13:42:33,015[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN deleted Customer with ID: '1'
+2025-05-04 13:51:44,242[main]INFO org.example.biluthyrningssystem.services.CustomerService-USER successfully updated customer with ID: '1'
+2025-05-04 14:05:28,096[main]WARN org.example.biluthyrningssystem.services.CustomerService-Unauthorized USER attempted and failed to change customer with ID: '1'
+2025-05-04 14:08:24,683[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-USER tried and failed to update customer with ID: '1'
+2025-05-04 14:15:58,549[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '1'
+2025-05-04 14:17:02,875[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed to add new customer
+2025-05-04 14:17:49,399[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed to add new customer
+2025-05-04 14:18:36,439[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN successfully added new customer
+2025-05-04 14:20:27,160[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '1'
+2025-05-04 14:20:37,230[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN successfully added new customer
+2025-05-04 14:20:45,110[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed to add new customer
+2025-05-04 14:20:58,365[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN tried and failed to delete customer with ID: '69'
+2025-05-05 13:04:12,146[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-USER tried and failed to update customer with ID: '1'
+2025-05-05 13:04:22,713[main]WARN org.example.biluthyrningssystem.services.CustomerService-Unauthorized USER attempted and failed to change customer with ID: '1'
+2025-05-05 13:09:32,162[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched all customers
+2025-05-05 13:09:46,756[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '1'
+2025-05-05 13:10:17,981[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '69'
+2025-05-05 13:10:17,987[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed fetch, as Customer with ID: '69' not found
+2025-05-05 13:12:50,084[main]INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils-Could not detect default configuration classes for test class [org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest]: CustomerControllerCustomerServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-05-05 13:12:50,291[main]INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper-Found @SpringBootConfiguration org.example.biluthyrningssystem.BiluthyrningssystemApplication for test class org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest
+2025-05-05 13:12:50,521[main]INFO org.springframework.boot.devtools.restart.RestartApplicationListener-Restart disabled due to context in which it is running
+2025-05-05 13:12:50,861[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-Starting CustomerControllerCustomerServiceIntegrationTest using Java 17.0.13 with PID 6264 (started by leoge in C:\Users\leoge\IdeaProjects\biluthyrningssystem1)
+2025-05-05 13:12:50,872[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-No active profile set, falling back to 1 default profile: "default"
+2025-05-05 13:12:51,689[main]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-05 13:12:51,795[main]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 96 ms. Found 3 JPA repository interfaces.
+2025-05-05 13:12:52,413[main]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-05-05 13:12:52,721[main]INFO com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:rentaldb user=SA
+2025-05-05 13:12:52,725[main]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-05-05 13:12:52,844[main]INFO org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-05 13:12:53,044[main]INFO org.hibernate.Version-HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-05-05 13:12:53,123[main]INFO org.hibernate.cache.internal.RegionFactoryInitiator-HHH000026: Second-level cache disabled
+2025-05-05 13:12:53,510[main]INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-05 13:12:53,613[main]INFO org.hibernate.orm.connections.pooling-HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-05 13:12:54,587[main]INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-05 13:12:54,649[main]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 13:12:55,214[main]INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-05 13:12:56,196[main]WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-05 13:12:56,322[main]INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer-Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-05-05 13:12:57,435[main]INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration-H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:rentaldb'
+2025-05-05 13:12:57,568[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-Started CustomerControllerCustomerServiceIntegrationTest in 7.063 seconds (process running for 9.254)
+2025-05-05 13:12:58,580[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched all customers
+2025-05-05 13:12:58,629[SpringApplicationShutdownHook]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 13:12:58,640[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-05-05 13:12:58,644[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-05-05 13:13:07,659[main]INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils-Could not detect default configuration classes for test class [org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest]: CustomerControllerCustomerServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-05-05 13:13:07,811[main]INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper-Found @SpringBootConfiguration org.example.biluthyrningssystem.BiluthyrningssystemApplication for test class org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest
+2025-05-05 13:13:07,937[main]INFO org.springframework.boot.devtools.restart.RestartApplicationListener-Restart disabled due to context in which it is running
+2025-05-05 13:13:08,254[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-Starting CustomerControllerCustomerServiceIntegrationTest using Java 17.0.13 with PID 23280 (started by leoge in C:\Users\leoge\IdeaProjects\biluthyrningssystem1)
+2025-05-05 13:13:08,260[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-No active profile set, falling back to 1 default profile: "default"
+2025-05-05 13:13:09,086[main]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-05 13:13:09,185[main]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 80 ms. Found 3 JPA repository interfaces.
+2025-05-05 13:13:09,739[main]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-05-05 13:13:10,045[main]INFO com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:rentaldb user=SA
+2025-05-05 13:13:10,048[main]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-05-05 13:13:10,130[main]INFO org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-05 13:13:10,239[main]INFO org.hibernate.Version-HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-05-05 13:13:10,307[main]INFO org.hibernate.cache.internal.RegionFactoryInitiator-HHH000026: Second-level cache disabled
+2025-05-05 13:13:10,691[main]INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-05 13:13:10,821[main]INFO org.hibernate.orm.connections.pooling-HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-05 13:13:11,774[main]INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-05 13:13:11,830[main]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 13:13:12,438[main]INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-05 13:13:13,196[main]WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-05 13:13:13,265[main]INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer-Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-05-05 13:13:14,150[main]INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration-H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:rentaldb'
+2025-05-05 13:13:14,258[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-Started CustomerControllerCustomerServiceIntegrationTest in 6.33 seconds (process running for 8.037)
+2025-05-05 13:13:14,905[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '1'
+2025-05-05 13:13:14,955[SpringApplicationShutdownHook]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 13:13:14,961[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-05-05 13:13:14,965[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-05-05 13:13:28,423[main]INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils-Could not detect default configuration classes for test class [org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest]: CustomerControllerCustomerServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-05-05 13:13:28,549[main]INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper-Found @SpringBootConfiguration org.example.biluthyrningssystem.BiluthyrningssystemApplication for test class org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest
+2025-05-05 13:13:28,679[main]INFO org.springframework.boot.devtools.restart.RestartApplicationListener-Restart disabled due to context in which it is running
+2025-05-05 13:13:28,977[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-Starting CustomerControllerCustomerServiceIntegrationTest using Java 17.0.13 with PID 17612 (started by leoge in C:\Users\leoge\IdeaProjects\biluthyrningssystem1)
+2025-05-05 13:13:28,981[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-No active profile set, falling back to 1 default profile: "default"
+2025-05-05 13:13:29,736[main]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-05 13:13:29,840[main]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 92 ms. Found 3 JPA repository interfaces.
+2025-05-05 13:13:30,409[main]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-05-05 13:13:30,580[main]INFO com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:rentaldb user=SA
+2025-05-05 13:13:30,584[main]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-05-05 13:13:30,664[main]INFO org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-05 13:13:30,747[main]INFO org.hibernate.Version-HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-05-05 13:13:30,800[main]INFO org.hibernate.cache.internal.RegionFactoryInitiator-HHH000026: Second-level cache disabled
+2025-05-05 13:13:31,171[main]INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-05 13:13:31,243[main]INFO org.hibernate.orm.connections.pooling-HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-05 13:13:32,056[main]INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-05 13:13:32,107[main]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 13:13:32,603[main]INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-05 13:13:33,494[main]WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-05 13:13:33,550[main]INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer-Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-05-05 13:13:34,503[main]INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration-H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:rentaldb'
+2025-05-05 13:13:34,638[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-Started CustomerControllerCustomerServiceIntegrationTest in 5.966 seconds (process running for 7.677)
+2025-05-05 13:13:35,360[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed to add new customer
+2025-05-05 13:13:35,418[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN deleted Customer with ID: '1'
+2025-05-05 13:13:35,428[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN tried and failed to delete customer with ID: '69'
+2025-05-05 13:13:35,439[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN successfully added new customer
+2025-05-05 13:13:35,449[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched all customers
+2025-05-05 13:13:35,457[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '1'
+2025-05-05 13:13:35,467[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-USER tried and failed to update customer with ID: '1'
+2025-05-05 13:13:35,477[main]INFO org.example.biluthyrningssystem.services.CustomerService-USER successfully updated customer with ID: '1'
+2025-05-05 13:13:35,491[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '69'
+2025-05-05 13:13:35,492[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed fetch, as Customer with ID: '69' not found
+2025-05-05 13:13:35,507[main]WARN org.example.biluthyrningssystem.services.CustomerService-Unauthorized USER attempted and failed to change customer with ID: '1'
+2025-05-05 13:13:35,526[SpringApplicationShutdownHook]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 13:13:35,535[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-05-05 13:13:35,541[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-05-05 13:15:27,076[main]INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils-Could not detect default configuration classes for test class [org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest]: CustomerControllerCustomerServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-05-05 13:15:27,299[main]INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper-Found @SpringBootConfiguration org.example.biluthyrningssystem.BiluthyrningssystemApplication for test class org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest
+2025-05-05 13:15:27,525[main]INFO org.springframework.boot.devtools.restart.RestartApplicationListener-Restart disabled due to context in which it is running
+2025-05-05 13:15:27,844[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-Starting CustomerControllerCustomerServiceIntegrationTest using Java 17.0.13 with PID 21740 (started by leoge in C:\Users\leoge\IdeaProjects\biluthyrningssystem1)
+2025-05-05 13:15:27,850[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-No active profile set, falling back to 1 default profile: "default"
+2025-05-05 13:15:28,756[main]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-05 13:15:28,830[main]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 64 ms. Found 3 JPA repository interfaces.
+2025-05-05 13:15:29,456[main]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-05-05 13:15:29,686[main]INFO com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:rentaldb user=SA
+2025-05-05 13:15:29,689[main]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-05-05 13:15:29,774[main]INFO org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-05 13:15:29,903[main]INFO org.hibernate.Version-HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-05-05 13:15:29,963[main]INFO org.hibernate.cache.internal.RegionFactoryInitiator-HHH000026: Second-level cache disabled
+2025-05-05 13:15:30,380[main]INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-05 13:15:30,464[main]INFO org.hibernate.orm.connections.pooling-HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-05 13:15:31,464[main]INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-05 13:15:31,521[main]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 13:15:32,053[main]INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-05 13:15:33,066[main]WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-05 13:15:33,149[main]INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer-Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-05-05 13:15:34,046[main]INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration-H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:rentaldb'
+2025-05-05 13:15:34,145[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-Started CustomerControllerCustomerServiceIntegrationTest in 6.645 seconds (process running for 8.643)
+2025-05-05 13:15:35,004[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed to add new customer
+2025-05-05 13:15:35,059[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN deleted Customer with ID: '1'
+2025-05-05 13:15:35,073[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN tried and failed to delete customer with ID: '69'
+2025-05-05 13:15:35,087[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN successfully added new customer
+2025-05-05 13:15:35,096[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched all customers
+2025-05-05 13:15:35,107[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '1'
+2025-05-05 13:15:35,119[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-USER tried and failed to update customer with ID: '1'
+2025-05-05 13:15:35,128[main]INFO org.example.biluthyrningssystem.services.CustomerService-USER successfully updated customer with ID: '1'
+2025-05-05 13:15:35,140[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '69'
+2025-05-05 13:15:35,141[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed fetch, as Customer with ID: '69' not found
+2025-05-05 13:15:35,158[main]WARN org.example.biluthyrningssystem.services.CustomerService-Unauthorized USER attempted and failed to change customer with ID: '1'
+2025-05-05 13:15:35,188[SpringApplicationShutdownHook]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 13:15:35,197[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-05-05 13:15:35,201[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-05-05 13:19:32,208[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed to add new customer
+2025-05-05 13:19:32,252[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN deleted Customer with ID: '1'
+2025-05-05 13:19:32,262[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN tried and failed to delete customer with ID: '69'
+2025-05-05 13:19:32,268[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN successfully added new customer
+2025-05-05 13:19:32,273[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched all customers
+2025-05-05 13:19:32,280[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '1'
+2025-05-05 13:19:32,289[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-USER tried and failed to update customer with ID: '1'
+2025-05-05 13:19:32,295[main]INFO org.example.biluthyrningssystem.services.CustomerService-USER successfully updated customer with ID: '1'
+2025-05-05 13:19:32,298[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '69'
+2025-05-05 13:19:32,298[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed fetch, as Customer with ID: '69' not found
+2025-05-05 13:19:32,302[main]WARN org.example.biluthyrningssystem.services.CustomerService-Unauthorized USER attempted and failed to change customer with ID: '1'
+2025-05-05 13:20:53,909[main]INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils-Could not detect default configuration classes for test class [org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest]: CustomerControllerCustomerServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-05-05 13:20:54,080[main]INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper-Found @SpringBootConfiguration org.example.biluthyrningssystem.BiluthyrningssystemApplication for test class org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest
+2025-05-05 13:20:54,297[main]INFO org.springframework.boot.devtools.restart.RestartApplicationListener-Restart disabled due to context in which it is running
+2025-05-05 13:20:54,608[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-Starting CustomerControllerCustomerServiceIntegrationTest using Java 17.0.13 with PID 3312 (started by leoge in C:\Users\leoge\IdeaProjects\biluthyrningssystem1)
+2025-05-05 13:20:54,611[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-No active profile set, falling back to 1 default profile: "default"
+2025-05-05 13:20:55,514[main]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-05 13:20:55,596[main]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 65 ms. Found 3 JPA repository interfaces.
+2025-05-05 13:20:56,175[main]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-05-05 13:20:56,422[main]INFO com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:rentaldb user=SA
+2025-05-05 13:20:56,425[main]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-05-05 13:20:56,496[main]INFO org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-05 13:20:56,620[main]INFO org.hibernate.Version-HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-05-05 13:20:56,692[main]INFO org.hibernate.cache.internal.RegionFactoryInitiator-HHH000026: Second-level cache disabled
+2025-05-05 13:20:57,192[main]INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-05 13:20:57,291[main]INFO org.hibernate.orm.connections.pooling-HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-05 13:20:58,297[main]INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-05 13:20:58,352[main]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 13:20:58,876[main]INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-05 13:20:59,752[main]WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-05 13:20:59,837[main]INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer-Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-05-05 13:21:00,880[main]INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration-H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:rentaldb'
+2025-05-05 13:21:01,010[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-Started CustomerControllerCustomerServiceIntegrationTest in 6.731 seconds (process running for 8.9)
+2025-05-05 13:21:01,802[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed to add new customer
+2025-05-05 13:21:01,862[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN tried and failed to delete customer with ID: '1'
+2025-05-05 13:21:01,876[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN tried and failed to delete customer with ID: '69'
+2025-05-05 13:21:01,892[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN successfully added new customer
+2025-05-05 13:21:01,905[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched all customers
+2025-05-05 13:21:01,912[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '1'
+2025-05-05 13:21:01,912[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed fetch, as Customer with ID: '1' not found
+2025-05-05 13:21:01,950[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '69'
+2025-05-05 13:21:01,951[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed fetch, as Customer with ID: '69' not found
+2025-05-05 13:21:01,975[SpringApplicationShutdownHook]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 13:21:01,983[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-05-05 13:21:01,986[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-05-05 13:44:20,002[main]INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils-Could not detect default configuration classes for test class [org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest]: CustomerControllerCustomerServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-05-05 13:44:20,215[main]INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper-Found @SpringBootConfiguration org.example.biluthyrningssystem.BiluthyrningssystemApplication for test class org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest
+2025-05-05 13:44:20,407[main]INFO org.springframework.boot.devtools.restart.RestartApplicationListener-Restart disabled due to context in which it is running
+2025-05-05 13:44:20,748[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-Starting CustomerControllerCustomerServiceIntegrationTest using Java 17.0.13 with PID 1276 (started by leoge in C:\Users\leoge\IdeaProjects\biluthyrningssystem1)
+2025-05-05 13:44:20,753[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-No active profile set, falling back to 1 default profile: "default"
+2025-05-05 13:44:21,573[main]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-05 13:44:21,661[main]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 72 ms. Found 3 JPA repository interfaces.
+2025-05-05 13:44:22,511[main]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 0 (http)
+2025-05-05 13:44:22,535[main]INFO org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-auto-1"]
+2025-05-05 13:44:22,540[main]INFO org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-05-05 13:44:22,541[main]INFO org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-05 13:44:22,640[main]INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-05-05 13:44:22,641[main]INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1860 ms
+2025-05-05 13:44:22,947[main]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-05-05 13:44:23,286[main]INFO com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:rentaldb user=SA
+2025-05-05 13:44:23,289[main]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-05-05 13:44:23,360[main]INFO org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-05 13:44:23,500[main]INFO org.hibernate.Version-HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-05-05 13:44:23,595[main]INFO org.hibernate.cache.internal.RegionFactoryInitiator-HHH000026: Second-level cache disabled
+2025-05-05 13:44:23,952[main]INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-05 13:44:24,040[main]INFO org.hibernate.orm.connections.pooling-HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-05 13:44:24,951[main]INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-05 13:44:25,015[main]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 13:44:25,440[main]INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-05 13:44:26,395[main]WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-05 13:44:26,486[main]INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer-Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-05-05 13:44:27,341[main]INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration-H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:rentaldb'
+2025-05-05 13:44:27,796[main]INFO org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-auto-1"]
+2025-05-05 13:44:27,825[main]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 60392 (http) with context path '/'
+2025-05-05 13:44:27,839[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-Started CustomerControllerCustomerServiceIntegrationTest in 7.447 seconds (process running for 9.52)
+2025-05-05 13:44:28,537[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed to add new customer
+2025-05-05 13:44:28,728[main]INFO org.hibernate.collection.spi.AbstractPersistentCollection-HHH000496: Detaching an uninitialized collection with queued operations from a session: [org.example.biluthyrningssystem.entities.Customer.orderList#1]
+2025-05-05 13:44:28,869[SpringApplicationShutdownHook]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-05 13:44:28,902[tomcat-shutdown]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-05-05 13:44:28,908[SpringApplicationShutdownHook]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 13:44:28,914[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-05-05 13:44:28,917[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-05-05 13:54:37,642[main]INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils-Could not detect default configuration classes for test class [org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest]: CustomerControllerCustomerServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-05-05 13:54:37,850[main]INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper-Found @SpringBootConfiguration org.example.biluthyrningssystem.BiluthyrningssystemApplication for test class org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest
+2025-05-05 13:54:38,120[main]INFO org.springframework.boot.devtools.restart.RestartApplicationListener-Restart disabled due to context in which it is running
+2025-05-05 13:54:38,448[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-Starting CustomerControllerCustomerServiceIntegrationTest using Java 17.0.13 with PID 19044 (started by leoge in C:\Users\leoge\IdeaProjects\biluthyrningssystem1)
+2025-05-05 13:54:38,453[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-No active profile set, falling back to 1 default profile: "default"
+2025-05-05 13:54:39,256[main]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-05 13:54:39,337[main]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 66 ms. Found 3 JPA repository interfaces.
+2025-05-05 13:54:40,040[main]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 0 (http)
+2025-05-05 13:54:40,059[main]INFO org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-auto-1"]
+2025-05-05 13:54:40,063[main]INFO org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-05-05 13:54:40,063[main]INFO org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-05 13:54:40,152[main]INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-05-05 13:54:40,153[main]INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1664 ms
+2025-05-05 13:54:40,425[main]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-05-05 13:54:40,760[main]INFO com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:rentaldb user=SA
+2025-05-05 13:54:40,763[main]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-05-05 13:54:40,833[main]INFO org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-05 13:54:40,938[main]INFO org.hibernate.Version-HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-05-05 13:54:41,019[main]INFO org.hibernate.cache.internal.RegionFactoryInitiator-HHH000026: Second-level cache disabled
+2025-05-05 13:54:41,446[main]INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-05 13:54:41,528[main]INFO org.hibernate.orm.connections.pooling-HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-05 13:54:42,451[main]INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-05 13:54:42,505[main]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 13:54:43,072[main]INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-05 13:54:43,941[main]WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-05 13:54:44,013[main]INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer-Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-05-05 13:54:44,677[main]INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration-H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:rentaldb'
+2025-05-05 13:54:45,011[main]INFO org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-auto-1"]
+2025-05-05 13:54:45,032[main]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 60660 (http) with context path '/'
+2025-05-05 13:54:45,044[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-Started CustomerControllerCustomerServiceIntegrationTest in 6.951 seconds (process running for 9.104)
+2025-05-05 13:54:46,040[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN deleted Customer with ID: '6'
+2025-05-05 13:54:46,085[SpringApplicationShutdownHook]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-05 13:54:46,114[tomcat-shutdown]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-05-05 13:54:46,119[SpringApplicationShutdownHook]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 13:54:46,129[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-05-05 13:54:46,135[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-05-05 13:55:20,945[main]INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils-Could not detect default configuration classes for test class [org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest]: CustomerControllerCustomerServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-05-05 13:55:21,074[main]INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper-Found @SpringBootConfiguration org.example.biluthyrningssystem.BiluthyrningssystemApplication for test class org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest
+2025-05-05 13:55:21,212[main]INFO org.springframework.boot.devtools.restart.RestartApplicationListener-Restart disabled due to context in which it is running
+2025-05-05 13:55:21,528[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-Starting CustomerControllerCustomerServiceIntegrationTest using Java 17.0.13 with PID 1952 (started by leoge in C:\Users\leoge\IdeaProjects\biluthyrningssystem1)
+2025-05-05 13:55:21,534[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-No active profile set, falling back to 1 default profile: "default"
+2025-05-05 13:55:22,363[main]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-05 13:55:22,475[main]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 92 ms. Found 3 JPA repository interfaces.
+2025-05-05 13:55:23,231[main]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 0 (http)
+2025-05-05 13:55:23,258[main]INFO org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-auto-1"]
+2025-05-05 13:55:23,264[main]INFO org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-05-05 13:55:23,265[main]INFO org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-05 13:55:23,382[main]INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-05-05 13:55:23,382[main]INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1827 ms
+2025-05-05 13:55:23,644[main]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-05-05 13:55:23,947[main]INFO com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:rentaldb user=SA
+2025-05-05 13:55:23,949[main]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-05-05 13:55:24,009[main]INFO org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-05 13:55:24,094[main]INFO org.hibernate.Version-HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-05-05 13:55:24,156[main]INFO org.hibernate.cache.internal.RegionFactoryInitiator-HHH000026: Second-level cache disabled
+2025-05-05 13:55:24,492[main]INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-05 13:55:24,586[main]INFO org.hibernate.orm.connections.pooling-HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-05 13:55:25,462[main]INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-05 13:55:25,519[main]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 13:55:25,985[main]INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-05 13:55:26,642[main]WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-05 13:55:26,696[main]INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer-Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-05-05 13:55:27,306[main]INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration-H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:rentaldb'
+2025-05-05 13:55:27,620[main]INFO org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-auto-1"]
+2025-05-05 13:55:27,636[main]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 60686 (http) with context path '/'
+2025-05-05 13:55:27,648[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-Started CustomerControllerCustomerServiceIntegrationTest in 6.447 seconds (process running for 8.203)
+2025-05-05 13:55:28,201[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN deleted Customer with ID: '6'
+2025-05-05 13:55:28,232[SpringApplicationShutdownHook]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-05 13:55:28,264[tomcat-shutdown]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-05-05 13:55:28,268[SpringApplicationShutdownHook]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 13:55:28,274[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-05-05 13:55:28,280[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-05-05 13:55:44,659[main]INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils-Could not detect default configuration classes for test class [org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest]: CustomerControllerCustomerServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-05-05 13:55:44,775[main]INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper-Found @SpringBootConfiguration org.example.biluthyrningssystem.BiluthyrningssystemApplication for test class org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest
+2025-05-05 13:55:44,907[main]INFO org.springframework.boot.devtools.restart.RestartApplicationListener-Restart disabled due to context in which it is running
+2025-05-05 13:55:45,207[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-Starting CustomerControllerCustomerServiceIntegrationTest using Java 17.0.13 with PID 24656 (started by leoge in C:\Users\leoge\IdeaProjects\biluthyrningssystem1)
+2025-05-05 13:55:45,210[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-No active profile set, falling back to 1 default profile: "default"
+2025-05-05 13:55:45,944[main]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-05 13:55:46,032[main]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 74 ms. Found 3 JPA repository interfaces.
+2025-05-05 13:55:46,756[main]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 0 (http)
+2025-05-05 13:55:46,776[main]INFO org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-auto-1"]
+2025-05-05 13:55:46,781[main]INFO org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-05-05 13:55:46,781[main]INFO org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-05 13:55:46,851[main]INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-05-05 13:55:46,852[main]INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1623 ms
+2025-05-05 13:55:47,097[main]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-05-05 13:55:47,370[main]INFO com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:rentaldb user=SA
+2025-05-05 13:55:47,376[main]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-05-05 13:55:47,445[main]INFO org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-05 13:55:47,533[main]INFO org.hibernate.Version-HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-05-05 13:55:47,617[main]INFO org.hibernate.cache.internal.RegionFactoryInitiator-HHH000026: Second-level cache disabled
+2025-05-05 13:55:47,959[main]INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-05 13:55:48,089[main]INFO org.hibernate.orm.connections.pooling-HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-05 13:55:49,050[main]INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-05 13:55:49,105[main]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 13:55:49,548[main]INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-05 13:55:50,357[main]WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-05 13:55:50,412[main]INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer-Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-05-05 13:55:51,031[main]INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration-H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:rentaldb'
+2025-05-05 13:55:51,381[main]INFO org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-auto-1"]
+2025-05-05 13:55:51,397[main]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 60707 (http) with context path '/'
+2025-05-05 13:55:51,415[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-Started CustomerControllerCustomerServiceIntegrationTest in 6.515 seconds (process running for 8.084)
+2025-05-05 13:55:52,079[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN deleted Customer with ID: '6'
+2025-05-05 13:55:52,111[SpringApplicationShutdownHook]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-05 13:55:52,145[tomcat-shutdown]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-05-05 13:55:52,150[SpringApplicationShutdownHook]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 13:55:52,158[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-05-05 13:55:52,162[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-05-05 14:00:57,371[main]INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils-Could not detect default configuration classes for test class [org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest]: CustomerControllerCustomerServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-05-05 14:00:57,548[main]INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper-Found @SpringBootConfiguration org.example.biluthyrningssystem.BiluthyrningssystemApplication for test class org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest
+2025-05-05 14:00:57,750[main]INFO org.springframework.boot.devtools.restart.RestartApplicationListener-Restart disabled due to context in which it is running
+2025-05-05 14:00:58,159[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-Starting CustomerControllerCustomerServiceIntegrationTest using Java 17.0.13 with PID 17152 (started by leoge in C:\Users\leoge\IdeaProjects\biluthyrningssystem1)
+2025-05-05 14:00:58,167[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-No active profile set, falling back to 1 default profile: "default"
+2025-05-05 14:00:59,102[main]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-05 14:00:59,205[main]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 89 ms. Found 3 JPA repository interfaces.
+2025-05-05 14:01:00,209[main]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 0 (http)
+2025-05-05 14:01:00,227[main]INFO org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-auto-1"]
+2025-05-05 14:01:00,231[main]INFO org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-05-05 14:01:00,232[main]INFO org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-05 14:01:00,308[main]INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-05-05 14:01:00,309[main]INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 2113 ms
+2025-05-05 14:01:00,585[main]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-05-05 14:01:00,903[main]INFO com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:rentaldb user=SA
+2025-05-05 14:01:00,905[main]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-05-05 14:01:00,976[main]INFO org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-05 14:01:01,095[main]INFO org.hibernate.Version-HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-05-05 14:01:01,167[main]INFO org.hibernate.cache.internal.RegionFactoryInitiator-HHH000026: Second-level cache disabled
+2025-05-05 14:01:01,536[main]INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-05 14:01:01,626[main]INFO org.hibernate.orm.connections.pooling-HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-05 14:01:02,594[main]INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-05 14:01:02,663[main]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 14:01:03,296[main]INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-05 14:01:04,062[main]WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-05 14:01:04,135[main]INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer-Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-05-05 14:01:04,857[main]INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration-H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:rentaldb'
+2025-05-05 14:01:05,273[main]INFO org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-auto-1"]
+2025-05-05 14:01:05,286[main]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 60873 (http) with context path '/'
+2025-05-05 14:01:05,297[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-Started CustomerControllerCustomerServiceIntegrationTest in 7.567 seconds (process running for 9.513)
+2025-05-05 14:01:06,062[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched all customers
+2025-05-05 14:01:06,173[SpringApplicationShutdownHook]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-05 14:01:06,208[tomcat-shutdown]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-05-05 14:01:06,213[SpringApplicationShutdownHook]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 14:01:06,225[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-05-05 14:01:06,235[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-05-05 14:02:13,517[main]INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils-Could not detect default configuration classes for test class [org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest]: CustomerControllerCustomerServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-05-05 14:02:13,658[main]INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper-Found @SpringBootConfiguration org.example.biluthyrningssystem.BiluthyrningssystemApplication for test class org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest
+2025-05-05 14:02:14,822[main]INFO org.springframework.boot.devtools.restart.RestartApplicationListener-Restart disabled due to context in which it is running
+2025-05-05 14:02:15,249[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-Starting CustomerControllerCustomerServiceIntegrationTest using Java 17.0.13 with PID 23948 (started by leoge in C:\Users\leoge\IdeaProjects\biluthyrningssystem1)
+2025-05-05 14:02:15,256[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-No active profile set, falling back to 1 default profile: "default"
+2025-05-05 14:02:16,162[main]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-05 14:02:16,265[main]INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 90 ms. Found 3 JPA repository interfaces.
+2025-05-05 14:02:17,364[main]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 0 (http)
+2025-05-05 14:02:17,399[main]INFO org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-auto-1"]
+2025-05-05 14:02:17,403[main]INFO org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-05-05 14:02:17,404[main]INFO org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-05 14:02:17,507[main]INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-05-05 14:02:17,508[main]INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 2214 ms
+2025-05-05 14:02:17,855[main]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-05-05 14:02:18,303[main]INFO com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:rentaldb user=SA
+2025-05-05 14:02:18,305[main]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-05-05 14:02:18,367[main]INFO org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-05 14:02:18,458[main]INFO org.hibernate.Version-HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-05-05 14:02:18,499[main]INFO org.hibernate.cache.internal.RegionFactoryInitiator-HHH000026: Second-level cache disabled
+2025-05-05 14:02:18,682[main]INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-05 14:02:18,825[main]INFO org.hibernate.orm.connections.pooling-HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-05 14:02:19,827[main]INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-05 14:02:19,898[main]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 14:02:20,520[main]INFO org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-05 14:02:21,504[main]WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-05 14:02:21,621[main]INFO org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer-Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-05-05 14:02:22,509[main]INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration-H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:rentaldb'
+2025-05-05 14:02:22,867[main]INFO org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-auto-1"]
+2025-05-05 14:02:22,888[main]INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 60931 (http) with context path '/'
+2025-05-05 14:02:22,899[main]INFO org.example.biluthyrningssystem.controllers.CustomerControllerCustomerServiceIntegrationTest-Started CustomerControllerCustomerServiceIntegrationTest in 8.092 seconds (process running for 10.927)
+2025-05-05 14:02:22,944[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed to add new customer
+2025-05-05 14:02:23,010[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN tried and failed to delete customer with ID: '1'
+2025-05-05 14:02:23,028[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN tried and failed to delete customer with ID: '69'
+2025-05-05 14:02:23,049[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN successfully added new customer
+2025-05-05 14:02:23,068[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched all customers
+2025-05-05 14:02:23,078[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '1'
+2025-05-05 14:02:23,079[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed fetch, as Customer with ID: '1' not found
+2025-05-05 14:02:23,121[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '69'
+2025-05-05 14:02:23,121[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed fetch, as Customer with ID: '69' not found
+2025-05-05 14:02:23,150[SpringApplicationShutdownHook]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-05 14:02:23,188[tomcat-shutdown]INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-05-05 14:02:23,195[SpringApplicationShutdownHook]INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05 14:02:23,203[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-05-05 14:02:23,207[SpringApplicationShutdownHook]INFO com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-05-05 14:02:41,866[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed to add new customer
+2025-05-05 14:02:41,919[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN deleted Customer with ID: '1'
+2025-05-05 14:02:41,933[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN tried and failed to delete customer with ID: '69'
+2025-05-05 14:02:41,942[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN successfully added new customer
+2025-05-05 14:02:41,950[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched all customers
+2025-05-05 14:02:41,958[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '1'
+2025-05-05 14:02:41,966[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-USER tried and failed to update customer with ID: '1'
+2025-05-05 14:02:41,972[main]INFO org.example.biluthyrningssystem.services.CustomerService-USER successfully updated customer with ID: '1'
+2025-05-05 14:02:41,977[main]INFO org.example.biluthyrningssystem.services.CustomerService-ADMIN fetched customer with ID: '69'
+2025-05-05 14:02:41,977[main]ERRORorg.example.biluthyrningssystem.services.CustomerService-ADMIN failed fetch, as Customer with ID: '69' not found
+2025-05-05 14:02:41,982[main]WARN org.example.biluthyrningssystem.services.CustomerService-Unauthorized USER attempted and failed to change customer with ID: '1'
