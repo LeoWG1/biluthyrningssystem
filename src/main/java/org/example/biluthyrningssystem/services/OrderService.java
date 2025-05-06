@@ -3,10 +3,10 @@ package org.example.biluthyrningssystem.services;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import jakarta.transaction.Transactional;
-import org.example.biluthyrningssystem.dto.CarStatisticsDTO;
-import org.example.biluthyrningssystem.dto.StatisticsDTO;
-import org.example.biluthyrningssystem.entities.Car;
-import org.example.biluthyrningssystem.entities.Order;
+import org.example.biluthyrningssystem.models.vos.CarStatisticsVO;
+import org.example.biluthyrningssystem.models.vos.StatisticsVO;
+import org.example.biluthyrningssystem.models.entities.Car;
+import org.example.biluthyrningssystem.models.entities.Order;
 import org.example.biluthyrningssystem.exceptions.ResourceNotFoundException;
 import org.example.biluthyrningssystem.repositories.CarRepository;
 import org.example.biluthyrningssystem.repositories.OrderRepository;
@@ -123,7 +123,7 @@ public class OrderService implements OrderServiceInterface {
     }
 
     @Override
-    public StatisticsDTO getStatistics() {
+    public StatisticsVO getStatistics() {
         List<Order> allOrders = orderRepository.findAll();
 
         long totalOrders = allOrders.size();
@@ -136,11 +136,11 @@ public class OrderService implements OrderServiceInterface {
                 .mapToLong(Order::getPrice)
                 .sum();
 
-        return new StatisticsDTO(totalActiveOrders, totalOrders, totalRevenue);
+        return new StatisticsVO(totalActiveOrders, totalOrders, totalRevenue);
     }
 
     @Override
-    public CarStatisticsDTO getCarStatistics(long id) {
+    public CarStatisticsVO getCarStatistics(long id) {
         List<Order> relevantOrders = orderRepository.findByCarId(id);
 
         long totalOrders = relevantOrders.size();
@@ -158,6 +158,6 @@ public class OrderService implements OrderServiceInterface {
                 .max(Comparator.naturalOrder())
                 .orElse(null);
 
-        return new CarStatisticsDTO(totalActiveOrders, totalOrders, totalRevenue, latestOrder);
+        return new CarStatisticsVO(totalActiveOrders, totalOrders, totalRevenue, latestOrder);
     }
 }

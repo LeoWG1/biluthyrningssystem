@@ -1,7 +1,7 @@
 package org.example.biluthyrningssystem.controllers;
 
-import org.example.biluthyrningssystem.dto.CarDTO;
-import org.example.biluthyrningssystem.entities.Car;
+import org.example.biluthyrningssystem.models.dtos.CarDTO;
+import org.example.biluthyrningssystem.models.entities.Car;
 import org.example.biluthyrningssystem.services.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,7 +1,7 @@
 package org.example.biluthyrningssystem.services;
 
-import org.example.biluthyrningssystem.dto.CarDTO;
-import org.example.biluthyrningssystem.entities.Car;
+import org.example.biluthyrningssystem.models.dtos.CarDTO;
+import org.example.biluthyrningssystem.models.entities.Car;
 
 import java.util.List;
 

@@ -1,14 +1,9 @@
-package org.example.biluthyrningssystem.dto;
+package org.example.biluthyrningssystem.models.dtos;
 
-import org.example.biluthyrningssystem.entities.Car;
-import org.example.biluthyrningssystem.entities.Order;
+import org.example.biluthyrningssystem.models.entities.Car;
 
-import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 //Ann-Louis made this class
 public class CarDTO {
