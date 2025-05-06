@@ -27,7 +27,7 @@ public class OrderService implements OrderServiceInterface {
 
     private final OrderRepository orderRepository;
     private final CarRepository carRepository;
-    private static final Logger ORDER_LOGGER = LogManager.getLogger("OrderService Logger");
+    private static final Logger ORDER_LOGGER = LogManager.getLogger("userlog");
 
     @Autowired
     public OrderService(OrderRepository orderRepository, CarRepository carRepository) {
@@ -37,6 +37,7 @@ public class OrderService implements OrderServiceInterface {
 
     @Override
     public List<Order> getAllOrders() {
+        ORDER_LOGGER.info("USER fetched all orders tied to");
         return orderRepository.findAll();
     }
 
