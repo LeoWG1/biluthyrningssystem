@@ -1,6 +1,6 @@
 package org.example.biluthyrningssystem.services;
 
-import org.example.biluthyrningssystem.entities.Customer;
+import org.example.biluthyrningssystem.models.entities.Customer;
 
 import java.security.Principal;
 import java.util.List;
