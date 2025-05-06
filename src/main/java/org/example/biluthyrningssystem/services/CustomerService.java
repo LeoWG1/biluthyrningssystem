@@ -18,7 +18,7 @@ import java.util.List;
 public class CustomerService implements CustomerServiceInterface { // Entire class made by Leo
 
     private final CustomerRepository customerRepository;
-    private static final Logger LOGGER = LogManager.getLogger(CustomerService.class);
+    private static final Logger LOGGER = LogManager.getLogger("userlog");
 
     public CustomerService(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
