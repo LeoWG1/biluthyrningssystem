@@ -8,6 +8,7 @@ import org.example.biluthyrningssystem.entities.Order;
 import org.example.biluthyrningssystem.exceptions.ResourceNotFoundException;
 import org.example.biluthyrningssystem.repositories.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cglib.core.Local;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -28,40 +29,71 @@ public class CarService implements CarServiceInterface {
     }
     /* Ann-Louis and Frida made this method
        List cars not in service along with its booked dates to see what dates are available */
+//    @Override
+//    public List<CarDTO> getAvailableCars() {
+//        List<CarDTO> carDTOList = new ArrayList<>();
+//        LocalDate startDate;
+//        LocalDate endDate;
+//        LocalDate today = LocalDate.now();
+//
+//        for (Car car : carRepository.findAll()) {
+//            if (!car.isInService()) {
+//                Map<String, LocalDate> dates = new HashMap<>();
+//                if(!car.getOrders().isEmpty()) {
+//                    for (Order order : car.getOrders()) {
+//                        if (order.isActive()) {
+//                            startDate = order.getStartDate();
+//                            endDate = order.getEndDate();
+//
+//                            dates.put(startDate, endDate);
+//                        }
+//                        carDTOList.add(new CarDTO(car, dates));
+//                    }
+//                }
+//                else {
+//                    carDTOList.add(new CarDTO(car));
+//                }
+//            }
+//        }
+//        Comparator<CarDTO> priceComparator = (car1, car2) -> (int) (car1.getPricePerDay() - car2.getPricePerDay());
+//        carDTOList.sort(priceComparator);
+//        return carDTOList;
+//    }
+
     @Override
     public List<CarDTO> getAvailableCars() {
         List<CarDTO> carDTOList = new ArrayList<>();
+        List<Map<String, LocalDate>> bookedDates = new ArrayList<>();
         LocalDate startDate;
         LocalDate endDate;
+//        LocalDate today = LocalDate.now();
+
         for (Car car : carRepository.findAll()) {
             if (!car.isInService()) {
-                Map<LocalDate, LocalDate> dates = new HashMap<>();
-                if(!car.getOrders().isEmpty()) {
-                    for (Order order : car.getOrders()) {
-                        if (order.isActive()) {
-                            startDate = order.getStartDate();
-                            endDate = order.getEndDate();
-
-                            dates.put(startDate, endDate);
-                        }
-                        carDTOList.add(new CarDTO(car, dates));
+                Map<String, LocalDate> dates = new HashMap<>();
+                for (Order order : car.getOrders()) {
+                    startDate = order.getStartDate();
+                    endDate = order.getEndDate();
+                    if (order.isActive() && isValidDate(endDate)) {
+                        dates.put("startDate", startDate);
+                        dates.put("endDate", endDate);
                     }
-                }
-                else {
-                    carDTOList.add(new CarDTO(car));
+                    bookedDates.add(dates);
+                    carDTOList.add(new CarDTO(car, bookedDates));
                 }
             }
         }
-        Comparator<CarDTO> priceComparator = (car1, car2) -> (int) (car1.getPricePerDay() - car2.getPricePerDay());
-        carDTOList.sort(priceComparator);
+//        Comparator<CarDTO> priceComparator = (car1, car2) -> (int) (car1.getPricePerDay() - car2.getPricePerDay());
+//        carDTOList.sort(priceComparator);
         return carDTOList;
     }
-//LISTAR JUST NU BARA BILAR SOM INTE ÄR PÅ SERVICE!
+
+    //LISTAR JUST NU BARA BILAR SOM INTE ÄR PÅ SERVICE!
     @Override
     public List<Car> adminGetAvailableCars() {
         List<Car> cars = new ArrayList<>();
-        for(Car car : carRepository.findAll()) {
-            if(!car.isInService()) {
+        for (Car car : carRepository.findAll()) {
+            if (!car.isInService()) {
                 cars.add(car);
             }
         }
@@ -75,13 +107,13 @@ public class CarService implements CarServiceInterface {
 
     @Override
     public String addCar(Car car) {
-        for(Car existingCar : carRepository.findAll()) {
+        for (Car existingCar : carRepository.findAll()) {
             if (existingCar.getPlateNumber().equals(car.getPlateNumber())) {
                 USER_LOGGER.warn("Admin tried to add a car with a plate number that already exists.");
                 throw new ResponseStatusException(HttpStatus.CONFLICT, "PlateNumber already exists");
             }
         }
-        if(isValidCar(car)) {
+        if (isValidCar(car)) {
             carRepository.save(car);
             USER_LOGGER.info("Admin added a car with plate number {}.", car.getPlateNumber());
             return "Car added";
@@ -92,8 +124,8 @@ public class CarService implements CarServiceInterface {
 
     @Override
     public String updateCar(Car car) {
-        if(carRepository.existsById(car.getId())) {
-            if(isValidCar(car)) {
+        if (carRepository.existsById(car.getId())) {
+            if (isValidCar(car)) {
                 carRepository.save(car);
                 USER_LOGGER.info("Admin updated car with plate number {}.", car.getPlateNumber());
                 return "Car updated";
@@ -107,16 +139,16 @@ public class CarService implements CarServiceInterface {
 
     @Override
     public String removeCar(Long id) {
-        if(carRepository.existsById(id)) {
+        if (carRepository.existsById(id)) {
             Car carToRemove = carRepository.getCarById(id);
             List<Order> carOrders = carToRemove.getOrders();
             for (Order order : carOrders) {
-                if(order.isActive()) {
+                if (order.isActive()) {
                     USER_LOGGER.warn("Admin tried to remove a car that is rented by a customer");
                     throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Car is rented by a customer and can not be removed");
                 }
             }
-            if(carToRemove.isInService()) {
+            if (carToRemove.isInService()) {
                 USER_LOGGER.warn("Admin tried to remove a car that is in service");
                 throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Car is in service and can not be removed");
             }
@@ -134,5 +166,10 @@ public class CarService implements CarServiceInterface {
                 car.getBrand() != null && !car.getBrand().isEmpty() &&
                 car.getModel() != null && !car.getModel().isEmpty() &&
                 car.getPlateNumber() != null && !car.getPlateNumber().isEmpty();
+    }
+
+    private boolean isValidDate(LocalDate endDate) {
+        LocalDate currentDate = LocalDate.now();
+        return currentDate.isAfter(endDate);
     }
 }

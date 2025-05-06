@@ -2,13 +2,11 @@ package org.example.biluthyrningssystem.dto;
 
 import org.example.biluthyrningssystem.entities.Car;
 import org.example.biluthyrningssystem.entities.Order;
+import org.springframework.cglib.core.Local;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 //Ann-Louis made this class
 public class CarDTO {
@@ -16,15 +14,16 @@ public class CarDTO {
     private String brand;
     private String model;
     private double pricePerDay;
-    private Map<LocalDate, LocalDate> bookedDates;
+    private List<Map<String, LocalDate>> bookedDates;
+//    private Map<LocalDate, LocalDate> bookedDates;
 
-    public CarDTO(Car car) {
-        this.brand = car.getBrand();
-        this.model = car.getModel();
-        this.pricePerDay = car.getPricePerDay();
-    }
+//    public CarDTO(Car car) {
+//        this.brand = car.getBrand();
+//        this.model = car.getModel();
+//        this.pricePerDay = car.getPricePerDay();
+//    }
 
-    public CarDTO(Car car, Map<LocalDate, LocalDate> bookedDates) {
+    public CarDTO(Car car, List<Map<String, LocalDate>> bookedDates) {
         this.brand = car.getBrand();
         this.model = car.getModel();
         this.pricePerDay = car.getPricePerDay();
@@ -55,11 +54,11 @@ public class CarDTO {
         this.pricePerDay = pricePerDay;
     }
 
-    public Map<LocalDate, LocalDate> getBookedDates() {
+    public List<Map<String, LocalDate>> getBookedDates() {
         return bookedDates;
     }
 
-    public void setBookedDates(Map<LocalDate, LocalDate> bookedDates) {
+    public void setBookedDates(List<Map<String, LocalDate>> bookedDates) {
         this.bookedDates = bookedDates;
     }
 }
