@@ -1,16 +1,16 @@
-package org.example.biluthyrningssystem.dto;
+package org.example.biluthyrningssystem.models.vos;
 
 /**
  * @author Frida Jakobsson
  */
-public class StatisticsDTO {
+public class StatisticsVO {
     private long totalActiveOrders;
     private long totalOrders;
     private long totalRevenue;
 
-    public StatisticsDTO() { }
+    public StatisticsVO() { }
 
-    public StatisticsDTO(long totalActiveOrders, long totalOrders, long totalRevenue) {
+    public StatisticsVO(long totalActiveOrders, long totalOrders, long totalRevenue) {
         this.totalActiveOrders = totalActiveOrders;
         this.totalOrders = totalOrders;
         this.totalRevenue = totalRevenue;

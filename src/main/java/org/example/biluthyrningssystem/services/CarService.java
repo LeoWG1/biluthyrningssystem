@@ -2,9 +2,9 @@ package org.example.biluthyrningssystem.services;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.example.biluthyrningssystem.dto.CarDTO;
-import org.example.biluthyrningssystem.entities.Car;
-import org.example.biluthyrningssystem.entities.Order;
+import org.example.biluthyrningssystem.models.dtos.CarDTO;
+import org.example.biluthyrningssystem.models.entities.Car;
+import org.example.biluthyrningssystem.models.entities.Order;
 import org.example.biluthyrningssystem.exceptions.ResourceNotFoundException;
 import org.example.biluthyrningssystem.repositories.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;

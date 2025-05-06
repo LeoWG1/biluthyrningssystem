@@ -1,33 +1,34 @@
-package org.example.biluthyrningssystem.dto;
+package org.example.biluthyrningssystem.models.dtos;
 
-import org.example.biluthyrningssystem.entities.Car;
-import org.example.biluthyrningssystem.entities.Order;
-import org.springframework.cglib.core.Local;
 
-import java.io.Serializable;
+import org.example.biluthyrningssystem.models.entities.Car;
+
 import java.time.LocalDate;
 import java.util.*;
 
 //Ann-Louis made this class
 public class CarDTO {
 
+    private long id;
     private String brand;
     private String model;
     private double pricePerDay;
     private List<Map<String, LocalDate>> bookedDates;
-//    private Map<LocalDate, LocalDate> bookedDates;
-
-//    public CarDTO(Car car) {
-//        this.brand = car.getBrand();
-//        this.model = car.getModel();
-//        this.pricePerDay = car.getPricePerDay();
-//    }
 
     public CarDTO(Car car, List<Map<String, LocalDate>> bookedDates) {
+        this.id = car.getId();
         this.brand = car.getBrand();
         this.model = car.getModel();
         this.pricePerDay = car.getPricePerDay();
         this.bookedDates = bookedDates;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getBrand() {
