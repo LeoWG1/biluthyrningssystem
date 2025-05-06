@@ -62,30 +62,33 @@ public class CarService implements CarServiceInterface {
 
     @Override
     public List<CarDTO> getAvailableCars() {
-        List<CarDTO> carDTOList = new ArrayList<>();
+        List<CarDTO> carList = new ArrayList<>();
         List<Map<String, LocalDate>> bookedDates = new ArrayList<>();
         LocalDate startDate;
         LocalDate endDate;
-//        LocalDate today = LocalDate.now();
+        LocalDate currentDate = LocalDate.now();
+
 
         for (Car car : carRepository.findAll()) {
             if (!car.isInService()) {
-                Map<String, LocalDate> dates = new HashMap<>();
-                for (Order order : car.getOrders()) {
-                    startDate = order.getStartDate();
-                    endDate = order.getEndDate();
-                    if (order.isActive() && isValidDate(endDate)) {
-                        dates.put("startDate", startDate);
-                        dates.put("endDate", endDate);
+                if(!car.getOrders().isEmpty()) {
+                    for (Order order : car.getOrders()) {
+                        startDate = order.getStartDate();
+                        endDate = order.getEndDate();
+                        if (currentDate.isBefore(endDate)) {
+                            Map<String, LocalDate> dates = new HashMap<>();
+                            dates.put("endDate", endDate);
+                            dates.put("startDate", startDate);
+                            bookedDates.add(dates);
+                        }
                     }
-                    bookedDates.add(dates);
-                    carDTOList.add(new CarDTO(car, bookedDates));
                 }
             }
+            carList.add(new CarDTO(car, bookedDates));
         }
 //        Comparator<CarDTO> priceComparator = (car1, car2) -> (int) (car1.getPricePerDay() - car2.getPricePerDay());
 //        carDTOList.sort(priceComparator);
-        return carDTOList;
+        return carList;
     }
 
     //LISTAR JUST NU BARA BILAR SOM INTE ÄR PÅ SERVICE!
@@ -170,6 +173,6 @@ public class CarService implements CarServiceInterface {
 
     private boolean isValidDate(LocalDate endDate) {
         LocalDate currentDate = LocalDate.now();
-        return currentDate.isAfter(endDate);
+        return currentDate.isBefore(endDate);
     }
 }
