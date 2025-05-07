@@ -68,7 +68,7 @@ class CarServiceTest {
     }
 
     @Test
-    void addCar() {
+    void addCarShouldAddCar() {
     }
 
     @Test
