@@ -31,21 +31,27 @@ public class CarService implements CarServiceInterface {
     @Override
     public List<CarDTO> getAvailableCars() {
         List<CarDTO> carDTOList = new ArrayList<>();
-        LocalDate startDate;
-        LocalDate endDate;
+
+        // Loop through all cars NOT in service
         for (Car car : carRepository.findAll()) {
             if (!car.isInService()) {
-                Map<LocalDate, LocalDate> dates = new HashMap<>();
-                if(!car.getOrders().isEmpty()) {
-                    for (Order order : car.getOrders()) {
-                        if (order.isActive()) {
-                            startDate = order.getStartDate();
-                            endDate = order.getEndDate();
+                List<Map<String, LocalDate>> allBookedDates = new ArrayList<>();
 
-                            dates.put(startDate, endDate);
-                        }
-                        carDTOList.add(new CarDTO(car, dates));
+                for (Order order : car.getOrders()) {
+                    if (order.isActive()) {
+                        Map<String, LocalDate> mapStartDate = new HashMap<>();
+                        mapStartDate.put("startDate", order.getStartDate());
+
+                        Map<String, LocalDate> mapEndDate = new HashMap<>();
+                        mapEndDate.put("endDate", order.getEndDate());
+
+                        allBookedDates.add(mapStartDate);
+                        allBookedDates.add(mapEndDate);
                     }
+                }
+
+                if (!allBookedDates.isEmpty()) {
+                    carDTOList.add(new CarDTO(car, allBookedDates));
                 }
                 else {
                     carDTOList.add(new CarDTO(car));
