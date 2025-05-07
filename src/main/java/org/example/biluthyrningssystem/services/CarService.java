@@ -35,16 +35,23 @@ public class CarService implements CarServiceInterface {
         LocalDate endDate;
         for (Car car : carRepository.findAll()) {
             if (!car.isInService()) {
-                Map<LocalDate, LocalDate> dates = new HashMap<>();
+                List<Map<String, LocalDate>> allBookedDates = new ArrayList<>();
                 if(!car.getOrders().isEmpty()) {
                     for (Order order : car.getOrders()) {
                         if (order.isActive()) {
                             startDate = order.getStartDate();
                             endDate = order.getEndDate();
 
-                            dates.put(startDate, endDate);
+                            Map<String, LocalDate> mapStartDate = new HashMap<>();
+                            mapStartDate.put("startDate", startDate);
+
+                            Map<String, LocalDate> mapEndDate = new HashMap<>();
+                            mapEndDate.put("endDate", endDate);
+
+                            allBookedDates.add(mapStartDate);
+                            allBookedDates.add(mapEndDate);
                         }
-                        carDTOList.add(new CarDTO(car, dates));
+                        carDTOList.add(new CarDTO(car, allBookedDates));
                     }
                 }
                 else {

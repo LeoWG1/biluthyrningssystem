@@ -3,6 +3,7 @@ package org.example.biluthyrningssystem.models.dtos;
 import org.example.biluthyrningssystem.models.entities.Car;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Map;
 
 //Ann-Louis made this class
@@ -11,7 +12,7 @@ public class CarDTO {
     private String brand;
     private String model;
     private double pricePerDay;
-    private Map<LocalDate, LocalDate> bookedDates;
+    private List<Map<String, LocalDate>> bookedDates;
 
     public CarDTO(Car car) {
         this.brand = car.getBrand();
@@ -19,7 +20,7 @@ public class CarDTO {
         this.pricePerDay = car.getPricePerDay();
     }
 
-    public CarDTO(Car car, Map<LocalDate, LocalDate> bookedDates) {
+    public CarDTO(Car car, List<Map<String, LocalDate>> bookedDates) {
         this.brand = car.getBrand();
         this.model = car.getModel();
         this.pricePerDay = car.getPricePerDay();
@@ -50,11 +51,11 @@ public class CarDTO {
         this.pricePerDay = pricePerDay;
     }
 
-    public Map<LocalDate, LocalDate> getBookedDates() {
+    public List<Map<String, LocalDate>> getBookedDates() {
         return bookedDates;
     }
 
-    public void setBookedDates(Map<LocalDate, LocalDate> bookedDates) {
+    public void setBookedDates(List<Map<String, LocalDate>> bookedDates) {
         this.bookedDates = bookedDates;
     }
 }
