@@ -58,20 +58,7 @@ public class CarService implements CarServiceInterface {
                 }
             }
         }
-        Comparator<CarDTO> priceComparator = (car1, car2) -> (int) (car1.getPricePerDay() - car2.getPricePerDay());
-        carDTOList.sort(priceComparator);
         return carDTOList;
-    }
-//LISTAR JUST NU BARA BILAR SOM INTE ÄR PÅ SERVICE!
-    @Override
-    public List<Car> adminGetAvailableCars() {
-        List<Car> cars = new ArrayList<>();
-        for(Car car : carRepository.findAll()) {
-            if(!car.isInService()) {
-                cars.add(car);
-            }
-        }
-        return cars;
     }
 
     @Override

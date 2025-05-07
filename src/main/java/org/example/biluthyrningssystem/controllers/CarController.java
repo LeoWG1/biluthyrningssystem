@@ -27,8 +27,8 @@ public class CarController {
     }
 
     @GetMapping("/admin/cars")
-    public ResponseEntity<List<Car>> adminGetAvailableCars() {
-        return ResponseEntity.ok(carService.adminGetAvailableCars());
+    public ResponseEntity<List<CarDTO>> adminGetAvailableCars() {
+        return ResponseEntity.ok(carService.getAvailableCars());
     }
 
     @GetMapping("/admin/allcars")
