@@ -63,9 +63,7 @@ public class CarService implements CarServiceInterface {
     @Override
     public List<CarDTO> getAvailableCars() {
         List<CarDTO> carList = new ArrayList<>();
-        List<Map<String, LocalDate>> bookedDates = new ArrayList<>();
-        LocalDate startDate;
-        LocalDate endDate;
+        List<Map<String, String>> bookedDates = new ArrayList<>();
         LocalDate currentDate = LocalDate.now();
 
 
@@ -73,34 +71,61 @@ public class CarService implements CarServiceInterface {
             if (!car.isInService()) {
                 if(!car.getOrders().isEmpty()) {
                     for (Order order : car.getOrders()) {
-                        startDate = order.getStartDate();
-                        endDate = order.getEndDate();
+                        String startDate = order.getStartDate().toString();
+                        String endDateString = order.getEndDate().toString();
+                        LocalDate endDate = order.getEndDate();
                         if (currentDate.isBefore(endDate)) {
-                            Map<String, LocalDate> dates = new HashMap<>();
-                            dates.put("endDate", endDate);
+                            Map<String, String> dates = new HashMap<>();
+                            dates.put("endDate", endDateString);
                             dates.put("startDate", startDate);
                             bookedDates.add(dates);
                         }
+                        else {
+                            Map<String, String> noDates = new HashMap<>();
+                            noDates.put("endDate", null);
+                            noDates.put("startDate", null);
+                            bookedDates.add(noDates);
+                        }
                     }
                 }
+                carList.add(new CarDTO(car, bookedDates));
             }
-            carList.add(new CarDTO(car, bookedDates));
         }
-//        Comparator<CarDTO> priceComparator = (car1, car2) -> (int) (car1.getPricePerDay() - car2.getPricePerDay());
-//        carDTOList.sort(priceComparator);
         return carList;
     }
 
-    //LISTAR JUST NU BARA BILAR SOM INTE ÄR PÅ SERVICE!
+    //LISTAR JUST NU BARA BILAR SOM INTE ÄR PÅ SERVICE! //TESTAR
     @Override
-    public List<Car> adminGetAvailableCars() {
-        List<Car> cars = new ArrayList<>();
+    public List<CarDTO> adminGetAvailableCars() {
+        List<CarDTO> carDTOList = new ArrayList<>();
+        List<Map<String, String>> bookedDates = new ArrayList<>();
+        Map<String, String> dates = new HashMap<>();
+        String startDateString;
+        String endDateString;
+
         for (Car car : carRepository.findAll()) {
             if (!car.isInService()) {
-                cars.add(car);
+                for(Order order : car.getOrders()) {
+                    LocalDate endDate = order.getEndDate();
+                    if (isValidDate(endDate)) {
+                        startDateString = order.getStartDate().toString();
+                        endDateString = order.getEndDate().toString();
+                        dates.put("startDate", startDateString);
+                        dates.put("endDate", endDateString);
+                        bookedDates.add(dates);
+                    }
+                    else {
+                        dates.put("startDate", null);
+                        dates.put("endDate", null);
+                        bookedDates.add(dates);
+                    }
+//                    bookedDates.add(dates);
+                }
+//                bookedDates.add(dates);
+                carDTOList.add(new CarDTO(car, bookedDates));
             }
         }
-        return cars;
+        return carDTOList;
     }
 
     @Override

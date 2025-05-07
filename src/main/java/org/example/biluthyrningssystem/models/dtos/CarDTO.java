@@ -2,9 +2,7 @@ package org.example.biluthyrningssystem.models.dtos;
 
 
 import org.example.biluthyrningssystem.models.entities.Car;
-import org.springframework.cglib.core.Local;
 
-import java.time.LocalDate;
 import java.util.*;
 
 //Ann-Louis made this class
@@ -14,9 +12,9 @@ public class CarDTO {
     private String brand;
     private String model;
     private double pricePerDay;
-    private List<Map<String, LocalDate>> bookedDates;
+    private List<Map<String, String>> bookedDates;
 
-    public CarDTO(Car car, List<Map<String, LocalDate>> bookedDates) {
+    public CarDTO(Car car, List<Map<String, String>> bookedDates) {
         this.id = car.getId();
         this.brand = car.getBrand();
         this.model = car.getModel();
@@ -56,11 +54,11 @@ public class CarDTO {
         this.pricePerDay = pricePerDay;
     }
 
-    public List<Map<String, LocalDate>> getBookedDates() {
+    public List<Map<String, String>> getBookedDates() {
         return bookedDates;
     }
 
-    public void setBookedDates(List<Map<String, LocalDate>> bookedDates) {
+    public void setBookedDates(List<Map<String, String>> bookedDates) {
         this.bookedDates = bookedDates;
     }
 }

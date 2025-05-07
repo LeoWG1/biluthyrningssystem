@@ -9,7 +9,7 @@ import java.util.List;
 public interface CarServiceInterface {
 
     List<CarDTO> getAvailableCars();
-    List<Car> adminGetAvailableCars();
+    List<CarDTO> adminGetAvailableCars();
     List<Car> getAllCars();
     String addCar(Car car);
     String updateCar(Car car);
