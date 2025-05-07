@@ -1,7 +1,7 @@
 package org.example.biluthyrningssystem.repositories;
 
 
-import org.example.biluthyrningssystem.entities.Car;
+import org.example.biluthyrningssystem.models.entities.Car;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

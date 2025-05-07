@@ -1,19 +1,19 @@
-package org.example.biluthyrningssystem.dto;
+package org.example.biluthyrningssystem.models.vos;
 
 import java.time.LocalDate;
 
 /**
  * @author Frida Jakobsson
  */
-public class CarStatisticsDTO {
+public class CarStatisticsVO {
     private long totalActiveOrders;
     private long totalOrders;
     private long totalRevenue;
     private LocalDate latestOrder;
 
-    public CarStatisticsDTO() { }
+    public CarStatisticsVO() { }
 
-    public CarStatisticsDTO(long totalActiveOrders, long totalOrders, long totalRevenue, LocalDate latestOrder) {
+    public CarStatisticsVO(long totalActiveOrders, long totalOrders, long totalRevenue, LocalDate latestOrder) {
         this.totalActiveOrders = totalActiveOrders;
         this.totalOrders = totalOrders;
         this.totalRevenue = totalRevenue;

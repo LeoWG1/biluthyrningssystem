@@ -1,4 +1,4 @@
-package org.example.biluthyrningssystem.entities;
+package org.example.biluthyrningssystem.models.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;

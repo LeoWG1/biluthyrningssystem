@@ -1,6 +1,6 @@
 package org.example.biluthyrningssystem.controllers;
 
-import org.example.biluthyrningssystem.entities.Customer;
+import org.example.biluthyrningssystem.models.entities.Customer;
 import org.example.biluthyrningssystem.services.CustomerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

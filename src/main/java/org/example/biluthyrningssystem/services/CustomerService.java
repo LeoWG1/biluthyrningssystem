@@ -2,7 +2,7 @@ package org.example.biluthyrningssystem.services;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.example.biluthyrningssystem.entities.Customer;
+import org.example.biluthyrningssystem.models.entities.Customer;
 import org.example.biluthyrningssystem.exceptions.ResourceNotFoundException;
 import org.example.biluthyrningssystem.exceptions.UnalterableFieldException;
 import org.example.biluthyrningssystem.repositories.CustomerRepository;
@@ -18,7 +18,7 @@ import java.util.List;
 public class CustomerService implements CustomerServiceInterface { // Entire class made by Leo
 
     private final CustomerRepository customerRepository;
-    private static final Logger LOGGER = LogManager.getLogger(CustomerService.class);
+    private static final Logger LOGGER = LogManager.getLogger("userlog");
 
     public CustomerService(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
