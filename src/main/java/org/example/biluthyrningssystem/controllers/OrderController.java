@@ -1,8 +1,11 @@
 package org.example.biluthyrningssystem.controllers;
 
-import org.example.biluthyrningssystem.models.vos.CarStatisticsVO;
-import org.example.biluthyrningssystem.models.vos.StatisticsVO;
+import org.example.biluthyrningssystem.exceptions.ResourceNotFoundException;
+import org.example.biluthyrningssystem.models.dtos.CarStatisticsDTO;
+import org.example.biluthyrningssystem.models.dtos.StatisticsDTO;
+import org.example.biluthyrningssystem.models.entities.Customer;
 import org.example.biluthyrningssystem.models.entities.Order;
+import org.example.biluthyrningssystem.repositories.CustomerRepository;
 import org.example.biluthyrningssystem.services.CustomerService;
 import org.example.biluthyrningssystem.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,10 +26,12 @@ import java.util.List;
 public class OrderController {
 
     private final OrderService orderService;
+    private final CustomerRepository customerRepository;
 
     @Autowired
-    public OrderController(OrderService orderService, CustomerService customerService) {
+    public OrderController(OrderService orderService, CustomerRepository customerRepository) {
         this.orderService = orderService;
+        this.customerRepository = customerRepository;
     }
 
     /*
@@ -46,10 +51,11 @@ public class OrderController {
 
     @PostMapping("/addorder")
     public ResponseEntity<?> addOrder(@RequestBody Order order, Principal principal) {
-        if (!(principal.getName().equals(order.getCustomer().getSocialSecurityNumber()))) {
-            return ResponseEntity.status(HttpStatus.FORBIDDEN)
-                    .body("Unable to place orders for other users");
-        }
+        String username = principal.getName();
+        Customer customer = customerRepository.findCustomerBySocialSecurityNumber(username)
+                .orElseThrow(() -> new ResourceNotFoundException("Customer", "Username", username));
+
+        order.setCustomer(customer);
         return new ResponseEntity<>(orderService.createOrder(order), HttpStatus.CREATED);
     }
 
@@ -91,12 +97,12 @@ public class OrderController {
     }
 
     @GetMapping("/admin/statistics")
-    public ResponseEntity<StatisticsVO> showStatistics() {
+    public ResponseEntity<StatisticsDTO> showStatistics() {
         return ResponseEntity.ok(orderService.getStatistics());
     }
 
     @GetMapping("/admin/statistics/{id}")
-    public ResponseEntity<CarStatisticsVO> showCarStatistics(@PathVariable ("id") long id) {
+    public ResponseEntity<CarStatisticsDTO> showCarStatistics(@PathVariable ("id") long id) {
         return ResponseEntity.ok(orderService.getCarStatistics(id));
     }
 }

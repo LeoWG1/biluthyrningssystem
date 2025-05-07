@@ -3,8 +3,8 @@ package org.example.biluthyrningssystem.services;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import jakarta.transaction.Transactional;
-import org.example.biluthyrningssystem.models.vos.CarStatisticsVO;
-import org.example.biluthyrningssystem.models.vos.StatisticsVO;
+import org.example.biluthyrningssystem.models.dtos.CarStatisticsDTO;
+import org.example.biluthyrningssystem.models.dtos.StatisticsDTO;
 import org.example.biluthyrningssystem.models.entities.Car;
 import org.example.biluthyrningssystem.models.entities.Order;
 import org.example.biluthyrningssystem.exceptions.ResourceNotFoundException;
@@ -71,11 +71,20 @@ public class OrderService implements OrderServiceInterface {
     @Override
     @Transactional // Cancels entire process if anything goes wrong
     public Order createOrder(Order order) {
-        // Check if car exists
+        // Check if dates are valid and availability of car
+        LocalDate today = LocalDate.now();
+
+        if (order.getStartDate().isBefore(today)) {
+            throw new IllegalArgumentException("Start date must be today or in the future");
+        }
+
+        if (order.getEndDate().isBefore(order.getStartDate())) {
+            throw new IllegalArgumentException("End date must be after start date");
+        }
+
         Car car = carRepository.findById(order.getCar().getId())
                 .orElseThrow(() -> new ResourceNotFoundException("Car", "id", order.getCar().getId()));
 
-        // Check if car is available for the dates
         List<Order> conflictingOrders = orderRepository.findActiveOrdersWithin(
                 car.getId(),
                 order.getStartDate(),
@@ -123,7 +132,7 @@ public class OrderService implements OrderServiceInterface {
     }
 
     @Override
-    public StatisticsVO getStatistics() {
+    public StatisticsDTO getStatistics() {
         List<Order> allOrders = orderRepository.findAll();
 
         long totalOrders = allOrders.size();
@@ -136,11 +145,11 @@ public class OrderService implements OrderServiceInterface {
                 .mapToLong(Order::getPrice)
                 .sum();
 
-        return new StatisticsVO(totalActiveOrders, totalOrders, totalRevenue);
+        return new StatisticsDTO(totalActiveOrders, totalOrders, totalRevenue);
     }
 
     @Override
-    public CarStatisticsVO getCarStatistics(long id) {
+    public CarStatisticsDTO getCarStatistics(long id) {
         List<Order> relevantOrders = orderRepository.findByCarId(id);
 
         long totalOrders = relevantOrders.size();
@@ -158,6 +167,6 @@ public class OrderService implements OrderServiceInterface {
                 .max(Comparator.naturalOrder())
                 .orElse(null);
 
-        return new CarStatisticsVO(totalActiveOrders, totalOrders, totalRevenue, latestOrder);
+        return new CarStatisticsDTO(totalActiveOrders, totalOrders, totalRevenue, latestOrder);
     }
 }
