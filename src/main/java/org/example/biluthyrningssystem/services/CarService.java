@@ -112,8 +112,8 @@ public class CarService implements CarServiceInterface {
             List<Order> carOrders = carToRemove.getOrders();
             for (Order order : carOrders) {
                 if(order.isActive()) {
-                    USER_LOGGER.warn("Admin tried to remove a car that is rented by a customer");
-                    throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Car is rented by a customer and can not be removed");
+                    USER_LOGGER.warn("Admin tried to remove a car that has active orders");
+                    throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Car has active orders and can not be removed");
                 }
             }
             if(carToRemove.isInService()) {
