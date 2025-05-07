@@ -67,7 +67,7 @@ public class CarService implements CarServiceInterface {
     }
 
     @Override
-    public String addCar(Car car) {
+    public Car addCar(Car car) {
         for(Car existingCar : carRepository.findAll()) {
             if (existingCar.getPlateNumber().equals(car.getPlateNumber())) {
                 USER_LOGGER.warn("Admin tried to add a car with a plate number that already exists.");
@@ -77,7 +77,6 @@ public class CarService implements CarServiceInterface {
         if(isValidCar(car)) {
             carRepository.save(car);
             USER_LOGGER.info("Admin added a car with plate number {}.", car.getPlateNumber());
-            return "Car added";
         }
         USER_LOGGER.warn("Admin tried to add a car with invalid data.");
         throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Missing some data.");

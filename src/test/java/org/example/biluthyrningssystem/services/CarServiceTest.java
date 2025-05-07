@@ -26,7 +26,6 @@ class CarServiceTest {
 
     private CarService carService;
     private CarRepository carRepository;
-    private Car car;
 
     @Autowired
     private CustomerRepository customerRepository;
@@ -37,22 +36,8 @@ class CarServiceTest {
         this.carRepository = carRepository;
     }
 
-//    @BeforeEach
-//    void setUp() {
-//        car.setId(1L);
-//        car.setModel("BMW");
-//        car.setBrand("520");
-//        car.setPlateNumber("PRE580");
-//        car.setPricePerDay(990.0);
-//        car.setInService(true);
-//    }
-
     @Test
     void getAvailableCars() {
-    }
-
-    @Test
-    void adminGetAvailableCars() {
     }
 
     @Test
@@ -69,6 +54,13 @@ class CarServiceTest {
 
     @Test
     void addCarShouldAddCar() {
+//
+//        Car car = new Car(990.0,"BMW","520","PRE580",false);
+//
+//        Car addedCar = carRepository.save(car);
+//        Car newCar = carService.addCar(car);
+//
+//        assertNotEquals(addedCar.getPlateNumber(),newCar.getPlateNumber());
     }
 
     @Test
