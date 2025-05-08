@@ -10,7 +10,7 @@ public interface CarServiceInterface {
 
     List<CarDTO> getAvailableCars();
     List<Car> getAllCars();
-    Car addCar(Car car);
+    String addCar(Car car);
     String updateCar(Car car);
     String removeCar(long id);
 }

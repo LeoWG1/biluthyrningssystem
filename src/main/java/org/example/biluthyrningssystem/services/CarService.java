@@ -36,24 +36,23 @@ public class CarService implements CarServiceInterface {
         for (Car car : carRepository.findAll()) {
             if (!car.isInService()) {
                 List<Map<String, LocalDate>> allBookedDates = new ArrayList<>();
+                if(car.getOrders() != null) { //testar
+                    for (Order order : car.getOrders()) {
+                        if (order.isActive()) {
+                            Map<String, LocalDate> mapStartDate = new HashMap<>();
+                            mapStartDate.put("startDate", order.getStartDate());
 
-                for (Order order : car.getOrders()) {
-                    if (order.isActive()) {
-                        Map<String, LocalDate> mapStartDate = new HashMap<>();
-                        mapStartDate.put("startDate", order.getStartDate());
+                            Map<String, LocalDate> mapEndDate = new HashMap<>();
+                            mapEndDate.put("endDate", order.getEndDate());
 
-                        Map<String, LocalDate> mapEndDate = new HashMap<>();
-                        mapEndDate.put("endDate", order.getEndDate());
-
-                        allBookedDates.add(mapStartDate);
-                        allBookedDates.add(mapEndDate);
+                            allBookedDates.add(mapStartDate);
+                            allBookedDates.add(mapEndDate);
+                        }
                     }
-                }
-
+                } //testar
                 if (!allBookedDates.isEmpty()) {
                     carDTOList.add(new CarDTO(car, allBookedDates));
-                }
-                else {
+                } else {
                     carDTOList.add(new CarDTO(car));
                 }
             }
@@ -67,19 +66,22 @@ public class CarService implements CarServiceInterface {
     }
 
     @Override
-    public Car addCar(Car car) {
-        for(Car existingCar : carRepository.findAll()) {
+    public String addCar(Car car) {
+        for (Car existingCar : carRepository.findAll()) {
             if (existingCar.getPlateNumber().equals(car.getPlateNumber())) {
                 USER_LOGGER.warn("Admin tried to add a car with a plate number that already exists.");
                 throw new ResponseStatusException(HttpStatus.CONFLICT, "PlateNumber already exists");
             }
         }
-        if(isValidCar(car)) {
+        if (isValidCar(car)) {
             carRepository.save(car);
             USER_LOGGER.info("Admin added a car with plate number {}.", car.getPlateNumber());
+            return "Car added";
         }
-        USER_LOGGER.warn("Admin tried to add a car with invalid data.");
-        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Missing some data.");
+        else {
+            USER_LOGGER.warn("Admin tried to add a car with invalid data.");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Missing some data.");
+        }
     }
 
     @Override
@@ -102,10 +104,12 @@ public class CarService implements CarServiceInterface {
         if(carRepository.existsById(id)) {
             Car carToRemove = carRepository.getCarById(id);
             List<Order> carOrders = carToRemove.getOrders();
-            for (Order order : carOrders) {
-                if(order.isActive()) {
-                    USER_LOGGER.warn("Admin tried to remove a car that has active orders");
-                    throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Car has active orders and can not be removed");
+            if(carOrders != null) { //testar
+                for (Order order : carOrders) {
+                    if (order.isActive()) {
+                        USER_LOGGER.warn("Admin tried to remove a car that has active orders");
+                        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Car has active orders and can not be removed");
+                    }
                 }
             }
             if(carToRemove.isInService()) {

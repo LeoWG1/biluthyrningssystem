@@ -1,6 +1,7 @@
 package org.example.biluthyrningssystem.services;
 
 import jakarta.transaction.Transactional;
+import org.example.biluthyrningssystem.models.dtos.CarDTO;
 import org.example.biluthyrningssystem.models.entities.Car;
 import org.example.biluthyrningssystem.repositories.CarRepository;
 import org.example.biluthyrningssystem.repositories.CustomerRepository;
@@ -27,8 +28,6 @@ class CarServiceTest {
     private CarService carService;
     private CarRepository carRepository;
 
-    @Autowired
-    private CustomerRepository customerRepository;
 
     @Autowired
     public CarServiceTest(CarService carService, CarRepository carRepository) {
@@ -38,6 +37,15 @@ class CarServiceTest {
 
     @Test
     void getAvailableCars() {
+
+//        Car carNotInService = new Car(990.0, "BMW", "520", "PRE580", false);
+////        Car carOnService = new Car(1100.0, "Audi", "A6", "AUD113", true);
+//
+//        Car savedCar = carRepository.save(carNotInService);
+//        CarDTO carNotInServiceDTO = new CarDTO(savedCar);
+//        List<CarDTO> cars = carService.getAvailableCars();
+//
+//        assertThat(cars.contains(carNotInServiceDTO)).isTrue();
     }
 
     @Test
@@ -54,22 +62,37 @@ class CarServiceTest {
 
     @Test
     void addCarShouldAddCar() {
-//
-//        Car car = new Car(990.0,"BMW","520","PRE580",false);
-//
-//        Car addedCar = carRepository.save(car);
-//        Car newCar = carService.addCar(car);
-//
-//        assertNotEquals(addedCar.getPlateNumber(),newCar.getPlateNumber());
+
+        Car car = new Car(990.0,"BMW","520","PRE580",false);
+
+        carService.addCar(car);
+        List<Car> cars = carRepository.findAll();
+
+        assertThat(cars.contains(car)).isTrue();
     }
 
     @Test
-    void updateCar() {
+    void updateCarShouldUpdateCar() {
+
+        Car car = new Car(990.0,"BMW","520","PRE580",false);
+        carService.addCar(car);
+        car.setModel("525i");
+        carService.updateCar(car);
+        List<Car> cars = carRepository.findAll();
+
+        assertThat(cars.contains(car)).isTrue();
     }
 
-    //REMOVE CAR METHOD TESTING
     @Test
     void removeCarWhenIdExistsShouldRemoveCar() {
+
+        Car car = new Car(990.0,"BMW","520","PRE580",false);
+
+        Car carToRemove = carRepository.save(car);
+        carService.removeCar(carToRemove.getId());
+        List<Car> cars = carRepository.findAll();
+
+        assertThat(cars.contains(car)).isFalse();
     }
 
     @Test
