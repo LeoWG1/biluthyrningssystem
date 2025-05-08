@@ -27,7 +27,9 @@ public class OrderService implements OrderServiceInterface {
 
     private final OrderRepository orderRepository;
     private final CarRepository carRepository;
-    private static final Logger ORDER_LOGGER = LogManager.getLogger("OrderService Logger");
+    private static final Logger ORDER_LOGGER = LogManager.getLogger("userlog");
+
+    // Logger messages added by Leo
 
     @Autowired
     public OrderService(OrderRepository orderRepository, CarRepository carRepository) {
@@ -75,15 +77,20 @@ public class OrderService implements OrderServiceInterface {
         LocalDate today = LocalDate.now();
 
         if (order.getStartDate().isBefore(today)) {
+            ORDER_LOGGER.warn("USER attempted and failed to create new order due to unavailable start date");
             throw new IllegalArgumentException("Start date must be today or in the future");
         }
 
         if (order.getEndDate().isBefore(order.getStartDate())) {
+            ORDER_LOGGER.warn("USER attempted and failed to create new order due to unavailable end date");
             throw new IllegalArgumentException("End date must be after start date");
         }
 
         Car car = carRepository.findById(order.getCar().getId())
-                .orElseThrow(() -> new ResourceNotFoundException("Car", "id", order.getCar().getId()));
+                .orElseThrow(() -> {
+                    ORDER_LOGGER.error("USER attempted to create new order with non-existent car. ID: {}", order.getCar().getId());
+                    return new ResourceNotFoundException("Car", "ID not found", order.getCar().getId());
+                });
 
         List<Order> conflictingOrders = orderRepository.findActiveOrdersWithin(
                 car.getId(),
@@ -92,6 +99,7 @@ public class OrderService implements OrderServiceInterface {
         );
 
         if (!conflictingOrders.isEmpty()) {
+            ORDER_LOGGER.error("USER attempted to create new order with unavailable car");
             throw new IllegalStateException("Car isn't available during the selected dates");
         }
 
@@ -104,29 +112,41 @@ public class OrderService implements OrderServiceInterface {
         order.setActive(true);
         order.setCar(car);
 
+        ORDER_LOGGER.info("USER has created new order with car ID: {}", order.getCar().getId());
+
         return orderRepository.save(order);
     }
 
     @Override
     public void removeOrderById(long id) {
-        orderRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Order", "id", id));
+        orderRepository.findById(id).orElseThrow(() -> {
+            ORDER_LOGGER.error("ADMIN attempted to remove non-existent order with ID: {}", id);
+            return new ResourceNotFoundException("Order", "ID not found", id);
+        });
         orderRepository.deleteById(id);
+        ORDER_LOGGER.info("ADMIN has removed order with ID: {}", id);
     }
 
     @Override
     public void removeOrderBeforeDate(LocalDate date) {
         List<Order> orders = orderRepository.findByEndDateBefore(date);
         orderRepository.deleteAll(orders);
+        ORDER_LOGGER.info("ADMIN has removed all orders before date: {}", date);
     }
 
     @Override
     public Order cancelOrder(long id) {
         Order order = orderRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Order", "id", id));
+                .orElseThrow(() -> {
+                    ORDER_LOGGER.error("USER attempted to cancel non-existent order with ID: {}", id);
+                    return new ResourceNotFoundException("Order", "id", id);
+                });
 
         order.setActive(false);
         Car car = order.getCar();
         carRepository.save(car);
+
+        ORDER_LOGGER.info("USER has cancelled order with ID: {}", id);
 
         return orderRepository.save(order);
     }
