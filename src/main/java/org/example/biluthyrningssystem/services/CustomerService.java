@@ -58,7 +58,7 @@ public class CustomerService implements CustomerServiceInterface { // Entire cla
         String user = principal.getName();
 
         Customer existingCustomer = customerRepository.findById(updatedCustomer.getId())
-                .orElseThrow(() -> new ResourceNotFoundException("Customer", "id", updatedCustomer.getId()));
+                .orElseThrow(() -> new ResourceNotFoundException("Customer", "ID not found", updatedCustomer.getId()));
 
         if(!existingCustomer.getSocialSecurityNumber().equals(user)){
             LOGGER.warn("Unauthorized USER attempted and failed to change customer with ID: '{}'", existingCustomer.getId());
