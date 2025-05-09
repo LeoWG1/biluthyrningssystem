@@ -10,25 +10,28 @@ import java.util.Map;
 public class CarDTO {
 
     private long id;
+    private double pricePerDay;
     private String brand;
     private String model;
-    private double pricePerDay;
+    private String plateNumber;
     private boolean inService;
     private List<Map<String, LocalDate>> bookedDates;
 
     public CarDTO(Car car) {
         this.id = car.getId();
+        this.pricePerDay = car.getPricePerDay();
         this.brand = car.getBrand();
         this.model = car.getModel();
-        this.pricePerDay = car.getPricePerDay();
+        this.plateNumber = car.getPlateNumber();
         this.inService = car.isInService();
     }
 
     public CarDTO(Car car, List<Map<String, LocalDate>> bookedDates) {
         this.id = car.getId();
+        this.pricePerDay = car.getPricePerDay();
         this.brand = car.getBrand();
         this.model = car.getModel();
-        this.pricePerDay = car.getPricePerDay();
+        this.plateNumber = car.getPlateNumber();
         this.inService = car.isInService();
         this.bookedDates = bookedDates;
     }
@@ -39,6 +42,14 @@ public class CarDTO {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public double getPricePerDay() {
+        return pricePerDay;
+    }
+
+    public void setPricePerDay(double pricePerDay) {
+        this.pricePerDay = pricePerDay;
     }
 
     public String getBrand() {
@@ -57,12 +68,12 @@ public class CarDTO {
         this.model = model;
     }
 
-    public double getPricePerDay() {
-        return pricePerDay;
+    public String getPlateNumber() {
+        return plateNumber;
     }
 
-    public void setPricePerDay(double pricePerDay) {
-        this.pricePerDay = pricePerDay;
+    public void setPlateNumber(String plateNumber) {
+        this.plateNumber = plateNumber;
     }
 
     public boolean isInService() {

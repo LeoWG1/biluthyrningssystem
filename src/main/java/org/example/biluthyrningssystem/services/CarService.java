@@ -92,11 +92,15 @@ public class CarService implements CarServiceInterface {
                 USER_LOGGER.info("Admin updated car with plate number {}.", car.getPlateNumber());
                 return "Car updated";
             }
-            USER_LOGGER.warn("Admin tried to update a car with invalid data.");
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Missing some data.");
+            else {
+                USER_LOGGER.warn("Admin tried to update a car with invalid data.");
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Missing some data.");
+            }
         }
-        USER_LOGGER.warn("Admin tried to update a car that does not exist.");
-        throw new ResourceNotFoundException("Car", "id", car.getId());
+        else {
+            USER_LOGGER.warn("Admin tried to update a car that does not exist.");
+            throw new ResourceNotFoundException("Car", "ID not found", car.getId());
+        }
     }
 
     @Override
@@ -116,13 +120,16 @@ public class CarService implements CarServiceInterface {
                 USER_LOGGER.warn("Admin tried to remove a car that is in service");
                 throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Car is in service and can not be removed");
             }
-
-            carRepository.deleteById(id);
-            USER_LOGGER.info("Admin removed car with plate number {}.", carToRemove.getPlateNumber());
-            return "Car removed";
+            else {
+                carRepository.deleteById(id);
+                USER_LOGGER.info("Admin removed car with plate number {}.", carToRemove.getPlateNumber());
+                return "Car removed";
+            }
         }
-        USER_LOGGER.warn("Admin tried to remove a car that does not exist.");
-        throw new ResourceNotFoundException("Car", "id", id);
+        else {
+            USER_LOGGER.warn("Admin tried to remove a car that does not exist.");
+            throw new ResourceNotFoundException("Car", "ID not found", id);
+        }
     }
 
     private boolean isValidCar(Car car) {

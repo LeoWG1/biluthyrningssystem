@@ -1,6 +1,7 @@
 package org.example.biluthyrningssystem.controllers;
 
 import jakarta.transaction.Transactional;
+import org.example.biluthyrningssystem.models.dtos.CarDTO;
 import org.example.biluthyrningssystem.models.entities.Car;
 import org.example.biluthyrningssystem.repositories.CarRepository;
 import org.junit.jupiter.api.Test;
@@ -9,12 +10,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.annotation.Rollback;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.server.ResponseStatusException;
-
+import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
+//Ann-Louis made this
 @SpringBootTest
 @Transactional
 @Rollback
@@ -30,15 +31,41 @@ class CarControllerCarServiceCarRepositoryIntegrationTest {
     }
 
     @Test
-    void getAvailableCars() {
+    void getAvailableCarsShouldReturnStatusCodeOK() {
+
+        Car car = new Car(990.0,"BMW","520","PRE580",false);
+        car.setOrders(null);
+
+        carRepository.save(car);
+        ResponseEntity<List<CarDTO>> response = carController.getAvailableCars();
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isNotEmpty();
     }
 
     @Test
-    void adminGetAvailableCars() {
+    void adminGetAvailableCarsShouldReturnStatusCodeOK() {
+
+        Car car = new Car(990.0,"BMW","520","PRE580",false);
+        car.setOrders(null);
+
+        carRepository.save(car);
+        ResponseEntity<List<CarDTO>> response = carController.adminGetAvailableCars();
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isNotEmpty();
     }
 
     @Test
-    void getAllCars() {
+    void getAllCarsShouldReturnStatusCodeOK() {
+
+        Car car = new Car(990.0,"BMW","520","PRE580",false);
+
+        carRepository.save(car);
+        ResponseEntity<List<Car>> response = carController.getAllCars();
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isNotEmpty();
     }
 
     @Test
@@ -66,10 +93,39 @@ class CarControllerCarServiceCarRepositoryIntegrationTest {
     }
 
     @Test
-    void updateCar() {
+    void updateCarShouldReturnStatusCodeOk() {
+
+        Car car = new Car(990.0,"BMW","520","PRE580",false);
+
+        carRepository.save(car);
+        ResponseEntity<String> response = carController.updateCar(car);
+
+        assertThat(response.getStatusCode().isSameCodeAs(HttpStatus.OK)).isTrue();
+        assertThat(response.getBody()).isEqualTo("Car updated");
     }
 
     @Test
-    void removeCar() {
+    void updateCarShouldReturnStatusCodeBadRequest() {
+
+        Car car = new Car(990.0,"BMW","520","PRE580",false);
+
+        carRepository.save(car);
+        car.setPricePerDay(0);
+
+        ResponseStatusException exception = assertThrows(ResponseStatusException.class, () -> carController.updateCar(car));
+        assertThat(exception.getStatusCode().isSameCodeAs(HttpStatus.BAD_REQUEST)).isTrue();
+        assertTrue(exception.getMessage().contains("Missing some data"));
+    }
+
+    @Test
+    void removeCarShouldReturnStatusCodeBadRequest() {
+
+        Car car = new Car(990.0,"BMW","520","PRE580",true);
+
+        carRepository.save(car);
+
+        ResponseStatusException exception = assertThrows(ResponseStatusException.class, () -> carController.removeCar(car.getId()));
+        assertThat(exception.getStatusCode().isSameCodeAs(HttpStatus.BAD_REQUEST)).isTrue();
+        assertTrue(exception.getMessage().contains("Car is in service and can not be removed"));
     }
 }
