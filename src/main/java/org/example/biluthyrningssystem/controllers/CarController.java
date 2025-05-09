@@ -27,8 +27,8 @@ public class CarController {
     }
 
     @GetMapping("/admin/cars")
-    public ResponseEntity<List<Car>> adminGetAvailableCars() {
-        return ResponseEntity.ok(carService.adminGetAvailableCars());
+    public ResponseEntity<List<CarDTO>> adminGetAvailableCars() {
+        return ResponseEntity.ok(carService.getAvailableCars());
     }
 
     @GetMapping("/admin/allcars")
@@ -47,7 +47,7 @@ public class CarController {
     }
 
     @DeleteMapping("admin/removecar/{id}")
-    public ResponseEntity<String> removeCar(@PathVariable Long id) {
+    public ResponseEntity<String> removeCar(@PathVariable long id) {
         return ResponseEntity.ok(carService.removeCar(id));
     }
 }
