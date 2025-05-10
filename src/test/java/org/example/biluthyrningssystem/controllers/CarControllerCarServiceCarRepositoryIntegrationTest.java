@@ -21,8 +21,8 @@ import static org.junit.jupiter.api.Assertions.*;
 @Rollback
 class CarControllerCarServiceCarRepositoryIntegrationTest {
 
-    private CarRepository carRepository;
-    private CarController carController;
+    private final CarRepository carRepository;
+    private final CarController carController;
 
     @Autowired
     public CarControllerCarServiceCarRepositoryIntegrationTest(CarRepository carRepository, CarController carController) {

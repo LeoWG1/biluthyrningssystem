@@ -105,14 +105,15 @@ public class CarService implements CarServiceInterface {
 
     @Override
     public String removeCar(long id) {
+        LocalDate today = LocalDate.now();
         if(carRepository.existsById(id)) {
             Car carToRemove = carRepository.getCarById(id);
             List<Order> carOrders = carToRemove.getOrders();
             if(carOrders != null) { //testar
                 for (Order order : carOrders) {
-                    if (order.isActive()) {
-                        USER_LOGGER.warn("Admin tried to remove a car that has active orders");
-                        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Car has active orders and can not be removed");
+                    if (order.getEndDate().isAfter(today) || order.getStartDate().isBefore(today) && order.isActive()) {
+                        USER_LOGGER.warn("Admin tried to remove a car that is rented");
+                        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Car is rented");
                     }
                 }
             }

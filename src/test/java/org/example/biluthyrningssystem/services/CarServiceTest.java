@@ -1,25 +1,18 @@
 package org.example.biluthyrningssystem.services;
 
 import jakarta.transaction.Transactional;
+import org.assertj.core.api.Assertions;
 import org.example.biluthyrningssystem.exceptions.ResourceNotFoundException;
 import org.example.biluthyrningssystem.models.dtos.CarDTO;
 import org.example.biluthyrningssystem.models.entities.Car;
-import org.example.biluthyrningssystem.models.entities.Customer;
-import org.example.biluthyrningssystem.models.entities.Order;
 import org.example.biluthyrningssystem.repositories.CarRepository;
-import org.example.biluthyrningssystem.repositories.CustomerRepository;
-import org.example.biluthyrningssystem.repositories.OrderRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpStatus;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.web.server.ResponseStatusException;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -29,10 +22,8 @@ import static org.junit.jupiter.api.Assertions.*;
 @Rollback
 class CarServiceTest {
 
-    private CarService carService;
-    private CarRepository carRepository;
-    @Autowired
-    private OrderRepository orderRepository;
+    private final CarService carService;
+    private final CarRepository carRepository;
 
 
     @Autowired
@@ -79,6 +70,30 @@ class CarServiceTest {
     }
 
     @Test
+    void addCarShouldReturnStatusCodeConflict() {
+
+        Car car1 = new Car(1200.0,"BMW","520","PRE580",false);
+        Car car2 = new Car(990.0,"BMW","520","PRE580",false);
+
+        carRepository.save(car1);
+
+        ResponseStatusException exception = assertThrows(ResponseStatusException.class, () -> carService.addCar(car2));
+        Assertions.assertThat(exception.getStatusCode().isSameCodeAs(HttpStatus.CONFLICT)).isTrue();
+        assertTrue(exception.getMessage().contains("PlateNumber already exists"));
+    }
+
+    @Test
+    void addCarWithInvalidDataShouldThrowException() {
+
+        Car car = new Car(0,"BMW","520","PRE580",false);
+
+        ResponseStatusException exception = assertThrows(ResponseStatusException.class, () -> carService.addCar(car));
+
+        assertThat(exception.getStatusCode().isSameCodeAs(HttpStatus.BAD_REQUEST)).isTrue();
+        assertTrue(exception.getMessage().contains("Missing some data"));
+    }
+
+    @Test
     void updateCarWhenIdExistsShouldUpdateCar() {
 
         Car car = new Car(990.0,"BMW","520","PRE580",false);
@@ -91,16 +106,30 @@ class CarServiceTest {
     }
 
     @Test
-    void updateCarShouldReturnResourceNotFoundException() {
-//
-//        Car car = new Car(990.0,"BMW","520","PRE580",false);
-////        Car carNotSaved = new Car(990.0,"BMW","520","PRE580",false);
-//        carRepository.save(car);
-//        car.setId(2L);
-//
-//        assertThrows(ResourceNotFoundException.class, () -> carService.updateCar(car));
-//
+    void updateCarWithInvalidDataShouldThrowException() {
+        Car car = new Car(990.0,"BMW","520","PRE580",false);
 
+        carRepository.save(car);
+        car.setPricePerDay(0);
+
+        ResponseStatusException exception = assertThrows(ResponseStatusException.class, () -> carService.updateCar(car));
+        assertThat(exception.getStatusCode().isSameCodeAs(HttpStatus.BAD_REQUEST)).isTrue();
+        assertTrue(exception.getMessage().contains("Missing some data"));
+    }
+
+    @Test
+    void updateCarWhenIdDoesNotExistShouldThrowException() {
+
+        Car savedCar = new Car(990.0,"BMW","520","PRE580",false);
+
+        carRepository.save(savedCar);
+
+        ResourceNotFoundException exception = assertThrows(ResourceNotFoundException.class, () ->
+        {
+            carService.removeCar(savedCar.getId());
+            carService.updateCar(savedCar);
+        });
+        assertTrue(exception.getMessage().contains("ID not found"));
     }
 
     @Test
@@ -125,19 +154,12 @@ class CarServiceTest {
     }
 
     @Test
-    void removeCarWithActiveOrdersShouldThrowException() {
+    void removeCarThatIsRentedShouldThrowException() {
 
-//        Car car = new Car(990.0,"BMW","520","PRE580",true);
-//        Order order = new Order();
-//        order.setActive(true);
-//        order.setCar(car);
-//
-//        orderRepository.save(order);
-//        Car carToRemove = carRepository.save(car);
-//        carToRemove.setOrders();
-//
-//        ResponseStatusException exception = assertThrows(ResponseStatusException.class, () -> carService.removeCar(carToRemove.getId()));
-//        assertThat(exception.getMessage().contains("Admin tried to remove a car that has active orders")).isTrue();
+        Car carToRemove = carRepository.getCarById(1);
+
+        ResponseStatusException exception = assertThrows(ResponseStatusException.class, () -> carService.removeCar(carToRemove.getId()));
+        assertThat(exception.getMessage().contains("Car is rented")).isTrue();
     }
 
     @Test
