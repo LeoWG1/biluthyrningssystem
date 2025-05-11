@@ -350,3 +350,28 @@
 2025-05-04 12:56:26,673[http-nio-9090-exec-8]INFO userlog-Admin added a car with plate number MFD84A.
 2025-05-06 11:14:37,280[http-nio-9090-exec-3]INFO userlog-ADMIN fetched all customers
 2025-05-06 11:18:48,604[main]ERRORuserlog-USER tried and failed to update customer with ID: '1'
+2025-05-11 21:43:13,638[main]WARN userlog-USER attempted and failed to create new order due to unavailable start date
+2025-05-11 21:46:52,930[main]WARN userlog-USER attempted and failed to create new order due to unavailable start date
+2025-05-11 21:47:55,713[main]WARN userlog-USER attempted and failed to create new order due to unavailable end date
+2025-05-11 21:53:38,483[main]ERRORuserlog-USER attempted to create new order with non-existent car. ID: 1
+2025-05-11 22:05:03,983[main]INFO userlog-USER has created new order with car ID: 1
+2025-05-11 22:06:17,860[main]INFO userlog-USER has created new order with car ID: 1
+2025-05-11 22:09:23,420[main]ERRORuserlog-USER attempted to create new order with unavailable car
+2025-05-11 22:21:52,775[main]INFO userlog-USER has created new order with car ID: 1
+2025-05-11 22:21:52,831[main]WARN userlog-USER attempted and failed to create new order due to unavailable end date
+2025-05-11 22:21:52,841[main]ERRORuserlog-USER attempted to create new order with non-existent car. ID: 1
+2025-05-11 22:21:52,855[main]ERRORuserlog-USER attempted to create new order with unavailable car
+2025-05-11 22:21:52,866[main]WARN userlog-USER attempted and failed to create new order due to unavailable start date
+2025-05-11 22:22:14,400[main]INFO userlog-USER has created new order with car ID: 1
+2025-05-11 22:22:14,489[main]WARN userlog-USER attempted and failed to create new order due to unavailable end date
+2025-05-11 22:22:14,502[main]ERRORuserlog-USER attempted to create new order with non-existent car. ID: 1
+2025-05-11 22:22:14,516[main]ERRORuserlog-USER attempted to create new order with unavailable car
+2025-05-11 22:22:14,526[main]WARN userlog-USER attempted and failed to create new order due to unavailable start date
+2025-05-11 22:31:01,439[main]INFO userlog-USER has cancelled order with ID: 1
+2025-05-11 22:31:01,556[main]INFO userlog-ADMIN has removed all orders before date: 2025-05-11
+2025-05-11 22:31:01,638[main]INFO userlog-USER has created new order with car ID: 1
+2025-05-11 22:31:01,729[main]WARN userlog-USER attempted and failed to create new order due to unavailable end date
+2025-05-11 22:31:01,740[main]ERRORuserlog-USER attempted to create new order with non-existent car. ID: 1
+2025-05-11 22:31:01,751[main]ERRORuserlog-USER attempted to create new order with unavailable car
+2025-05-11 22:31:01,762[main]WARN userlog-USER attempted and failed to create new order due to unavailable start date
+2025-05-11 22:31:01,772[main]INFO userlog-ADMIN has removed order with ID: 1
