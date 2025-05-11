@@ -8,7 +8,7 @@ import java.util.List;
 // Ann-Louis made this class
 @Entity
 @Table(name = "cars")
-@JsonIgnoreProperties("orders") //TESTAR
+@JsonIgnoreProperties("orders")
 public class Car {
 
     @Id
@@ -34,6 +34,14 @@ public class Car {
     private List<Order> orders;
 
     public Car() {}
+
+    public Car(double pricePerDay, String brand, String model, String plateNumber, boolean inService) {
+        this.pricePerDay = pricePerDay;
+        this.brand = brand;
+        this.model = model;
+        this.plateNumber = plateNumber;
+        this.inService = inService;
+    }
 
     public Long getId() {
         return id;
