@@ -36,7 +36,7 @@ public class CarService implements CarServiceInterface {
         for (Car car : carRepository.findAll()) {
             if (!car.isInService()) {
                 List<Map<String, LocalDate>> allBookedDates = new ArrayList<>();
-                if(car.getOrders() != null) { //testar
+                if(car.getOrders() != null) {
                     for (Order order : car.getOrders()) {
                         if (order.isActive()) {
                             Map<String, LocalDate> mapStartDate = new HashMap<>();
@@ -49,7 +49,7 @@ public class CarService implements CarServiceInterface {
                             allBookedDates.add(mapEndDate);
                         }
                     }
-                } //testar
+                }
                 if (!allBookedDates.isEmpty()) {
                     carDTOList.add(new CarDTO(car, allBookedDates));
                 } else {
@@ -109,7 +109,7 @@ public class CarService implements CarServiceInterface {
         if(carRepository.existsById(id)) {
             Car carToRemove = carRepository.getCarById(id);
             List<Order> carOrders = carToRemove.getOrders();
-            if(carOrders != null) { //testar
+            if(carOrders != null) {
                 for (Order order : carOrders) {
                     if (order.getEndDate().isAfter(today) || order.getStartDate().isBefore(today) && order.isActive()) {
                         USER_LOGGER.warn("Admin tried to remove a car that is rented");

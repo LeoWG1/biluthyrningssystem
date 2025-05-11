@@ -25,7 +25,6 @@ class CarServiceTest {
     private final CarService carService;
     private final CarRepository carRepository;
 
-
     @Autowired
     public CarServiceTest(CarService carService, CarRepository carRepository) {
         this.carService = carService;
@@ -59,7 +58,7 @@ class CarServiceTest {
     }
 
     @Test
-    void addCarShouldAddCar() {
+    void addCarWithValidDataShouldAddCar() {
 
         Car car = new Car(990.0,"BMW","520","PRE580",false);
 
@@ -72,12 +71,12 @@ class CarServiceTest {
     @Test
     void addCarShouldReturnStatusCodeConflict() {
 
-        Car car1 = new Car(1200.0,"BMW","520","PRE580",false);
-        Car car2 = new Car(990.0,"BMW","520","PRE580",false);
+        Car car = new Car(1200.0,"BMW","520","PRE580",false);
+        Car additionalCar = new Car(990.0,"BMW","520","PRE580",false);
 
-        carRepository.save(car1);
+        carRepository.save(car);
 
-        ResponseStatusException exception = assertThrows(ResponseStatusException.class, () -> carService.addCar(car2));
+        ResponseStatusException exception = assertThrows(ResponseStatusException.class, () -> carService.addCar(additionalCar));
         Assertions.assertThat(exception.getStatusCode().isSameCodeAs(HttpStatus.CONFLICT)).isTrue();
         assertTrue(exception.getMessage().contains("PlateNumber already exists"));
     }
@@ -126,7 +125,8 @@ class CarServiceTest {
 
         ResourceNotFoundException exception = assertThrows(ResourceNotFoundException.class, () ->
         {
-            carService.removeCar(savedCar.getId());
+            carRepository.deleteById(savedCar.getId());
+//            carService.removeCar(savedCar.getId());
             carService.updateCar(savedCar);
         });
         assertTrue(exception.getMessage().contains("ID not found"));
@@ -141,7 +141,7 @@ class CarServiceTest {
         carService.removeCar(carToRemove.getId());
         List<Car> cars = carRepository.findAll();
 
-        assertThat(cars.contains(car)).isFalse();
+        assertThat(cars.contains(carToRemove)).isFalse();
     }
 
     @Test
