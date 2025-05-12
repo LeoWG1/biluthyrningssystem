@@ -5,6 +5,7 @@ import org.example.biluthyrningssystem.models.entities.Order;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpStatus;
 import org.springframework.test.annotation.Rollback;
 
 import java.security.Principal;
@@ -49,11 +50,25 @@ class OrderControllerOrderServiceIntegrationTest {
 
     @Test
     void removeOrderById_deletesOrderFromDatabase() {
+        List<Order> allOrders = orderController.getAllOrdersAdmin().getBody();
+        assertThat(allOrders).isNotEmpty();
+        long idToDelete = allOrders.get(0).getId();
 
+        var deleteResponse = orderController.removeOrderByID(idToDelete);
+
+        assertThat(deleteResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
     }
 
     @Test
     void getStatistics_returnsCorrectStatistics() {
+        var response = orderController.showStatistics();
 
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+
+        var stats = response.getBody();
+        assertThat(stats).isNotNull();
+        assertThat(stats.getTotalOrders()).isGreaterThanOrEqualTo(0);
+        assertThat(stats.getTotalActiveOrders()).isBetween(0L, stats.getTotalOrders());
+        assertThat(stats.getTotalRevenue()).isGreaterThanOrEqualTo(0L);
     }
 }
