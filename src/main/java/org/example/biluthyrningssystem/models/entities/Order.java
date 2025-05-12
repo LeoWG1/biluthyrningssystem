@@ -34,8 +34,7 @@ public class Order {
     @JoinColumn(name = "car_id", nullable = false)
     private Car car;
 
-    public Order() {
-    }
+    public Order() { }
 
     public long getId() {
         return id;

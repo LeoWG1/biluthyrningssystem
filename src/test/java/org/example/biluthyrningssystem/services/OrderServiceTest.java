@@ -28,7 +28,7 @@ import static org.mockito.Mockito.when;
  * @author Frida Jakobsson
  */
 @ExtendWith(MockitoExtension.class)
-public class OrderServiceTest {
+class OrderServiceTest {
 
     @Mock
     private OrderRepository orderRepository;
