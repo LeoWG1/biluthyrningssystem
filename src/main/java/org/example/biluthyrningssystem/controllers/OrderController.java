@@ -6,7 +6,6 @@ import org.example.biluthyrningssystem.models.dtos.StatisticsDTO;
 import org.example.biluthyrningssystem.models.entities.Customer;
 import org.example.biluthyrningssystem.models.entities.Order;
 import org.example.biluthyrningssystem.repositories.CustomerRepository;
-import org.example.biluthyrningssystem.services.CustomerService;
 import org.example.biluthyrningssystem.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -74,7 +73,7 @@ public class OrderController {
     /*
     ADMIN ENDPOINTS
      */
-    @GetMapping("/admin/orders")
+    @GetMapping("/admin/orders") // All historical (inactive) orders
     public ResponseEntity<List<Order>> getAllOrdersAdmin() {
         return ResponseEntity.ok(orderService.getAllInactiveOrders());
     }
