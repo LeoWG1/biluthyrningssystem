@@ -126,7 +126,6 @@ class CarServiceTest {
         ResourceNotFoundException exception = assertThrows(ResourceNotFoundException.class, () ->
         {
             carRepository.deleteById(savedCar.getId());
-//            carService.removeCar(savedCar.getId());
             carService.updateCar(savedCar);
         });
         assertTrue(exception.getMessage().contains("ID not found"));
