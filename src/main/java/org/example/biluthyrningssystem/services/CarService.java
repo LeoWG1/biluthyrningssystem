@@ -36,42 +36,28 @@ public class CarService implements CarServiceInterface {
         for (Car car : carRepository.findAll()) {
             if (!car.isInService()) {
                 List<Map<String, LocalDate>> allBookedDates = new ArrayList<>();
+                if(car.getOrders() != null) {
+                    for (Order order : car.getOrders()) {
+                        if (order.isActive()) {
+                            Map<String, LocalDate> mapStartDate = new HashMap<>();
+                            mapStartDate.put("startDate", order.getStartDate());
 
-                for (Order order : car.getOrders()) {
-                    if (order.isActive()) {
-                        Map<String, LocalDate> mapStartDate = new HashMap<>();
-                        mapStartDate.put("startDate", order.getStartDate());
+                            Map<String, LocalDate> mapEndDate = new HashMap<>();
+                            mapEndDate.put("endDate", order.getEndDate());
 
-                        Map<String, LocalDate> mapEndDate = new HashMap<>();
-                        mapEndDate.put("endDate", order.getEndDate());
-
-                        allBookedDates.add(mapStartDate);
-                        allBookedDates.add(mapEndDate);
+                            allBookedDates.add(mapStartDate);
+                            allBookedDates.add(mapEndDate);
+                        }
                     }
                 }
-
                 if (!allBookedDates.isEmpty()) {
                     carDTOList.add(new CarDTO(car, allBookedDates));
-                }
-                else {
+                } else {
                     carDTOList.add(new CarDTO(car));
                 }
             }
         }
-        Comparator<CarDTO> priceComparator = (car1, car2) -> (int) (car1.getPricePerDay() - car2.getPricePerDay());
-        carDTOList.sort(priceComparator);
         return carDTOList;
-    }
-//LISTAR JUST NU BARA BILAR SOM INTE ÄR PÅ SERVICE!
-    @Override
-    public List<Car> adminGetAvailableCars() {
-        List<Car> cars = new ArrayList<>();
-        for(Car car : carRepository.findAll()) {
-            if(!car.isInService()) {
-                cars.add(car);
-            }
-        }
-        return cars;
     }
 
     @Override
@@ -81,19 +67,21 @@ public class CarService implements CarServiceInterface {
 
     @Override
     public String addCar(Car car) {
-        for(Car existingCar : carRepository.findAll()) {
+        for (Car existingCar : carRepository.findAll()) {
             if (existingCar.getPlateNumber().equals(car.getPlateNumber())) {
                 USER_LOGGER.warn("Admin tried to add a car with a plate number that already exists.");
                 throw new ResponseStatusException(HttpStatus.CONFLICT, "PlateNumber already exists");
             }
         }
-        if(isValidCar(car)) {
+        if (isValidCar(car)) {
             carRepository.save(car);
             USER_LOGGER.info("Admin added a car with plate number {}.", car.getPlateNumber());
             return "Car added";
         }
-        USER_LOGGER.warn("Admin tried to add a car with invalid data.");
-        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Missing some data.");
+        else {
+            USER_LOGGER.warn("Admin tried to add a car with invalid data.");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Missing some data.");
+        }
     }
 
     @Override
@@ -104,35 +92,45 @@ public class CarService implements CarServiceInterface {
                 USER_LOGGER.info("Admin updated car with plate number {}.", car.getPlateNumber());
                 return "Car updated";
             }
-            USER_LOGGER.warn("Admin tried to update a car with invalid data.");
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Missing some data.");
+            else {
+                USER_LOGGER.warn("Admin tried to update a car with invalid data.");
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Missing some data.");
+            }
         }
-        USER_LOGGER.warn("Admin tried to update a car that does not exist.");
-        throw new ResourceNotFoundException("Car", "id", car.getId());
+        else {
+            USER_LOGGER.warn("Admin tried to update a car that does not exist.");
+            throw new ResourceNotFoundException("Car", "ID not found", car.getId());
+        }
     }
 
     @Override
-    public String removeCar(Long id) {
+    public String removeCar(long id) {
+        LocalDate today = LocalDate.now();
         if(carRepository.existsById(id)) {
             Car carToRemove = carRepository.getCarById(id);
             List<Order> carOrders = carToRemove.getOrders();
-            for (Order order : carOrders) {
-                if(order.isActive()) {
-                    USER_LOGGER.warn("Admin tried to remove a car that is rented by a customer");
-                    throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Car is rented by a customer and can not be removed");
+            if(carOrders != null) {
+                for (Order order : carOrders) {
+                    if (order.getEndDate().isAfter(today) || order.getStartDate().isBefore(today) && order.isActive()) {
+                        USER_LOGGER.warn("Admin tried to remove a car that is rented");
+                        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Car is rented");
+                    }
                 }
             }
             if(carToRemove.isInService()) {
                 USER_LOGGER.warn("Admin tried to remove a car that is in service");
                 throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Car is in service and can not be removed");
             }
-
-            carRepository.deleteById(id);
-            USER_LOGGER.info("Admin removed car with plate number {}.", carToRemove.getPlateNumber());
-            return "Car removed";
+            else {
+                carRepository.deleteById(id);
+                USER_LOGGER.info("Admin removed car with plate number {}.", carToRemove.getPlateNumber());
+                return "Car removed";
+            }
         }
-        USER_LOGGER.warn("Admin tried to remove a car that does not exist.");
-        throw new ResourceNotFoundException("Car", "id", id);
+        else {
+            USER_LOGGER.warn("Admin tried to remove a car that does not exist.");
+            throw new ResourceNotFoundException("Car", "ID not found", id);
+        }
     }
 
     private boolean isValidCar(Car car) {

@@ -17,7 +17,8 @@ VALUES
     (990.0, 'Peugeot', '3008', 'ABC123', false),
     (1365.0, 'Volvo', 'V90 Plug in', 'YXH32E', false),
     (1138.5, 'Volvo', 'XC40', 'PRE12B', true),
-    (1260.0, 'Volvo', 'V60 Plug in', 'FCV91H', false);
+    (1260.0, 'Volvo', 'V60 Plug in', 'FCV91H', false),
+    (780.0,'BMW','520','NYH334',false);
 
 INSERT INTO orders (price, start_date, end_date, active, customer_id, car_id)
 VALUES

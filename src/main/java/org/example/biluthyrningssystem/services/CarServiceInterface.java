@@ -9,9 +9,8 @@ import java.util.List;
 public interface CarServiceInterface {
 
     List<CarDTO> getAvailableCars();
-    List<Car> adminGetAvailableCars();
     List<Car> getAllCars();
     String addCar(Car car);
     String updateCar(Car car);
-    String removeCar(Long id);
+    String removeCar(long id);
 }
