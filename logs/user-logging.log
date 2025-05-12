@@ -375,3 +375,5 @@
 2025-05-11 22:31:01,751[main]ERRORuserlog-USER attempted to create new order with unavailable car
 2025-05-11 22:31:01,762[main]WARN userlog-USER attempted and failed to create new order due to unavailable start date
 2025-05-11 22:31:01,772[main]INFO userlog-ADMIN has removed order with ID: 1
+2025-05-12 09:58:12,593[http-nio-9090-exec-7]INFO userlog-USER has created new order with car ID: 5
+2025-05-12 10:02:24,531[http-nio-9090-exec-2]INFO userlog-USER has created new order with car ID: 3
