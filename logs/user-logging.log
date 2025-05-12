@@ -694,3 +694,16 @@
 2025-05-12 15:40:36,465[main]ERRORuserlog-USER attempted to create new order with unavailable car
 2025-05-12 15:40:36,478[main]WARN userlog-USER attempted and failed to create new order due to unavailable start date
 2025-05-12 15:40:36,493[main]INFO userlog-ADMIN has removed order with ID: 1
+2025-05-12 20:42:59,213[main]INFO userlog-USER has cancelled order with ID: 1
+2025-05-12 20:42:59,235[main]INFO userlog-ADMIN has removed all orders before date: 2025-05-12
+2025-05-12 20:42:59,265[main]INFO userlog-USER has created new order with car ID: 1
+2025-05-12 20:42:59,292[main]WARN userlog-USER attempted and failed to create new order due to unavailable end date
+2025-05-12 20:42:59,297[main]ERRORuserlog-USER attempted to create new order with non-existent car. ID: 1
+2025-05-12 20:42:59,301[main]ERRORuserlog-USER attempted to create new order with unavailable car
+2025-05-12 20:42:59,305[main]WARN userlog-USER attempted and failed to create new order due to unavailable start date
+2025-05-12 20:42:59,310[main]INFO userlog-ADMIN has removed order with ID: 1
+2025-05-12 20:43:33,898[main]INFO userlog-ADMIN has removed order with ID: 4
+2025-05-12 20:46:53,774[main]WARN userlog-Admin tried to add a car with invalid data.
+2025-05-12 20:51:17,676[main]INFO userlog-Admin added a car with plate number PRE580.
+2025-05-12 20:53:51,527[main]WARN userlog-Admin tried to update a car that does not exist.
+2025-05-12 20:56:55,228[main]INFO userlog-Admin added a car with plate number PRE580.
