@@ -1,7 +1,9 @@
 package org.example.biluthyrningssystem.services;
 
 import org.example.biluthyrningssystem.models.entities.Car;
+import org.example.biluthyrningssystem.models.entities.Order;
 import org.example.biluthyrningssystem.repositories.CarRepository;
+import org.example.biluthyrningssystem.repositories.OrderRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -10,10 +12,13 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+//Ann-Louis made this
 @ExtendWith(MockitoExtension.class)
 class CarServiceUnitTest {
 
@@ -33,6 +38,7 @@ class CarServiceUnitTest {
         car.setModel("520");
         car.setPricePerDay(990.0);
         car.setPlateNumber("PRE580");
+        car.setInService(false);
     }
 
     @Test
@@ -61,10 +67,10 @@ class CarServiceUnitTest {
     }
 
     @Test
-    void updateCar() {
+    void updateCarWithValidDataShouldReturnCarUpdated() {
     }
 
     @Test
-    void removeCar() {
+    void removeCarWhenIdExistShouldReturnCarRemoved() {
     }
 }
